@@ -25,5 +25,13 @@ typedef struct packed {
         logic [23:0]mant;
 } float_ieee;
 
+function float_ieee real2float_ieee(shortreal number);
+        real2float_ieee = $shortrealtobits();
+endfunction
+
+function shortreal float_ieee2real(float_ieee number);
+        float_ieee2real = $bitstoshortreal();
+endfunction
+
 endpackage : float_pack
    
