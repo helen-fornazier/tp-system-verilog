@@ -26,11 +26,11 @@ typedef struct packed {
 } float_ieee;
 
 function float_ieee real2float_ieee(shortreal number);
-        real2float_ieee = $shortrealtobits();
+        return $shortrealtobits(number);
 endfunction
 
 function shortreal float_ieee2real(float_ieee number);
-        float_ieee2real = $bitstoshortreal();
+        return $bitstoshortreal(number);
 endfunction
 
 endpackage : float_pack
