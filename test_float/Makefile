@@ -1,5 +1,5 @@
 # Placez ici le nom du répertoire de sources
-src_dir =  ../src
+src_dir =  ../LM32_SYNTH_COPRO/copro_src
 pack_file = ${src_dir}/float_pack.sv
 # Corrigez ces lignes pour que les nom des champs (s,exposant,mantisse) corresponde au noms que vous avez utilisé
 vlog_option_23_8 =  +define+TB_EXP_SIZE=8 +define+TB_MANT_SIZE=23 +define+SIGN=s +define+EXP=exposant +define+MANT=mantisse
