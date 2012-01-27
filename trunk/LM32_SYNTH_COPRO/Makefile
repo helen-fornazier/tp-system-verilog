@@ -16,6 +16,9 @@ simu:simu_code
 syn:bootloader 
 	make all -C target/syn
 
+syn_test_copro: simu_code
+	make all -C target/syn
+
 program:
 	make -C target/syn program
 

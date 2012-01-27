@@ -43,6 +43,7 @@ int main()
     int a = 0xdeadbeef;
     int b = 0xbadec0de;
     int c;
+    my_printf ("Test Copro\r\n");
     c = copro_add (a,b);
     my_printf ("a: 0x%x b: 0x%x -> c: 0x%x\r\n",a,b,c);
 

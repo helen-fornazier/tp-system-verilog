@@ -30,6 +30,7 @@ all: copy
 
 copy: $(SOFT_VM)
 	cp $< ../../simulation
+	cp $< ../../target/syn/quartus
 
 %.vm: %.srec
 	$(SREC_CAT) $< -Output $@ -Vmem 32
