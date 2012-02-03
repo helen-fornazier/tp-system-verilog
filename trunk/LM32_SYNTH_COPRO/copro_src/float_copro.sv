@@ -1,8 +1,9 @@
 // Squelette du coprocesseur flottant
 module float_copro #(
-               parameter t_mult = 5,
+	       parameter t_mult = 5,
                parameter t_add = 3,
-               parameter t_sub = 2)  
+               parameter t_sub = 2,
+	       parameter t_div = 5)  
                (input logic clk,
                input logic copro_valid,
                input logic copro_accept,
@@ -73,6 +74,14 @@ module float_copro #(
                        COUNT = 0;
                     end  
                     else COUNT = COUNT + 1;
+		//division
+                 11'd3:
+                    if (COUNT >= t_div) begin
+                       copro_complete = 1;
+                       copro_result = resultat;
+                       COUNT = 0;
+                    end  
+                    else COUNT = COUNT + 1;		
               endcase
       end
    end

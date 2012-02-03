@@ -18,6 +18,9 @@ module float_copro_dp(opcode, op0, op1, result);
           //multiplication
           11'd2:
             result <= op0 * op1;
+	  //division
+	  11'd3:
+            result <= op0 / op1;
         endcase
      end
      
