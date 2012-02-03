@@ -28,8 +28,30 @@ package float_pack;
 /*-------- Calcul Flotant --------*/
 
 function float float_mul(float op1, float op2);
-        //TODO
-        return real2float(float2real(op1)*float2real(op2));
+        automatic float result = 0;
+        automatic logic [2*Nm+1:0]man_tmp = 0; /*2*Nm+2 bits*/
+        automatic logic signed [Ne:0] exp_tmp = 0; /*Ne+1 bits*/
+        /*Signal*/
+        result.s = op1.s ^ op2.s;
+        /*Exposant*/
+        exp_tmp = (op2.exposant - (2**(Ne-1) - 1)) + op1.exposant;
+        if ((exp_tmp < 0) || (!op1.exposant && !op1.mantisse)||(!op2.exposant && !op2.mantisse)) begin
+                result.exposant = 0;
+                result.mantisse = 0;
+        end
+        else begin
+                result.exposant[Ne-1:0] = exp_tmp[Ne-1:0];
+                /*Mantisse*/
+                man_tmp = {1,op1.mantisse}*{1,op2.mantisse};
+                if (man_tmp[2*Nm+1]) begin
+                        result.mantisse[Nm-1:0] = man_tmp[2*Nm:Nm+1];
+                        result.exposant++;
+                        //TODO: Verify Overflow
+                end
+                else result.mantisse[Nm-1:0] = man_tmp[2*Nm-1:Nm];
+        end
+        /*Answer*/
+        return result;
 endfunction
 
 /*Somme f=1, Sub f=0*/
