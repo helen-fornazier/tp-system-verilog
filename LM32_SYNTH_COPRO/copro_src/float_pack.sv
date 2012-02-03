@@ -30,25 +30,33 @@ package float_pack;
 function float float_mul(float op1, float op2);
         automatic float result = 0;
         automatic logic [2*Nm+1:0]man_tmp = 0; /*2*Nm+2 bits*/
-        automatic logic signed [Ne:0] exp_tmp = 0; /*Ne+1 bits*/
+        automatic logic signed [Ne+1:0] exp_tmp = 0; /*Ne+2 bits, One is for the signal and the other for the overflow*/
+
         /*Signal*/
         result.s = op1.s ^ op2.s;
+
         /*Exposant*/
-        exp_tmp = (op2.exposant - (2**(Ne-1) - 1)) + op1.exposant;
+        exp_tmp = op1.exposant + op2.exposant - (2**(Ne-1) - 1);
         if ((exp_tmp < 0) || (!op1.exposant && !op1.mantisse)||(!op2.exposant && !op2.mantisse)) begin
                 result.exposant = 0;
                 result.mantisse = 0;
         end
         else begin
-                result.exposant[Ne-1:0] = exp_tmp[Ne-1:0];
                 /*Mantisse*/
                 man_tmp = {1,op1.mantisse}*{1,op2.mantisse};
                 if (man_tmp[2*Nm+1]) begin
                         result.mantisse[Nm-1:0] = man_tmp[2*Nm:Nm+1];
-                        result.exposant++;
-                        //TODO: Verify Overflow
+                        exp_tmp++;
                 end
                 else result.mantisse[Nm-1:0] = man_tmp[2*Nm-1:Nm];
+
+                /*Saturation and overflow*/
+                if (exp_tmp[Ne] || exp_tmp[Ne-1:0] == '1) begin
+                        result.exposant = '1;
+                        result.mantisse = '0;
+                end
+                else if (exp_tmp == 0) result.mantisse = '0;
+                else result.exposant[Ne-1:0] = exp_tmp[Ne-1:0];
         end
         /*Answer*/
         return result;
