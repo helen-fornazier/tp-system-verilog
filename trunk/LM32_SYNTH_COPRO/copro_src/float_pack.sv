@@ -52,33 +52,87 @@ function float float_mul(float op1, float op2);
         end
         /*Answer*/
         return result;
-endfunction
+endfunction // float_mul
 
 /*Somme f=1, Sub f=0*/
-function float float_add_sub(logic f, float op1, float op2);
-        //TODO
-        if(f) return real2float(float2real(op1)+float2real(op2));
-        else return real2float(float2real(op1)-float2real(op2));
-endfunction
+function float float_add_sub(logic f, float op1, float op2);   
+   logic [4:0] 	   shift_size;
+   logic [Nm+1:0] big_m,small_m;
+   logic 	big_s,small_s;
+   logic [Ne-1:0] big_e;
+   
+   
+   //sub, change signal of the second op
+   if(f==0) op2.s = !op2.s;
+
+   //if one number is zero there's nothing to do
+   if(op1.mantisse==0 && op1.exposant==0) return op2;
+   else if (op2.mantisse==0 && op2.exposant==0)return op1;
+   //proceed operation
+   else begin   
+      if (op1.exposant >= op2.exposant) begin
+	 shift_size = op1.exposant-op2.exposant;
+	 big_e=op1.exposant;
+	 big_m[Nm+1:0] = {'1b0,'1b1,op1.mantisse};
+	 big_s = op1.s;      
+	 small_m[Nm+1:0] = {'1b0,'1b1,op2.mantisse} >> shift_size;
+	 small_s = op1.s;    
+      end
+      else begin
+	 shift_size = op2.exposant-op1.exposant;
+	 big_e=op2.exposant;
+	 big_m[Nm+1:0] = {'1b0,'1b1,op2.mantisse};
+	 big_s = op2.s;  
+	 small_m[Nm+1:0] = {'1b0,'1b1,op1.mantisse} >> shift_size;
+	 small_s = op1.s;      
+      end // else: !if(op1.exposant >= op2.exposant)
+      
+      op1.s = big_s;
+      
+      if (big_s==small_s) begin
+	 big_m = big_m + small_m;
+	 if (big_m[Nm+1])begin
+	    op1.exposant = big_e+1;
+	    op1.mantisse = big_m[Nm:1];
+	 end
+	 else begin
+	    op1.exposant = big_e;
+	    op1.mantisse = big_m[Nm-1:0];
+	 end	 
+      else begin
+	 big_m = big_m - small_m;
+	 for (shift_size=0;shift_size<Nm;shifit_size++)
+	   if (big_m[Nm])
+	 
+      end
+
+      
+      
+      
+   end // else: !if(op2.mantisse==0 && op2.exposant==0)
+      
+   
+        
+endfunction // float_add_sub
 
 function float float_div(float op1, float op2);
         //TODO
         return real2float(float2real(op1)/float2real(op2));
-endfunction
+endfunction // float_div
 
 function float float_add(float op1, float op2);
         return float_add_sub(1, op1, op2);
-endfunction
+endfunction // float_add
 
 function float float_sub(float op1, float op2);
         return float_add_sub(0, op1, op2);
-endfunction
+endfunction // float_sub
 
 /*---------- Convertion ----------*/
 
    function float_ieee real2float_ieee(shortreal number);
       return $shortrealtobits(number);
-   endfunction
+   endfunction // real2float_ieee
 
    function shortreal float_ieee2real(float_ieee number);
       return $bitstoshortreal(number);
@@ -104,6 +158,6 @@ endfunction
       nieee.exposant[7:0] = n.exposant[Ne-1:0] + (2**(Ne-1)) - 128;
       number = float_ieee2real(nieee); 
       return number;    
-   endfunction // real2float
+   endfunction // float2real
 
 endpackage : float_pack
