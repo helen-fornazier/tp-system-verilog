@@ -123,9 +123,62 @@ function float float_add_sub(logic f, float op1, float op2);
         
 endfunction // float_add_sub
 
+
 function float float_div(float op1, float op2);
-        //TODO
-        return real2float(float2real(op1)/float2real(op2));
+        automatic float result = 0;
+        automatic logic [Nm:0]man_tmp = 0; /*Nm+1 bits*/
+        automatic logic signed [Ne+1:0] exp_tmp = 0; /*Ne+2 bits, One is for the signal and the other for the overflow*/
+        automatic logic [2*Nm+1:0] op1_tmp = 0;
+        automatic logic [Nm:0] op2_tmp = {1,op2.mantisse};
+        result = '0;
+
+        /*op1 shift*/
+        op1_tmp[2*Nm+1:Nm] = {1,op1.mantisse[Nm-1:0]};
+        op2_tmp[Nm:0] = {1,op2.mantisse};
+
+        /*Signal*/
+        result.s = op1.s ^ op2.s;
+
+        /*Exposant*/
+        exp_tmp = op1.exposant - op2.exposant + (2**(Ne-1) - 1);
+        if ((exp_tmp < 0) || (!op1.exposant && !op1.mantisse)) begin
+                result.exposant = 0;
+                result.mantisse = 0;
+        end
+        /*Division by zero*/
+        else if (!op2.exposant && !op2.mantisse) begin
+                        result.exposant = '1;
+                        result.mantisse = '0;
+        end
+        else begin
+                /*Mantisse*/
+                /*Integer Division*/
+                man_tmp = op1_tmp/op2_tmp;
+                /*Rounding*/
+                //if(op2_tmp*man_tmp-op1_tmp >= op2_tmp/2 + op2_tmp/4 + op2_tmp+8) man_tmp++;
+
+                if (man_tmp[Nm]==0 && man_tmp[Nm-1]) begin
+                        result.mantisse[Nm-1:1] = man_tmp[Nm-2:0];
+                        exp_tmp--;
+                        /*Reverifying exposant*/
+                        if (exp_tmp < 0) begin
+                                result.exposant = 0;
+                                result.mantisse = 0;
+                                return result;
+                        end
+                end
+                else result.mantisse[Nm-1:0] = man_tmp[Nm-1:0];
+
+                /*Saturation and overflow*/
+                if (exp_tmp[Ne] || exp_tmp[Ne-1:0] == '1) begin
+                        result.exposant = '1;
+                        result.mantisse = '0;
+                end
+                else if (exp_tmp == 0) result.mantisse = '0;
+                else result.exposant[Ne-1:0] = exp_tmp[Ne-1:0];
+        end
+        /*Answer*/
+        return result;
 endfunction // float_div
 
 function float float_add(float op1, float op2);
