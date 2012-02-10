@@ -1,0 +1,196 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test
+vadd_ieee
+Z1 DXx6 sv_std 3 std 0 22 :CP]PHbGOHGT_H:3KF`8L2
+Z2 DXx4 work 10 float_pack 0 22 g86YZ`U[Q>FW9@CJAX9Aa1
+Z3 DXx4 work 16 add_ieee_sv_unit 0 22 BFmz`6jJEHFWBWEGm>_B[3
+Z4 VEi<BF><dYePe1A3VZ3`ek3
+r1
+31
+Z5 IC767nibmM=Knlld?PVO3a0
+Z6 !s105 add_ieee_sv_unit
+S1
+Z7 d/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test
+Z8 w1328870981
+Z9 8add_ieee.sv
+Z10 Fadd_ieee.sv
+L0 3
+Z11 OL;L;10.0d;49
+Z12 !s108 1328870990.347313
+Z13 !s107 add_ieee.sv|../LM32_SYNTH_COPRO/copro_src/float_pack.sv|
+Z14 !s90 +acc|../LM32_SYNTH_COPRO/copro_src/float_pack.sv|add_ieee.sv|
+Z15 o+acc -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z16 !s100 9R:BPWMEDjZ1[AgS1hA2d2
+!s85 0
+Xadd_ieee_sv_unit
+R1
+R2
+Z17 VBFmz`6jJEHFWBWEGm>_B[3
+r1
+31
+Z18 !s100 z05@>U7aTL:LgeF?@^L@b2
+Z19 IBFmz`6jJEHFWBWEGm>_B[3
+S1
+R7
+R8
+R9
+R10
+L0 1
+R11
+R12
+R13
+R14
+R15
+!s85 0
+!i103 1
+vdiv_ieee
+R1
+R2
+Z20 DXx4 work 16 div_ieee_sv_unit 0 22 NmZC5AE_dW8L@FHE:<`Gl2
+Z21 V@QC88oHMcKF=MA7ijn89K3
+r1
+31
+Z22 IIK=M`VTC;1?G^jRF=GRJA1
+Z23 !s105 div_ieee_sv_unit
+S1
+R7
+Z24 w1328870846
+Z25 8div_ieee.sv
+Z26 Fdiv_ieee.sv
+L0 3
+R11
+Z27 !s108 1328870990.477971
+Z28 !s107 div_ieee.sv|../LM32_SYNTH_COPRO/copro_src/float_pack.sv|
+Z29 !s90 +acc|../LM32_SYNTH_COPRO/copro_src/float_pack.sv|div_ieee.sv|
+R15
+!s85 0
+Z30 !s100 8JFIfE18oc>oLbMZ^cZ7G3
+Xdiv_ieee_sv_unit
+R1
+R2
+Z31 VNmZC5AE_dW8L@FHE:<`Gl2
+r1
+31
+Z32 !s100 gBRdN:E_c@jQ3g[2Mz:i[0
+Z33 INmZC5AE_dW8L@FHE:<`Gl2
+S1
+R7
+R24
+R25
+R26
+L0 1
+R11
+R27
+R28
+R29
+R15
+!s85 0
+!i103 1
+Xfloat_pack
+R1
+Z34 !s100 Z5QQ0d5iPd_NET:ERWK_I3
+Z35 Ig86YZ`U[Q>FW9@CJAX9Aa1
+Z36 Vg86YZ`U[Q>FW9@CJAX9Aa1
+S1
+R7
+Z37 w1328869789
+Z38 8../LM32_SYNTH_COPRO/copro_src/float_pack.sv
+Z39 F../LM32_SYNTH_COPRO/copro_src/float_pack.sv
+L0 1
+R11
+r1
+!s85 0
+31
+Z40 !s108 1328870990.605544
+Z41 !s107 sub_ieee.sv|../LM32_SYNTH_COPRO/copro_src/float_pack.sv|
+Z42 !s90 +acc|../LM32_SYNTH_COPRO/copro_src/float_pack.sv|sub_ieee.sv|
+R15
+vmult_ieee
+R1
+R2
+Z43 DXx4 work 17 mult_ieee_sv_unit 0 22 dg_`gNDI4JN9^D_@8zOcT0
+Z44 VKSVP22bfedXnW7I^7f4z71
+r1
+31
+Z45 !s100 Rc^iHJJADm4`a19g;Foce2
+Z46 IEX7=Z6=nV[:dOAZaLKc_n0
+Z47 !s105 mult_ieee_sv_unit
+S1
+R7
+Z48 w1328870455
+Z49 8mult_ieee.sv
+Z50 Fmult_ieee.sv
+L0 3
+R11
+Z51 !s108 1328870990.196929
+Z52 !s107 mult_ieee.sv|../LM32_SYNTH_COPRO/copro_src/float_pack.sv|
+Z53 !s90 +acc|../LM32_SYNTH_COPRO/copro_src/float_pack.sv|mult_ieee.sv|
+R15
+!s85 0
+Xmult_ieee_sv_unit
+R1
+R2
+Z54 Vdg_`gNDI4JN9^D_@8zOcT0
+r1
+31
+Z55 !s100 6am5T;Q@kTe3Q>MXnl55n3
+Z56 Idg_`gNDI4JN9^D_@8zOcT0
+S1
+R7
+R48
+R49
+R50
+L0 1
+R11
+R51
+R52
+R53
+R15
+!s85 0
+!i103 1
+vsub_ieee
+R1
+R2
+Z57 DXx4 work 16 sub_ieee_sv_unit 0 22 dgkHV:f23GOg@6267>kb[3
+Z58 VENMSNFi<4hNV>beOM51oC1
+r1
+!s85 0
+31
+!s100 ]cPlc6Ydn3Flog[ZS45?N0
+IDe4=MJJT;o8R5=MIP6^:Q3
+Z59 !s105 sub_ieee_sv_unit
+S1
+R7
+Z60 w1328870989
+Z61 8sub_ieee.sv
+Z62 Fsub_ieee.sv
+L0 3
+R11
+R40
+R41
+R42
+R15
+Xsub_ieee_sv_unit
+R1
+R2
+Z63 VdgkHV:f23GOg@6267>kb[3
+r1
+!s85 0
+31
+Z64 !s100 2R0FT:Gek1@7[?CCG@BZk0
+Z65 IdgkHV:f23GOg@6267>kb[3
+!i103 1
+S1
+R7
+R60
+R61
+R62
+L0 1
+R11
+R40
+R41
+R42
+R15
