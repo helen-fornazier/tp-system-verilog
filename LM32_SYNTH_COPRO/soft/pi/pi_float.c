@@ -25,17 +25,39 @@ static inline unsigned int get_cc(void)
 // CODE A MODIFIER
 static inline float fmult(float x, float y)
 {
-    return x*y ;
+  float resultat;
+  asm volatile("user %[dest],%[src1],%[src2],0x02"
+                 :[dest] "=r" (resultat)
+                 :[src1] "r" (x),
+                 [src2] "r" (y)
+                 ) ;
+  return resultat;
+//   return x*y ;
 }
 
 static inline float fadd(float x, float y)
 {
-    return  x + y ;
+  float resultat;
+  asm volatile("user %[dest],%[src1],%[src2],0x00"
+                 :[dest] "=r" (resultat)
+                 :[src1] "r" (x),
+                 [src2] "r" (y)
+                 ) ;
+  return resultat;
+//    return  x + y ;
 }
 
 static inline float fdiv(float x, float y)
 {
-    return x/y;
+  float resultat;
+  asm volatile("user %[dest],%[src1],%[src2],0x03"
+                 :[dest] "=r" (resultat)
+                 :[src1] "r" (x),
+                 [src2] "r" (y)
+                 ) ;
+  return resultat;
+
+//    return x/y;
 }
 // FIN DU CODE A MODIFIER
 
@@ -98,8 +120,11 @@ int main()
     printf("\nCalcul en utilisant le coprocesseur\n");
     // utilisant le copro
     for (i=1;i<100000;i*=10) {
+        printf("\nInicio\n") ;
         t0 = get_cc();
-        pi = fmult(4.0,dev_lim_atn_copro(1.0,i)) ;
+        //printf("\nPassou cc\n") ;
+        //pi = fmult(4.0,dev_lim_atn_copro(1.0,i)) ;
+        pi = float_mult(4.0, 1.0);
         t1 = get_cc();
         printf("Iterations :%10d Pi : %10.9f\n",i,pi) ;
         printf("Duration 1    %f ms\n\r", (t1-t0)/1000./FREQ);
