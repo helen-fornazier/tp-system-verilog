@@ -70,112 +70,78 @@ endfunction // float_mul
 
 /*Somme f=1, Sub f=0*/
 function float float_add_sub(logic f, float op1, float op2);   
-   logic [4:0]    shift_size;
-   logic [Nm+1:0] big_m,small_m;
+   logic [Ne-1:0]    shift_size, first_one;
+   float smallf, bigf;
+   float result;
+   logic [Nm+1:-1] big_m,small_m,result_m;
    logic 	  big_s,small_s;
-   logic signed   [Ne+1:0] big_e;/*Ne+2 bits, One is for the signal and the other for the overflow*/
+   logic signed   [Ne+1:0] big_e, result_e;/*Ne+2 bits, One is for the signal and the other for the overflow*/
    
    
    //sub, change signal of the second op
    if(f==0) op2.s = !op2.s;
-
-   //if one number is zero there's nothing to do
-   if(!op1.mantisse && !op1.exposant) return op2;
-   else if (!op2.mantisse && !op2.exposant)return op1;
    
-   //proceed operation
-   else begin
-      //prepare operands to calculus
-      //find out the biggest one, align the smalest if different exponents
-      if (op1.exposant > op2.exposant) begin	 
-	 if (op1.exposant-op2.exposant<=Nm+1)
-	   shift_size = op1.exposant-op2.exposant;
-	 else shift_size = Nm+1;
-	 
-	 small_m[Nm+1:0] = {1'b0,1'b1,op2.mantisse};
-	 small_m = small_m >> shift_size;
-	 small_s = op2.s;
-	 
-	 big_e={2'b0,op1.exposant};
-	 big_m[Nm+1:0] = {1'b0,1'b1,op1.mantisse};
-	 big_s = op1.s;         
-      end // if (op1.exposant > op2.exposant)
-      else if (op1.exposant < op2.exposant)begin
-	 if (op2.exposant-op1.exposant<=Nm+1)
-	   shift_size = op2.exposant-op1.exposant;
-	 else shift_size = Nm+1;
-	 	
-	 small_m[Nm+1:0] = {1'b0,1'b1,op1.mantisse};
-	 small_m = small_m >> shift_size;
-	 small_s = op1.s;
-	 
-	 big_e={2'b0,op2.exposant};
-	 big_m[Nm+1:0] = {1'b0,1'b1,op2.mantisse};
-	 big_s = op2.s;        
-      end // if (op1.exposant < op2.exposant)
-      else if (op1.exposant == op2.exposant) begin
-	 if (op1.mantisse>op2.mantisse)begin
-	    small_m[Nm+1:0] = {1'b0,1'b1,op2.mantisse};	   
-	    small_s = op2.s;
-	    big_e={2'b0,op1.exposant};
-	    big_m[Nm+1:0] = {1'b0,1'b1,op1.mantisse};
-	    big_s = op1.s; 
-	 end
-	 else begin
-	    small_m[Nm+1:0] = {1'b0,1'b1,op1.mantisse};	    
-	    small_s = op1.s;	    
-	    big_e = {2'b0,op2.exposant};
-	    big_m[Nm+1:0] = {1'b0,1'b1,op2.mantisse};
-	    big_s = op2.s;
-	 end // else: !if(op1.mantisse>op2.mantisse)
-      end // if (op1.exposant = op2.exposant)
+   //prepare operands to calculus
+   //find out the biggest one
+   bigf = op1;
+   smallf = op2;   
+   if ({op2.exposant,op2.mantisse} > {op1.exposant, op1.mantisse}) 
+     begin
+	bigf = op2;
+	smallf = op1;
+     end
+   //if one number is zero there's nothing to do
+   if ({smallf.exposant, smallf.mantisse} == '0)
+     return bigf;
+   //$display("INIT") ; 
+   //$display("sSml:%x mSml:%x ",smallf.s, smallf.mantisse) ; 
+   // align the smalest if different exponents
+   shift_size = bigf.exposant-smallf.exposant;      
+   small_m[Nm+1:-1] = {1'b0,1'b1,smallf.mantisse,1'b0};
+   small_m = small_m >> shift_size;
+   
+   big_e = {2'b0,bigf.exposant};
+   big_m[Nm+1:-1] = {1'b0,1'b1,bigf.mantisse,1'b0};
+  
+   //$display("sBig:%x mBig:%x eBig:%x",bigf.s, bigf.mantisse, bigf.exposant) ;
+   //$display("sSml:%x mSml:%x ",smallf.s, small_m) ;  
+   
+   //generate final result (stored in result)
+   
+   //first generate signal
+   result.s  = bigf.s;
+   
+   //then generate mantisse and exponent
+   if (bigf.s==smallf.s) 
+     //same signal, perform addition
+     result_m = big_m + small_m;
+   else 
+     //different signals, perform subtraction
+     result_m = big_m - small_m;      
+   //normalize results and find first one
+   for (first_one = 0; first_one <=Nm && (result_m[Nm+1]==0); first_one++)
+     result_m = result_m << 1;
+   //check if mantisse is zero and adjust exponent accordingly	 
+   if (result_m=='0) result_e='0;
+   else begin     
+      result_e = big_e - first_one + 1;	 
+      //check under/overflow in exp
+      if(result_e <= 0) begin
+	 result_e = '0;
+	 result_m = '0;	    
+      end
+      else if (result_e[Ne] == 1'b1 || result_e[Ne-1:0] == '1) begin
+	 result_e = '1;	       
+	 result_e = result_e-1'b1;
+	 result_m = '1;
+      end
+   end // else: !if(result_m=='0)
 
-      //$display("sBig:%x mBig:%x eBig:%x",big_s, big_m, big_e) ;
-     // $display("sSml:%x mSml:%x ",small_s, small_m) ;  
-      
-      //generate final result (stored in op1)
-           
-      //first generate signal
-      op1.s = big_s;
-      
-      //then generate mantisse and exponent
-      if (big_s==small_s) begin
-	 //same signal, perform addition
-	 big_m = big_m + small_m;
-	 //normalize mantisse and adjust exponent
-	 if (big_m[Nm+1])begin
-	    big_m = big_m>>1;	    
-	    big_e = big_e+1;	    
-	    //verify overflow in exp
-	    if (big_e[Ne] || big_e[Ne-1:0] == '1) begin
-	       big_e = '1;	       
-	       big_e = big_e-1;
-	       big_m = '1;
-	    end
-	 end
-      end // if (big_s==small_s)
-      else begin
-	 //different signals, perform subtracttion
-	 big_m = big_m - small_m;
-	 //normalize results
-	 for (shift_size=0; shift_size<Nm && (big_m[Nm]==0); shift_size++)
-	   big_m = big_m << 1;
-	 //adjust exponent
-	 big_e = big_e - shift_size;
-	 //check underflow in exp
-	 if(big_e <= 0) begin
-	    big_e = '0;
-	    big_m = '0;	    
-	 end
-      end // else: !if(big_s==small_s)
-      op1.mantisse[Nm-1:0] = big_m[Nm-1:0];
-      op1.exposant[Ne-1:0] = big_e[Ne-1:0];
-      return op1;     
+   result.mantisse[Nm-1:0] = result_m[Nm:1];
+   result.exposant[Ne-1:0] = result_e[Ne-1:0];
+return result;     
 	
-   end // else: !if(!op2.mantisse && !op2.exposant)
 
-      
-        
 endfunction // float_add_sub
 
 
