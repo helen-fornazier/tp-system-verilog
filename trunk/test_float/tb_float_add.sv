@@ -165,6 +165,7 @@ $fdisplay(of,"===Test addition===");
               $display("sa:%x ma:%x ea:%x",A.`SIGN,A.`MANT,A.`EXP) ;
               $display("sb:%x mb:%x eb:%x",B.`SIGN,B.`MANT,B.`EXP) ;
               $display("sc:%x mc:%x ec:%x",C.`SIGN,C.`MANT,C.`EXP) ;
+	      $display("sd:%x md:%x ed:%x",D.`SIGN,D.`MANT,D.`EXP) ;
               $finish ;
             `endif
 		  end 

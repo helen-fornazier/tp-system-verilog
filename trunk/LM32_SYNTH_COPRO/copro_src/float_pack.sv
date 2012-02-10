@@ -70,40 +70,71 @@ endfunction // float_mul
 
 /*Somme f=1, Sub f=0*/
 function float float_add_sub(logic f, float op1, float op2);   
-   logic [4:0]   shift_size;
+   logic [4:0]    shift_size;
    logic [Nm+1:0] big_m,small_m;
    logic 	  big_s,small_s;
-   logic signed [Ne+1:0] big_e;/*Ne+2 bits, One is for the signal and the other for the overflow*/
+   logic signed   [Ne+1:0] big_e;/*Ne+2 bits, One is for the signal and the other for the overflow*/
    
    
    //sub, change signal of the second op
    if(f==0) op2.s = !op2.s;
 
    //if one number is zero there's nothing to do
-   if(op1.mantisse==0 && op1.exposant==0) return op2;
-   else if (op2.mantisse==0 && op2.exposant==0)return op1;
+   if(!op1.mantisse && !op1.exposant) return op2;
+   else if (!op2.mantisse && !op2.exposant)return op1;
+   
    //proceed operation
    else begin
-      //prepare operands to calculus   
-      if (op1.exposant >= op2.exposant) begin
-	 shift_size = op1.exposant-op2.exposant;	  
-	 small_m[Nm+1:0] = {1'b0,1'b1,op2.mantisse} >> shift_size;
-	 small_s = op1.s;
-	 big_e={1'b0,1'b0,op1.exposant};
+      //prepare operands to calculus
+      //find out the biggest one, align the smalest if different exponents
+      if (op1.exposant > op2.exposant) begin	 
+	 if (op1.exposant-op2.exposant<=Nm+1)
+	   shift_size = op1.exposant-op2.exposant;
+	 else shift_size = Nm+1;
+	 
+	 small_m[Nm+1:0] = {1'b0,1'b1,op2.mantisse};
+	 small_m = small_m >> shift_size;
+	 small_s = op2.s;
+	 
+	 big_e={2'b0,op1.exposant};
 	 big_m[Nm+1:0] = {1'b0,1'b1,op1.mantisse};
 	 big_s = op1.s;         
-      end
-      else begin
-	 shift_size = op2.exposant-op1.exposant;	
-	 small_m[Nm+1:0] = {1'b0,1'b1,op1.mantisse} >> shift_size;
+      end // if (op1.exposant > op2.exposant)
+      else if (op1.exposant < op2.exposant)begin
+	 if (op2.exposant-op1.exposant<=Nm+1)
+	   shift_size = op2.exposant-op1.exposant;
+	 else shift_size = Nm+1;
+	 	
+	 small_m[Nm+1:0] = {1'b0,1'b1,op1.mantisse};
+	 small_m = small_m >> shift_size;
 	 small_s = op1.s;
-	 big_e={1'b0,1'b0,op2.exposant};
+	 
+	 big_e={2'b0,op2.exposant};
 	 big_m[Nm+1:0] = {1'b0,1'b1,op2.mantisse};
 	 big_s = op2.s;        
-      end // else: !if(op1.exposant >= op2.exposant)
+      end // if (op1.exposant < op2.exposant)
+      else if (op1.exposant == op2.exposant) begin
+	 if (op1.mantisse>op2.mantisse)begin
+	    small_m[Nm+1:0] = {1'b0,1'b1,op2.mantisse};	   
+	    small_s = op2.s;
+	    big_e={2'b0,op1.exposant};
+	    big_m[Nm+1:0] = {1'b0,1'b1,op1.mantisse};
+	    big_s = op1.s; 
+	 end
+	 else begin
+	    small_m[Nm+1:0] = {1'b0,1'b1,op1.mantisse};	    
+	    small_s = op1.s;	    
+	    big_e = {2'b0,op2.exposant};
+	    big_m[Nm+1:0] = {1'b0,1'b1,op2.mantisse};
+	    big_s = op2.s;
+	 end // else: !if(op1.mantisse>op2.mantisse)
+      end // if (op1.exposant = op2.exposant)
+
+      //$display("sBig:%x mBig:%x eBig:%x",big_s, big_m, big_e) ;
+     // $display("sSml:%x mSml:%x ",small_s, small_m) ;  
       
-      //generate final result
-      
+      //generate final result (stored in op1)
+           
       //first generate signal
       op1.s = big_s;
       
@@ -136,18 +167,16 @@ function float float_add_sub(logic f, float op1, float op2);
 	    big_e = '0;
 	    big_m = '0;	    
 	 end
-	 op1.mantisse = big_m[Nm-1:0];
-	 op1.exposant = big_e[Ne-1:0];   
-         
       end // else: !if(big_s==small_s)
-
+      op1.mantisse[Nm-1:0] = big_m[Nm-1:0];
+      op1.exposant[Ne-1:0] = big_e[Ne-1:0];
       return op1;     
 	
-   end // else: !if(op2.mantisse==0 && op2.exposant==0)
+   end // else: !if(!op2.mantisse && !op2.exposant)
 
       
         
-   endfunction // float_add_sub
+endfunction // float_add_sub
 
 
 function float float_div(float op1, float op2);

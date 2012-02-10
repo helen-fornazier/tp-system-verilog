@@ -4,8 +4,8 @@ pack_file = ${src_dir}/float_pack.sv
 #debug = +define+STOP_ON_ERROR
 debug =
 # Corrigez ces lignes pour que les nom des champs (s,exposant,mantisse) corresponde au noms que vous avez utilisé
-vlog_option_23_8 = ${debug} +define+TB_EXP_SIZE=8 +define+TB_MANT_SIZE=23 +define+SIGN=s +define+EXP=exposant +define+MANT=mantisse
-vlog_option_8_4 =  ${debug} +define+STOP_ON_ERROR +define+TB_EXP_SIZE=4 +define+TB_MANT_SIZE=8 +define+SIGN=s +define+EXP=exposant +define+MANT=mantisse
+vlog_option_23_8 = ${debug} +define+TB_EXP_SIZE=8 +define+TB_MANT_SIZE=23 +define+SIGN=s +define+EXP=exposant +define+MANT=mantisse +define+STOP_ON_ERROR
+vlog_option_8_4 =  ${debug} +define+STOP_ON_ERROR +define+TB_EXP_SIZE=4 +define+TB_MANT_SIZE=8 +define+SIGN=s +define+EXP=exposant +define+MANT=mantisse +define+STOP_ON_ERROR
 
 
 all: simu_float_conv_23_8 simu_float_mult_23_8 simu_float_div_23_8 simu_float_add_23_8 simu_float_conv_8_4  simu_float_mult_8_4 simu_float_div_8_4 simu_float_add_8_4 
