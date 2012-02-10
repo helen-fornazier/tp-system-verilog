@@ -13,7 +13,7 @@ module float_copro_dp(opcode, op0, op1, result);
           //somme
           11'd0:
             //result <= op0 + op1;
-            result <= float_add_sub(0, op0, op1);
+            result <= float_add_sub(1, op0, op1);
           //soustraction
           11'd1:
             //result <= op0 - op1;
@@ -21,7 +21,7 @@ module float_copro_dp(opcode, op0, op1, result);
           //multiplication
           11'd2:
             //result <= op0 * op1;
-            result <= float_mult(op0, op1);
+            result <= float_mul(op0, op1);
 	  //division
 	  11'd3:
             //result <= op0 / op1;
