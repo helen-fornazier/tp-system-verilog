@@ -36,17 +36,26 @@ static inline int copro_mult(int x, int y)
 }
 
 
+static inline float float_mult(float x, float y)
+{
+  float resultat;
+  asm volatile("user %[dest],%[src1],%[src2],0x02"
+                 :[dest] "=r" (resultat)
+                 :[src1] "r" (x),
+                 [src2] "r" (y)
+                 ) ;
+  return resultat;
+}
 
 
 int main()
 {
-    int a = 0xdeadbeef;
-    int b = 0xbadec0de;
-    int c;
-    my_printf ("Test Copro\r\n");
-    c = copro_add (a,b);
-    my_printf ("a: 0x%x b: 0x%x -> c: 0x%x\r\n",a,b,c);
-
+   float a = 3.0;
+   float b = 4.0;
+   float c;
+   c = float_mult(a,b);
+   a = float_mult(b,c);
+   b = float_mult(a,c);
     return 0;
 }
 
