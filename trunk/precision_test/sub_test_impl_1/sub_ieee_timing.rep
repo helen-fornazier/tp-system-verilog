@@ -1,0 +1,340 @@
+//  Precision RTL Synthesis 2011a.61_64-bit (Production Release) Fri May 20 13:37:48 PDT 2011
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2011, All Rights Reserved.
+//             Portions copyright 1991-2008 Compuware Corporation
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+//  
+//  Running on Linux koikefor@a405-11 #1 SMP Mon Jan 9 20:49:59 UTC 2012 2.6.32-5-amd64 x86_64
+//  
+//  Start time Fri Feb 10 15:26:49 2012
+
+-- Device: Altera - Cyclone II : EP2C35F672C : 6
+-- CTE report summary..
+-- POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+
+================================================================================================
+                   Clock Frequency Report
+
+	Domain                  Clock Name                            Min Period (Freq)             Required Period (Freq)
+	------                  ----------                            -----------------             ----------------------
+	Design_Clock            Design_Clock                          16.240 (61.576 MHz)           10.000 (100.000 MHz)
+
+
+================================================================================================
+Setup Timing Analysis of Design_Clock
+
+Setup Slack Path Summary
+
+                Data                                                                    Data
+       Setup    Path                                                                    End 
+Index  Slack   Delay   Source Clock  Dest. Clock   Data Start Pin      Data End Pin     Edge
+-----  ------  ------  ------------  ------------  ---------------  ------------------  ----
+  1    -6.240  16.240  Design_Clock  Design_Clock  op1_exposant(0)  result_mantisse(2)  Rise
+  2    -6.219  16.219  Design_Clock  Design_Clock  op2_exposant(0)  result_mantisse(2)  Rise
+  3    -6.169  16.169  Design_Clock  Design_Clock  op2_exposant(1)  result_mantisse(2)  Rise
+  4    -6.148  16.148  Design_Clock  Design_Clock  op1_exposant(1)  result_mantisse(2)  Rise
+  5    -6.098  16.098  Design_Clock  Design_Clock  op2_exposant(2)  result_mantisse(2)  Rise
+  6    -6.077  16.077  Design_Clock  Design_Clock  op1_exposant(2)  result_mantisse(2)  Rise
+  7    -6.027  16.027  Design_Clock  Design_Clock  op2_exposant(3)  result_mantisse(2)  Rise
+  8    -6.006  16.006  Design_Clock  Design_Clock  op1_exposant(3)  result_mantisse(2)  Rise
+  9    -5.956  15.956  Design_Clock  Design_Clock  op2_exposant(4)  result_mantisse(2)  Rise
+ 10    -5.935  15.935  Design_Clock  Design_Clock  op1_exposant(4)  result_mantisse(2)  Rise
+
+                  CTE Path Report
+
+
+Critical path #1, (path slack = -6.240):
+
+SOURCE CLOCK: name: Design_Clock period: 10.000000
+     Times are relative to the 1st rising edge
+  DEST CLOCK: name: Design_Clock period: 10.000000
+     Times are relative to the 2nd rising edge
+
+NAME                                                                  GATE                     DELAY    ARRIVAL DIR  FANOUT
+op1_exposant(0)                                                    (port)                               0.000   up
+op1_exposant(0)                                                    (net)                      0.000                   8
+shift_size_sub8_F1i64_ix63749z52945/dataa                          cycloneii_lcell_comb                 0.000   up
+shift_size_sub8_F1i64_ix63749z52945/cout                           cycloneii_lcell_comb       0.414     0.414   up
+nx63749z21                                                         (net)                *     0.000                   1
+shift_size_sub8_F1i64_ix63749z52944/cin                            cycloneii_lcell_comb                 0.414   up
+shift_size_sub8_F1i64_ix63749z52944/cout                           cycloneii_lcell_comb       0.071     0.485   up
+nx63749z20                                                         (net)                *     0.000                   1
+shift_size_sub8_F1i64_ix63749z52943/cin                            cycloneii_lcell_comb                 0.485   up
+shift_size_sub8_F1i64_ix63749z52943/cout                           cycloneii_lcell_comb       0.071     0.556   up
+nx63749z19                                                         (net)                *     0.000                   1
+shift_size_sub8_F1i64_ix63749z52942/cin                            cycloneii_lcell_comb                 0.556   up
+shift_size_sub8_F1i64_ix63749z52942/cout                           cycloneii_lcell_comb       0.071     0.627   up
+nx63749z18                                                         (net)                *     0.000                   1
+shift_size_sub8_F1i64_ix63749z52941/cin                            cycloneii_lcell_comb                 0.627   up
+shift_size_sub8_F1i64_ix63749z52941/cout                           cycloneii_lcell_comb       0.071     0.698   up
+nx63749z17                                                         (net)                *     0.000                   1
+shift_size_sub8_F1i64_ix63749z52940/cin                            cycloneii_lcell_comb                 0.698   up
+shift_size_sub8_F1i64_ix63749z52940/cout                           cycloneii_lcell_comb       0.071     0.769   up
+nx63749z16                                                         (net)                *     0.000                   1
+shift_size_sub8_F1i64_ix63749z52939/cin                            cycloneii_lcell_comb                 0.769   up
+shift_size_sub8_F1i64_ix63749z52939/cout                           cycloneii_lcell_comb       0.071     0.840   up
+nx63749z15                                                         (net)                *     0.000                   1
+shift_size_sub8_F1i64_ix63749z52937/cin                            cycloneii_lcell_comb                 0.840   up
+shift_size_sub8_F1i64_ix63749z52937/combout                        cycloneii_lcell_comb       0.000     0.840   up
+nx63749z14                                                         (net)                *     0.650                  68
+ix63749z52986/datac                                                cycloneii_lcell_comb                 1.490   up
+ix63749z52986/combout                                              cycloneii_lcell_comb       0.275     1.765   up
+nx63749z52                                                         (net)                *     0.650                  37
+ix63749z53014/datac                                                cycloneii_lcell_comb                 2.415   up
+ix63749z53014/combout                                              cycloneii_lcell_comb       0.275     2.690   up
+con_0_9                                                            (net)                *     0.290                   2
+ix63749z53013/datab                                                cycloneii_lcell_comb                 2.980   up
+ix63749z53013/combout                                              cycloneii_lcell_comb       0.420     3.400   up
+con_1_11                                                           (net)                *     0.310                   3
+ix63749z53012/datab                                                cycloneii_lcell_comb                 3.710   up
+ix63749z53012/combout                                              cycloneii_lcell_comb       0.420     4.130   up
+con_2_15                                                           (net)                *     0.290                   2
+ix63749z53100/datab                                                cycloneii_lcell_comb                 4.420   up
+ix63749z53100/combout                                              cycloneii_lcell_comb       0.420     4.840   up
+nx63749z99                                                         (net)                *     0.270                   1
+ix63749z53098/datac                                                cycloneii_lcell_comb                 5.110   up
+ix63749z53098/combout                                              cycloneii_lcell_comb       0.275     5.385   up
+small_m_F1n1s2(1)                                                  (net)                *     0.270                   1
+ix63749z53097/dataa                                                cycloneii_lcell_comb                 5.655   up
+ix63749z53097/cout                                                 cycloneii_lcell_comb       0.414     6.069   up
+nx63749z98                                                         (net)                *     0.000                   1
+ix63749z53088/cin                                                  cycloneii_lcell_comb                 6.069   up
+ix63749z53088/cout                                                 cycloneii_lcell_comb       0.071     6.140   up
+nx63749z93                                                         (net)                *     0.000                   1
+ix63749z53078/cin                                                  cycloneii_lcell_comb                 6.140   up
+ix63749z53078/cout                                                 cycloneii_lcell_comb       0.071     6.211   up
+nx63749z88                                                         (net)                *     0.000                   1
+ix63749z53069/cin                                                  cycloneii_lcell_comb                 6.211   up
+ix63749z53069/cout                                                 cycloneii_lcell_comb       0.071     6.282   up
+nx63749z83                                                         (net)                *     0.000                   1
+ix63749z53060/cin                                                  cycloneii_lcell_comb                 6.282   up
+ix63749z53060/cout                                                 cycloneii_lcell_comb       0.071     6.353   up
+nx63749z79                                                         (net)                *     0.000                   1
+ix63749z53051/cin                                                  cycloneii_lcell_comb                 6.353   up
+ix63749z53051/cout                                                 cycloneii_lcell_comb       0.071     6.424   up
+nx63749z75                                                         (net)                *     0.000                   1
+ix63749z53038/cin                                                  cycloneii_lcell_comb                 6.424   up
+ix63749z53038/cout                                                 cycloneii_lcell_comb       0.071     6.495   up
+nx63749z71                                                         (net)                *     0.000                   1
+ix63749z53026/cin                                                  cycloneii_lcell_comb                 6.495   up
+ix63749z53026/cout                                                 cycloneii_lcell_comb       0.071     6.566   up
+nx63749z68                                                         (net)                *     0.000                   1
+ix63749z53010/cin                                                  cycloneii_lcell_comb                 6.566   up
+ix63749z53010/cout                                                 cycloneii_lcell_comb       0.071     6.637   up
+nx63749z65                                                         (net)                *     0.000                   1
+ix63749z52970/cin                                                  cycloneii_lcell_comb                 6.637   up
+ix63749z52970/cout                                                 cycloneii_lcell_comb       0.071     6.708   up
+nx63749z113                                                        (net)                *     0.000                   1
+ix63749z53115/cin                                                  cycloneii_lcell_comb                 6.708   up
+ix63749z53115/cout                                                 cycloneii_lcell_comb       0.071     6.779   up
+nx63749z134                                                        (net)                *     0.000                   1
+ix63749z53167/cin                                                  cycloneii_lcell_comb                 6.779   up
+ix63749z53167/cout                                                 cycloneii_lcell_comb       0.071     6.850   up
+nx63749z133                                                        (net)                *     0.000                   1
+ix63749z53162/cin                                                  cycloneii_lcell_comb                 6.850   up
+ix63749z53162/cout                                                 cycloneii_lcell_comb       0.071     6.921   up
+nx63749z132                                                        (net)                *     0.000                   1
+ix63749z53157/cin                                                  cycloneii_lcell_comb                 6.921   up
+ix63749z53157/cout                                                 cycloneii_lcell_comb       0.071     6.992   up
+nx63749z131                                                        (net)                *     0.000                   1
+ix63749z53152/cin                                                  cycloneii_lcell_comb                 6.992   up
+ix63749z53152/cout                                                 cycloneii_lcell_comb       0.071     7.063   up
+nx63749z130                                                        (net)                *     0.000                   1
+ix63749z53149/cin                                                  cycloneii_lcell_comb                 7.063   up
+ix63749z53149/cout                                                 cycloneii_lcell_comb       0.071     7.134   up
+nx63749z129                                                        (net)                *     0.000                   1
+ix63749z53143/cin                                                  cycloneii_lcell_comb                 7.134   up
+ix63749z53143/cout                                                 cycloneii_lcell_comb       0.071     7.205   up
+nx63749z126                                                        (net)                *     0.000                   1
+ix63749z53137/cin                                                  cycloneii_lcell_comb                 7.205   up
+ix63749z53137/cout                                                 cycloneii_lcell_comb       0.071     7.276   up
+nx63749z123                                                        (net)                *     0.000                   1
+ix63749z53131/cin                                                  cycloneii_lcell_comb                 7.276   up
+ix63749z53131/cout                                                 cycloneii_lcell_comb       0.071     7.347   up
+nx63749z120                                                        (net)                *     0.000                   1
+ix63749z53128/cin                                                  cycloneii_lcell_comb                 7.347   up
+ix63749z53128/cout                                                 cycloneii_lcell_comb       0.071     7.418   up
+nx63749z119                                                        (net)                *     0.000                   1
+ix63749z53125/cin                                                  cycloneii_lcell_comb                 7.418   up
+ix63749z53125/cout                                                 cycloneii_lcell_comb       0.071     7.489   up
+nx63749z118                                                        (net)                *     0.000                   1
+ix63749z53122/cin                                                  cycloneii_lcell_comb                 7.489   up
+ix63749z53122/combout                                              cycloneii_lcell_comb       0.000     7.489   up
+nx63749z142                                                        (net)                *     0.610                  18
+ix63749z53196/dataa                                                cycloneii_lcell_comb                 8.099   up
+ix63749z53196/combout                                              cycloneii_lcell_comb       0.438     8.537   up
+nx63749z168                                                        (net)                *     0.330                   4
+ix63749z53203/datab                                                cycloneii_lcell_comb                 8.867   up
+ix63749z53203/combout                                              cycloneii_lcell_comb       0.420     9.287   up
+a(0)_dup_765                                                       (net)                *     0.510                  13
+ix63749z53228/datac                                                cycloneii_lcell_comb                 9.797   up
+ix63749z53228/combout                                              cycloneii_lcell_comb       0.275    10.072   up
+nx63749z197                                                        (net)                *     0.530                  14
+ix63749z53227/dataa                                                cycloneii_lcell_comb                10.602   up
+ix63749z53227/combout                                              cycloneii_lcell_comb       0.438    11.040   up
+nx63749z196                                                        (net)                *     0.270                   1
+ix63749z53226/datac                                                cycloneii_lcell_comb                11.310   up
+ix63749z53226/combout                                              cycloneii_lcell_comb       0.275    11.585   up
+nx63749z195                                                        (net)                *     0.270                   1
+ix63749z53225/dataa                                                cycloneii_lcell_comb                11.855   up
+ix63749z53225/cout                                                 cycloneii_lcell_comb       0.414    12.269   up
+nx63749z194                                                        (net)                *     0.000                   1
+ix63749z53209/cin                                                  cycloneii_lcell_comb                12.269   up
+ix63749z53209/cout                                                 cycloneii_lcell_comb       0.071    12.340   up
+nx63749z177                                                        (net)                *     0.000                   1
+ix63749z53199/cin                                                  cycloneii_lcell_comb                12.340   up
+ix63749z53199/cout                                                 cycloneii_lcell_comb       0.071    12.411   up
+nx63749z170                                                        (net)                *     0.000                   1
+ix63749z52966/cin                                                  cycloneii_lcell_comb                12.411   up
+ix63749z52966/cout                                                 cycloneii_lcell_comb       0.071    12.482   up
+nx63749z38                                                         (net)                *     0.000                   1
+ix63749z52964/cin                                                  cycloneii_lcell_comb                12.482   up
+ix63749z52964/cout                                                 cycloneii_lcell_comb       0.071    12.553   up
+nx63749z37                                                         (net)                *     0.000                   1
+ix63749z52962/cin                                                  cycloneii_lcell_comb                12.553   up
+ix63749z52962/cout                                                 cycloneii_lcell_comb       0.071    12.624   up
+nx63749z36                                                         (net)                *     0.000                   1
+ix63749z52960/cin                                                  cycloneii_lcell_comb                12.624   up
+ix63749z52960/combout                                              cycloneii_lcell_comb       0.000    12.624   up
+nx63749z218                                                        (net)                *     0.290                   2
+ix63749z53247/dataa                                                cycloneii_lcell_comb                12.914   up
+ix63749z53247/combout                                              cycloneii_lcell_comb       0.438    13.352   up
+nx63749z217                                                        (net)                *     0.270                   1
+ix63749z52958/datab                                                cycloneii_lcell_comb                13.622   up
+ix63749z52958/combout                                              cycloneii_lcell_comb       0.420    14.042   up
+nx63749z33                                                         (net)                *     0.650                  31
+ix56735z52925/dataa                                                cycloneii_lcell_comb                14.692   up
+ix56735z52925/combout                                              cycloneii_lcell_comb       0.438    15.130   up
+big_m_F1n5ss1(2)                                                   (net)                *     0.270                   1
+prec_sel2mux_result_mantisse_select_0Bus7(2)_ix56735z52924/datad   cycloneii_lcell_comb                15.400   up
+prec_sel2mux_result_mantisse_select_0Bus7(2)_ix56735z52924/combout cycloneii_lcell_comb       0.150    15.550   up
+nx56735z1                                                          (net)                *     0.270                   1
+ix56735z52923/datab                                                cycloneii_lcell_comb                15.820   up
+ix56735z52923/combout                                              cycloneii_lcell_comb       0.420    16.240   up
+result_mantisse(2)                                                 (net)                *     0.000                   0
+result_mantisse(2)                                                 (port)                              16.240   up
+
+		Initial edge separation:     10.000
+		Source clock delay:      -    0.000
+		Dest clock delay:        +    0.000
+		                        -----------
+		Edge separation:             10.000
+		Setup constraint:        -    0.000
+		                        -----------
+		Data required time:          10.000
+		Data arrival time:       -   16.240   ( 56.90% cell delay, 43.10% net delay )
+		                        -----------
+		Slack (VIOLATED):            -6.240
+
+
+
+================================================================================================
+                   Input Delay Report
+
+	Input                  Clock Name                            Slack (ns)
+	-----                  ----------                            ----------
+	op1_exposant(0)        Design_Clock                          -6.240
+	op2_exposant(0)        Design_Clock                          -6.219
+	op2_exposant(1)        Design_Clock                          -6.169
+	op1_exposant(1)        Design_Clock                          -6.148
+	op2_exposant(2)        Design_Clock                          -6.098
+	op1_exposant(2)        Design_Clock                          -6.077
+	op2_exposant(3)        Design_Clock                          -6.027
+	op1_exposant(3)        Design_Clock                          -6.006
+	op2_exposant(4)        Design_Clock                          -5.956
+	op1_exposant(4)        Design_Clock                          -5.935
+	op2_exposant(5)        Design_Clock                          -5.885
+	op1_exposant(5)        Design_Clock                          -5.864
+	op2_exposant(7)        Design_Clock                          -5.838
+	op1_exposant(7)        Design_Clock                          -5.820
+	op2_exposant(6)        Design_Clock                          -5.814
+	op1_exposant(6)        Design_Clock                          -5.793
+	op1_mantisse(15)       Design_Clock                          -4.698
+	op1_mantisse(16)       Design_Clock                          -4.680
+	op1_mantisse(13)       Design_Clock                          -4.553
+	op2_mantisse(15)       Design_Clock                          -4.553
+	op1_mantisse(14)       Design_Clock                          -4.535
+	op2_mantisse(16)       Design_Clock                          -4.535
+	op1_mantisse(11)       Design_Clock                          -4.533
+	op1_mantisse(12)       Design_Clock                          -4.515
+	op1_mantisse(7)        Design_Clock                          -4.513
+	op1_mantisse(8)        Design_Clock                          -4.495
+	op2_mantisse(13)       Design_Clock                          -4.408
+	op2_mantisse(14)       Design_Clock                          -4.390
+	op1_mantisse(9)        Design_Clock                          -4.388
+	op2_mantisse(11)       Design_Clock                          -4.388
+	op1_mantisse(10)       Design_Clock                          -4.370
+	op2_mantisse(12)       Design_Clock                          -4.370
+	op1_mantisse(5)        Design_Clock                          -4.368
+	op2_mantisse(7)        Design_Clock                          -4.368
+	op1_mantisse(6)        Design_Clock                          -4.350
+	op2_mantisse(8)        Design_Clock                          -4.350
+	op2_mantisse(9)        Design_Clock                          -4.243
+	op2_mantisse(10)       Design_Clock                          -4.225
+	op2_mantisse(5)        Design_Clock                          -4.223
+	op2_mantisse(6)        Design_Clock                          -4.205
+	op1_mantisse(20)       Design_Clock                          -4.033
+	op1_mantisse(21)       Design_Clock                          -4.015
+	op1_mantisse(19)       Design_Clock                          -4.015
+	op1_mantisse(18)       Design_Clock                          -4.013
+	op2_mantisse(20)       Design_Clock                          -3.888
+	op2_mantisse(21)       Design_Clock                          -3.870
+	op2_mantisse(19)       Design_Clock                          -3.870
+	op2_mantisse(18)       Design_Clock                          -3.868
+	op1_mantisse(17)       Design_Clock                          -3.830
+	op1_mantisse(22)       Design_Clock                          -3.783
+	op1_mantisse(4)        Design_Clock                          -3.768
+	op1_mantisse(3)        Design_Clock                          -3.750
+	op1_mantisse(2)        Design_Clock                          -3.748
+	op2_mantisse(17)       Design_Clock                          -3.685
+	op2_mantisse(22)       Design_Clock                          -3.638
+	op2_mantisse(4)        Design_Clock                          -3.623
+	op1_mantisse(1)        Design_Clock                          -3.618
+	op2_mantisse(3)        Design_Clock                          -3.605
+	op2_mantisse(2)        Design_Clock                          -3.603
+	op2_mantisse(1)        Design_Clock                          -3.473
+	op1_mantisse(0)        Design_Clock                          -2.710
+	op2_mantisse(0)        Design_Clock                          -2.585
+	op1_s                  Design_Clock                          2.052 
+	op2_s                  Design_Clock                          2.177 
+
+
+================================================================================================
+                   Output Delay Report
+
+	Output                 Clock Name                            Slack (ns)
+	------                 ----------                            ----------
+	result_mantisse(22)    Design_Clock                          -6.240
+	result_mantisse(21)    Design_Clock                          -6.240
+	result_mantisse(20)    Design_Clock                          -6.240
+	result_mantisse(19)    Design_Clock                          -6.240
+	result_mantisse(18)    Design_Clock                          -6.240
+	result_mantisse(17)    Design_Clock                          -6.240
+	result_mantisse(15)    Design_Clock                          -6.240
+	result_mantisse(14)    Design_Clock                          -6.240
+	result_mantisse(13)    Design_Clock                          -6.240
+	result_mantisse(12)    Design_Clock                          -6.240
+	result_mantisse(11)    Design_Clock                          -6.240
+	result_mantisse(10)    Design_Clock                          -6.240
+	result_mantisse(9)     Design_Clock                          -6.240
+	result_mantisse(8)     Design_Clock                          -6.240
+	result_mantisse(7)     Design_Clock                          -6.240
+	result_mantisse(6)     Design_Clock                          -6.240
+	result_mantisse(5)     Design_Clock                          -6.240
+	result_mantisse(4)     Design_Clock                          -6.240
+	result_mantisse(3)     Design_Clock                          -6.240
+	result_mantisse(2)     Design_Clock                          -6.240
+	result_mantisse(0)     Design_Clock                          -6.222
+	result_exposant(7)     Design_Clock                          -6.222
+	result_exposant(6)     Design_Clock                          -6.222
+	result_exposant(5)     Design_Clock                          -6.222
+	result_exposant(4)     Design_Clock                          -6.222
+	result_exposant(3)     Design_Clock                          -6.222
+	result_exposant(2)     Design_Clock                          -6.222
+	result_exposant(1)     Design_Clock                          -6.222
+	result_exposant(0)     Design_Clock                          -6.222
+	result_mantisse(16)    Design_Clock                          -6.077
+	result_mantisse(1)     Design_Clock                          -6.077
+	result_s               Design_Clock                          5.673 

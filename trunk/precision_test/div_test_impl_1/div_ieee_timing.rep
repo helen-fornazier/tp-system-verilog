@@ -1,0 +1,2134 @@
+//  Precision RTL Synthesis 2011a.61_64-bit (Production Release) Fri May 20 13:37:48 PDT 2011
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2011, All Rights Reserved.
+//             Portions copyright 1991-2008 Compuware Corporation
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+//  
+//  Running on Linux koikefor@a405-11 #1 SMP Mon Jan 9 20:49:59 UTC 2012 2.6.32-5-amd64 x86_64
+//  
+//  Start time Fri Feb 10 15:21:14 2012
+
+-- Device: Altera - Cyclone II : EP2C35F672C : 6
+-- CTE report summary..
+-- POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+
+================================================================================================
+                   Clock Frequency Report
+
+	Domain                  Clock Name                            Min Period (Freq)             Required Period (Freq)
+	------                  ----------                            -----------------             ----------------------
+	Design_Clock            Design_Clock                          106.406 (9.398 MHz)           10.000 (100.000 MHz)
+
+
+================================================================================================
+Setup Timing Analysis of Design_Clock
+
+Setup Slack Path Summary
+
+                 Data                                                                     Data
+        Setup    Path                                                                     End 
+Index   Slack    Delay   Source Clock  Dest. Clock   Data Start Pin      Data End Pin     Edge
+-----  -------  -------  ------------  ------------  ---------------  ------------------  ----
+  1    -96.406  106.406  Design_Clock  Design_Clock  op1_mantisse(0)  result_mantisse(0)  Rise
+  2    -96.385  106.385  Design_Clock  Design_Clock  op2_mantisse(0)  result_mantisse(0)  Rise
+  3    -96.335  106.335  Design_Clock  Design_Clock  op2_mantisse(1)  result_mantisse(0)  Rise
+  4    -96.314  106.314  Design_Clock  Design_Clock  op1_mantisse(1)  result_mantisse(0)  Rise
+  5    -96.264  106.264  Design_Clock  Design_Clock  op2_mantisse(2)  result_mantisse(0)  Rise
+  6    -96.243  106.243  Design_Clock  Design_Clock  op1_mantisse(2)  result_mantisse(0)  Rise
+  7    -96.193  106.193  Design_Clock  Design_Clock  op2_mantisse(3)  result_mantisse(0)  Rise
+  8    -96.172  106.172  Design_Clock  Design_Clock  op1_mantisse(3)  result_mantisse(0)  Rise
+  9    -96.122  106.122  Design_Clock  Design_Clock  op2_mantisse(4)  result_mantisse(0)  Rise
+ 10    -96.101  106.101  Design_Clock  Design_Clock  op1_mantisse(4)  result_mantisse(0)  Rise
+
+                  CTE Path Report
+
+
+Critical path #1, (path slack = -96.406):
+
+SOURCE CLOCK: name: Design_Clock period: 10.000000
+     Times are relative to the 1st rising edge
+  DEST CLOCK: name: Design_Clock period: 10.000000
+     Times are relative to the 2nd rising edge
+
+NAME                                           GATE                     DELAY    ARRIVAL DIR  FANOUT
+op1_mantisse(0)                             (port)                               0.000   up
+op1_mantisse(0)                             (net)                      0.000                   4
+ix60524z17534/ix10225z52946/dataa           cycloneii_lcell_comb                 0.000   up
+ix60524z17534/ix10225z52946/cout            cycloneii_lcell_comb       0.414     0.414   up
+ix60524z17534/nx10225z67                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52945/cin             cycloneii_lcell_comb                 0.414   up
+ix60524z17534/ix10225z52945/cout            cycloneii_lcell_comb       0.071     0.485   up
+ix60524z17534/nx10225z64                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52944/cin             cycloneii_lcell_comb                 0.485   up
+ix60524z17534/ix10225z52944/cout            cycloneii_lcell_comb       0.071     0.556   up
+ix60524z17534/nx10225z61                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52943/cin             cycloneii_lcell_comb                 0.556   up
+ix60524z17534/ix10225z52943/cout            cycloneii_lcell_comb       0.071     0.627   up
+ix60524z17534/nx10225z58                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52942/cin             cycloneii_lcell_comb                 0.627   up
+ix60524z17534/ix10225z52942/cout            cycloneii_lcell_comb       0.071     0.698   up
+ix60524z17534/nx10225z55                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52941/cin             cycloneii_lcell_comb                 0.698   up
+ix60524z17534/ix10225z52941/cout            cycloneii_lcell_comb       0.071     0.769   up
+ix60524z17534/nx10225z52                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52940/cin             cycloneii_lcell_comb                 0.769   up
+ix60524z17534/ix10225z52940/cout            cycloneii_lcell_comb       0.071     0.840   up
+ix60524z17534/nx10225z49                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52939/cin             cycloneii_lcell_comb                 0.840   up
+ix60524z17534/ix10225z52939/cout            cycloneii_lcell_comb       0.071     0.911   up
+ix60524z17534/nx10225z46                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52938/cin             cycloneii_lcell_comb                 0.911   up
+ix60524z17534/ix10225z52938/cout            cycloneii_lcell_comb       0.071     0.982   up
+ix60524z17534/nx10225z43                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52937/cin             cycloneii_lcell_comb                 0.982   up
+ix60524z17534/ix10225z52937/cout            cycloneii_lcell_comb       0.071     1.053   up
+ix60524z17534/nx10225z40                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52936/cin             cycloneii_lcell_comb                 1.053   up
+ix60524z17534/ix10225z52936/cout            cycloneii_lcell_comb       0.071     1.124   up
+ix60524z17534/nx10225z37                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52935/cin             cycloneii_lcell_comb                 1.124   up
+ix60524z17534/ix10225z52935/cout            cycloneii_lcell_comb       0.071     1.195   up
+ix60524z17534/nx10225z34                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52934/cin             cycloneii_lcell_comb                 1.195   up
+ix60524z17534/ix10225z52934/cout            cycloneii_lcell_comb       0.071     1.266   up
+ix60524z17534/nx10225z31                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52933/cin             cycloneii_lcell_comb                 1.266   up
+ix60524z17534/ix10225z52933/cout            cycloneii_lcell_comb       0.071     1.337   up
+ix60524z17534/nx10225z28                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52932/cin             cycloneii_lcell_comb                 1.337   up
+ix60524z17534/ix10225z52932/cout            cycloneii_lcell_comb       0.071     1.408   up
+ix60524z17534/nx10225z25                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52931/cin             cycloneii_lcell_comb                 1.408   up
+ix60524z17534/ix10225z52931/cout            cycloneii_lcell_comb       0.071     1.479   up
+ix60524z17534/nx10225z22                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52930/cin             cycloneii_lcell_comb                 1.479   up
+ix60524z17534/ix10225z52930/cout            cycloneii_lcell_comb       0.071     1.550   up
+ix60524z17534/nx10225z19                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52929/cin             cycloneii_lcell_comb                 1.550   up
+ix60524z17534/ix10225z52929/cout            cycloneii_lcell_comb       0.071     1.621   up
+ix60524z17534/nx10225z16                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52928/cin             cycloneii_lcell_comb                 1.621   up
+ix60524z17534/ix10225z52928/cout            cycloneii_lcell_comb       0.071     1.692   up
+ix60524z17534/nx10225z13                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52927/cin             cycloneii_lcell_comb                 1.692   up
+ix60524z17534/ix10225z52927/cout            cycloneii_lcell_comb       0.071     1.763   up
+ix60524z17534/nx10225z10                    (net)                *     0.000                   1
+ix60524z17534/ix10225z52926/cin             cycloneii_lcell_comb                 1.763   up
+ix60524z17534/ix10225z52926/cout            cycloneii_lcell_comb       0.071     1.834   up
+ix60524z17534/nx10225z7                     (net)                *     0.000                   1
+ix60524z17534/ix10225z52925/cin             cycloneii_lcell_comb                 1.834   up
+ix60524z17534/ix10225z52925/cout            cycloneii_lcell_comb       0.071     1.905   up
+ix60524z17534/nx10225z4                     (net)                *     0.000                   1
+ix60524z17534/ix10225z52923/cin             cycloneii_lcell_comb                 1.905   up
+ix60524z17534/ix10225z52923/cout            cycloneii_lcell_comb       0.071     1.976   up
+ix60524z17534/nx23445z2                     (net)                *     0.000                   1
+ix60524z17534/ix23445z52923/cin             cycloneii_lcell_comb                 1.976   up
+ix60524z17534/ix23445z52923/combout         cycloneii_lcell_comb       0.000     1.976   up
+ix60524z17534/nx23445z1                     (net)                *     0.650                  89
+ix60524z52973/datac                         cycloneii_lcell_comb                 2.626   up
+ix60524z52973/combout                       cycloneii_lcell_comb       0.275     2.901   up
+nx60524z72                                  (net)                *     0.290                   2
+ix60524z52972/datab                         cycloneii_lcell_comb                 3.191   up
+ix60524z52972/cout                          cycloneii_lcell_comb       0.393     3.584   up
+nx60524z71                                  (net)                *     0.000                   1
+ix60524z52970/cin                           cycloneii_lcell_comb                 3.584   up
+ix60524z52970/cout                          cycloneii_lcell_comb       0.071     3.655   up
+nx60524z68                                  (net)                *     0.000                   1
+ix60524z52968/cin                           cycloneii_lcell_comb                 3.655   up
+ix60524z52968/cout                          cycloneii_lcell_comb       0.071     3.726   up
+nx60524z65                                  (net)                *     0.000                   1
+ix60524z52966/cin                           cycloneii_lcell_comb                 3.726   up
+ix60524z52966/cout                          cycloneii_lcell_comb       0.071     3.797   up
+nx60524z62                                  (net)                *     0.000                   1
+ix60524z52964/cin                           cycloneii_lcell_comb                 3.797   up
+ix60524z52964/cout                          cycloneii_lcell_comb       0.071     3.868   up
+nx60524z59                                  (net)                *     0.000                   1
+ix60524z52962/cin                           cycloneii_lcell_comb                 3.868   up
+ix60524z52962/cout                          cycloneii_lcell_comb       0.071     3.939   up
+nx60524z56                                  (net)                *     0.000                   1
+ix60524z52960/cin                           cycloneii_lcell_comb                 3.939   up
+ix60524z52960/cout                          cycloneii_lcell_comb       0.071     4.010   up
+nx60524z53                                  (net)                *     0.000                   1
+ix60524z52958/cin                           cycloneii_lcell_comb                 4.010   up
+ix60524z52958/cout                          cycloneii_lcell_comb       0.071     4.081   up
+nx60524z50                                  (net)                *     0.000                   1
+ix60524z52956/cin                           cycloneii_lcell_comb                 4.081   up
+ix60524z52956/cout                          cycloneii_lcell_comb       0.071     4.152   up
+nx60524z47                                  (net)                *     0.000                   1
+ix60524z52954/cin                           cycloneii_lcell_comb                 4.152   up
+ix60524z52954/cout                          cycloneii_lcell_comb       0.071     4.223   up
+nx60524z44                                  (net)                *     0.000                   1
+ix60524z52952/cin                           cycloneii_lcell_comb                 4.223   up
+ix60524z52952/cout                          cycloneii_lcell_comb       0.071     4.294   up
+nx60524z41                                  (net)                *     0.000                   1
+ix60524z52950/cin                           cycloneii_lcell_comb                 4.294   up
+ix60524z52950/cout                          cycloneii_lcell_comb       0.071     4.365   up
+nx60524z38                                  (net)                *     0.000                   1
+ix60524z52948/cin                           cycloneii_lcell_comb                 4.365   up
+ix60524z52948/cout                          cycloneii_lcell_comb       0.071     4.436   up
+nx60524z35                                  (net)                *     0.000                   1
+ix60524z52946/cin                           cycloneii_lcell_comb                 4.436   up
+ix60524z52946/cout                          cycloneii_lcell_comb       0.071     4.507   up
+nx60524z32                                  (net)                *     0.000                   1
+ix60524z52944/cin                           cycloneii_lcell_comb                 4.507   up
+ix60524z52944/cout                          cycloneii_lcell_comb       0.071     4.578   up
+nx60524z29                                  (net)                *     0.000                   1
+ix60524z52942/cin                           cycloneii_lcell_comb                 4.578   up
+ix60524z52942/cout                          cycloneii_lcell_comb       0.071     4.649   up
+nx60524z26                                  (net)                *     0.000                   1
+ix60524z52940/cin                           cycloneii_lcell_comb                 4.649   up
+ix60524z52940/cout                          cycloneii_lcell_comb       0.071     4.720   up
+nx60524z23                                  (net)                *     0.000                   1
+ix60524z52938/cin                           cycloneii_lcell_comb                 4.720   up
+ix60524z52938/cout                          cycloneii_lcell_comb       0.071     4.791   up
+nx60524z20                                  (net)                *     0.000                   1
+ix60524z52936/cin                           cycloneii_lcell_comb                 4.791   up
+ix60524z52936/cout                          cycloneii_lcell_comb       0.071     4.862   up
+nx60524z17                                  (net)                *     0.000                   1
+ix60524z52934/cin                           cycloneii_lcell_comb                 4.862   up
+ix60524z52934/cout                          cycloneii_lcell_comb       0.071     4.933   up
+nx60524z14                                  (net)                *     0.000                   1
+ix60524z52932/cin                           cycloneii_lcell_comb                 4.933   up
+ix60524z52932/cout                          cycloneii_lcell_comb       0.071     5.004   up
+nx60524z11                                  (net)                *     0.000                   1
+ix60524z52930/cin                           cycloneii_lcell_comb                 5.004   up
+ix60524z52930/cout                          cycloneii_lcell_comb       0.071     5.075   up
+nx60524z8                                   (net)                *     0.000                   1
+ix60524z52927/cin                           cycloneii_lcell_comb                 5.075   up
+ix60524z52927/cout                          cycloneii_lcell_comb       0.071     5.146   up
+nx60524z4                                   (net)                *     0.000                   1
+ix60524z52925/cin                           cycloneii_lcell_comb                 5.146   up
+ix60524z52925/combout                       cycloneii_lcell_comb       0.000     5.146   up
+nx60524z3                                   (net)                *     0.650                  63
+ix60524z52929/datab                         cycloneii_lcell_comb                 5.796   up
+ix60524z52929/combout                       cycloneii_lcell_comb       0.420     6.216   up
+nx60524z7                                   (net)                *     0.290                   2
+ix60524z52927/datab                         cycloneii_lcell_comb                 6.506   up
+ix60524z52927/combout                       cycloneii_lcell_comb       0.420     6.926   up
+nx60524z76                                  (net)                *     0.350                   5
+ix60524z52979/dataa                         cycloneii_lcell_comb                 7.276   up
+ix60524z52979/combout                       cycloneii_lcell_comb       0.438     7.714   up
+nx60524z81                                  (net)                *     0.650                  22
+ix60524z52977/datab                         cycloneii_lcell_comb                 8.364   up
+ix60524z52977/cout                          cycloneii_lcell_comb       0.393     8.757   up
+nx60524z78                                  (net)                *     0.000                   1
+ix60524z52976/cin                           cycloneii_lcell_comb                 8.757   up
+ix60524z52976/combout                       cycloneii_lcell_comb       0.000     8.757   up
+nx60524z77                                  (net)                *     0.350                   5
+ix60524z53111/datac                         cycloneii_lcell_comb                 9.107   up
+ix60524z53111/combout                       cycloneii_lcell_comb       0.275     9.382   up
+nx60524z257                                 (net)                *     0.270                   1
+ix60524z53110/datab                         cycloneii_lcell_comb                 9.652   up
+ix60524z53110/cout                          cycloneii_lcell_comb       0.393    10.045   up
+nx60524z256                                 (net)                *     0.000                   1
+ix60524z53108/cin                           cycloneii_lcell_comb                10.045   up
+ix60524z53108/cout                          cycloneii_lcell_comb       0.071    10.116   up
+nx60524z253                                 (net)                *     0.000                   1
+ix60524z53106/cin                           cycloneii_lcell_comb                10.116   up
+ix60524z53106/cout                          cycloneii_lcell_comb       0.071    10.187   up
+nx60524z250                                 (net)                *     0.000                   1
+ix60524z53102/cin                           cycloneii_lcell_comb                10.187   up
+ix60524z53102/cout                          cycloneii_lcell_comb       0.071    10.258   up
+nx60524z245                                 (net)                *     0.000                   1
+ix60524z53100/cin                           cycloneii_lcell_comb                10.258   up
+ix60524z53100/cout                          cycloneii_lcell_comb       0.071    10.329   up
+nx60524z242                                 (net)                *     0.000                   1
+ix60524z53096/cin                           cycloneii_lcell_comb                10.329   up
+ix60524z53096/cout                          cycloneii_lcell_comb       0.071    10.400   up
+nx60524z237                                 (net)                *     0.000                   1
+ix60524z53092/cin                           cycloneii_lcell_comb                10.400   up
+ix60524z53092/cout                          cycloneii_lcell_comb       0.071    10.471   up
+nx60524z232                                 (net)                *     0.000                   1
+ix60524z53088/cin                           cycloneii_lcell_comb                10.471   up
+ix60524z53088/cout                          cycloneii_lcell_comb       0.071    10.542   up
+nx60524z227                                 (net)                *     0.000                   1
+ix60524z53084/cin                           cycloneii_lcell_comb                10.542   up
+ix60524z53084/cout                          cycloneii_lcell_comb       0.071    10.613   up
+nx60524z222                                 (net)                *     0.000                   1
+ix60524z53080/cin                           cycloneii_lcell_comb                10.613   up
+ix60524z53080/cout                          cycloneii_lcell_comb       0.071    10.684   up
+nx60524z217                                 (net)                *     0.000                   1
+ix60524z53076/cin                           cycloneii_lcell_comb                10.684   up
+ix60524z53076/cout                          cycloneii_lcell_comb       0.071    10.755   up
+nx60524z212                                 (net)                *     0.000                   1
+ix60524z53072/cin                           cycloneii_lcell_comb                10.755   up
+ix60524z53072/cout                          cycloneii_lcell_comb       0.071    10.826   up
+nx60524z207                                 (net)                *     0.000                   1
+ix60524z53068/cin                           cycloneii_lcell_comb                10.826   up
+ix60524z53068/cout                          cycloneii_lcell_comb       0.071    10.897   up
+nx60524z202                                 (net)                *     0.000                   1
+ix60524z53064/cin                           cycloneii_lcell_comb                10.897   up
+ix60524z53064/cout                          cycloneii_lcell_comb       0.071    10.968   up
+nx60524z197                                 (net)                *     0.000                   1
+ix60524z53060/cin                           cycloneii_lcell_comb                10.968   up
+ix60524z53060/cout                          cycloneii_lcell_comb       0.071    11.039   up
+nx60524z192                                 (net)                *     0.000                   1
+ix60524z53056/cin                           cycloneii_lcell_comb                11.039   up
+ix60524z53056/cout                          cycloneii_lcell_comb       0.071    11.110   up
+nx60524z187                                 (net)                *     0.000                   1
+ix60524z53052/cin                           cycloneii_lcell_comb                11.110   up
+ix60524z53052/cout                          cycloneii_lcell_comb       0.071    11.181   up
+nx60524z182                                 (net)                *     0.000                   1
+ix60524z53048/cin                           cycloneii_lcell_comb                11.181   up
+ix60524z53048/cout                          cycloneii_lcell_comb       0.071    11.252   up
+nx60524z177                                 (net)                *     0.000                   1
+ix60524z53044/cin                           cycloneii_lcell_comb                11.252   up
+ix60524z53044/cout                          cycloneii_lcell_comb       0.071    11.323   up
+nx60524z172                                 (net)                *     0.000                   1
+ix60524z53040/cin                           cycloneii_lcell_comb                11.323   up
+ix60524z53040/cout                          cycloneii_lcell_comb       0.071    11.394   up
+nx60524z167                                 (net)                *     0.000                   1
+ix60524z53036/cin                           cycloneii_lcell_comb                11.394   up
+ix60524z53036/cout                          cycloneii_lcell_comb       0.071    11.465   up
+nx60524z162                                 (net)                *     0.000                   1
+ix60524z53032/cin                           cycloneii_lcell_comb                11.465   up
+ix60524z53032/cout                          cycloneii_lcell_comb       0.071    11.536   up
+nx60524z157                                 (net)                *     0.000                   1
+ix60524z53027/cin                           cycloneii_lcell_comb                11.536   up
+ix60524z53027/cout                          cycloneii_lcell_comb       0.071    11.607   up
+nx60524z151                                 (net)                *     0.000                   1
+ix60524z53026/cin                           cycloneii_lcell_comb                11.607   up
+ix60524z53026/combout                       cycloneii_lcell_comb       0.000    11.607   up
+nx60524z150                                 (net)                *     0.650                  24
+ix60524z53031/datab                         cycloneii_lcell_comb                12.257   up
+ix60524z53031/combout                       cycloneii_lcell_comb       0.420    12.677   up
+nx60524z156                                 (net)                *     0.630                  19
+ix60524z53159/datad                         cycloneii_lcell_comb                13.307   up
+ix60524z53159/combout                       cycloneii_lcell_comb       0.150    13.457   up
+nx60524z327                                 (net)                *     0.290                   2
+ix60524z53158/datab                         cycloneii_lcell_comb                13.747   up
+ix60524z53158/cout                          cycloneii_lcell_comb       0.393    14.140   up
+nx60524z326                                 (net)                *     0.000                   1
+ix60524z53156/cin                           cycloneii_lcell_comb                14.140   up
+ix60524z53156/cout                          cycloneii_lcell_comb       0.071    14.211   up
+nx60524z323                                 (net)                *     0.000                   1
+ix60524z53154/cin                           cycloneii_lcell_comb                14.211   up
+ix60524z53154/cout                          cycloneii_lcell_comb       0.071    14.282   up
+nx60524z320                                 (net)                *     0.000                   1
+ix60524z53152/cin                           cycloneii_lcell_comb                14.282   up
+ix60524z53152/cout                          cycloneii_lcell_comb       0.071    14.353   up
+nx60524z317                                 (net)                *     0.000                   1
+ix60524z53150/cin                           cycloneii_lcell_comb                14.353   up
+ix60524z53150/cout                          cycloneii_lcell_comb       0.071    14.424   up
+nx60524z314                                 (net)                *     0.000                   1
+ix60524z53148/cin                           cycloneii_lcell_comb                14.424   up
+ix60524z53148/cout                          cycloneii_lcell_comb       0.071    14.495   up
+nx60524z311                                 (net)                *     0.000                   1
+ix60524z53146/cin                           cycloneii_lcell_comb                14.495   up
+ix60524z53146/cout                          cycloneii_lcell_comb       0.071    14.566   up
+nx60524z308                                 (net)                *     0.000                   1
+ix60524z53144/cin                           cycloneii_lcell_comb                14.566   up
+ix60524z53144/cout                          cycloneii_lcell_comb       0.071    14.637   up
+nx60524z305                                 (net)                *     0.000                   1
+ix60524z53142/cin                           cycloneii_lcell_comb                14.637   up
+ix60524z53142/cout                          cycloneii_lcell_comb       0.071    14.708   up
+nx60524z302                                 (net)                *     0.000                   1
+ix60524z53140/cin                           cycloneii_lcell_comb                14.708   up
+ix60524z53140/cout                          cycloneii_lcell_comb       0.071    14.779   up
+nx60524z299                                 (net)                *     0.000                   1
+ix60524z53138/cin                           cycloneii_lcell_comb                14.779   up
+ix60524z53138/cout                          cycloneii_lcell_comb       0.071    14.850   up
+nx60524z296                                 (net)                *     0.000                   1
+ix60524z53136/cin                           cycloneii_lcell_comb                14.850   up
+ix60524z53136/cout                          cycloneii_lcell_comb       0.071    14.921   up
+nx60524z293                                 (net)                *     0.000                   1
+ix60524z53134/cin                           cycloneii_lcell_comb                14.921   up
+ix60524z53134/cout                          cycloneii_lcell_comb       0.071    14.992   up
+nx60524z290                                 (net)                *     0.000                   1
+ix60524z53132/cin                           cycloneii_lcell_comb                14.992   up
+ix60524z53132/cout                          cycloneii_lcell_comb       0.071    15.063   up
+nx60524z287                                 (net)                *     0.000                   1
+ix60524z53130/cin                           cycloneii_lcell_comb                15.063   up
+ix60524z53130/cout                          cycloneii_lcell_comb       0.071    15.134   up
+nx60524z284                                 (net)                *     0.000                   1
+ix60524z53128/cin                           cycloneii_lcell_comb                15.134   up
+ix60524z53128/cout                          cycloneii_lcell_comb       0.071    15.205   up
+nx60524z281                                 (net)                *     0.000                   1
+ix60524z53126/cin                           cycloneii_lcell_comb                15.205   up
+ix60524z53126/cout                          cycloneii_lcell_comb       0.071    15.276   up
+nx60524z278                                 (net)                *     0.000                   1
+ix60524z53124/cin                           cycloneii_lcell_comb                15.276   up
+ix60524z53124/cout                          cycloneii_lcell_comb       0.071    15.347   up
+nx60524z275                                 (net)                *     0.000                   1
+ix60524z53122/cin                           cycloneii_lcell_comb                15.347   up
+ix60524z53122/cout                          cycloneii_lcell_comb       0.071    15.418   up
+nx60524z272                                 (net)                *     0.000                   1
+ix60524z53120/cin                           cycloneii_lcell_comb                15.418   up
+ix60524z53120/cout                          cycloneii_lcell_comb       0.071    15.489   up
+nx60524z269                                 (net)                *     0.000                   1
+ix60524z53118/cin                           cycloneii_lcell_comb                15.489   up
+ix60524z53118/cout                          cycloneii_lcell_comb       0.071    15.560   up
+nx60524z266                                 (net)                *     0.000                   1
+ix60524z53115/cin                           cycloneii_lcell_comb                15.560   up
+ix60524z53115/cout                          cycloneii_lcell_comb       0.071    15.631   up
+nx60524z262                                 (net)                *     0.000                   1
+ix60524z53114/cin                           cycloneii_lcell_comb                15.631   up
+ix60524z53114/combout                       cycloneii_lcell_comb       0.000    15.631   up
+nx60524z261                                 (net)                *     0.650                  40
+ix60524z53117/datab                         cycloneii_lcell_comb                16.281   up
+ix60524z53117/combout                       cycloneii_lcell_comb       0.420    16.701   up
+nx60524z265                                 (net)                *     0.630                  19
+ix60524z53209/datad                         cycloneii_lcell_comb                17.331   up
+ix60524z53209/combout                       cycloneii_lcell_comb       0.150    17.481   up
+nx60524z400                                 (net)                *     0.290                   2
+ix60524z53208/datab                         cycloneii_lcell_comb                17.771   up
+ix60524z53208/cout                          cycloneii_lcell_comb       0.393    18.164   up
+nx60524z399                                 (net)                *     0.000                   1
+ix60524z53206/cin                           cycloneii_lcell_comb                18.164   up
+ix60524z53206/cout                          cycloneii_lcell_comb       0.071    18.235   up
+nx60524z396                                 (net)                *     0.000                   1
+ix60524z53204/cin                           cycloneii_lcell_comb                18.235   up
+ix60524z53204/cout                          cycloneii_lcell_comb       0.071    18.306   up
+nx60524z393                                 (net)                *     0.000                   1
+ix60524z53202/cin                           cycloneii_lcell_comb                18.306   up
+ix60524z53202/cout                          cycloneii_lcell_comb       0.071    18.377   up
+nx60524z390                                 (net)                *     0.000                   1
+ix60524z53200/cin                           cycloneii_lcell_comb                18.377   up
+ix60524z53200/cout                          cycloneii_lcell_comb       0.071    18.448   up
+nx60524z387                                 (net)                *     0.000                   1
+ix60524z53198/cin                           cycloneii_lcell_comb                18.448   up
+ix60524z53198/cout                          cycloneii_lcell_comb       0.071    18.519   up
+nx60524z384                                 (net)                *     0.000                   1
+ix60524z53196/cin                           cycloneii_lcell_comb                18.519   up
+ix60524z53196/cout                          cycloneii_lcell_comb       0.071    18.590   up
+nx60524z381                                 (net)                *     0.000                   1
+ix60524z53194/cin                           cycloneii_lcell_comb                18.590   up
+ix60524z53194/cout                          cycloneii_lcell_comb       0.071    18.661   up
+nx60524z378                                 (net)                *     0.000                   1
+ix60524z53192/cin                           cycloneii_lcell_comb                18.661   up
+ix60524z53192/cout                          cycloneii_lcell_comb       0.071    18.732   up
+nx60524z375                                 (net)                *     0.000                   1
+ix60524z53190/cin                           cycloneii_lcell_comb                18.732   up
+ix60524z53190/cout                          cycloneii_lcell_comb       0.071    18.803   up
+nx60524z372                                 (net)                *     0.000                   1
+ix60524z53188/cin                           cycloneii_lcell_comb                18.803   up
+ix60524z53188/cout                          cycloneii_lcell_comb       0.071    18.874   up
+nx60524z369                                 (net)                *     0.000                   1
+ix60524z53186/cin                           cycloneii_lcell_comb                18.874   up
+ix60524z53186/cout                          cycloneii_lcell_comb       0.071    18.945   up
+nx60524z366                                 (net)                *     0.000                   1
+ix60524z53184/cin                           cycloneii_lcell_comb                18.945   up
+ix60524z53184/cout                          cycloneii_lcell_comb       0.071    19.016   up
+nx60524z363                                 (net)                *     0.000                   1
+ix60524z53182/cin                           cycloneii_lcell_comb                19.016   up
+ix60524z53182/cout                          cycloneii_lcell_comb       0.071    19.087   up
+nx60524z360                                 (net)                *     0.000                   1
+ix60524z53180/cin                           cycloneii_lcell_comb                19.087   up
+ix60524z53180/cout                          cycloneii_lcell_comb       0.071    19.158   up
+nx60524z357                                 (net)                *     0.000                   1
+ix60524z53178/cin                           cycloneii_lcell_comb                19.158   up
+ix60524z53178/cout                          cycloneii_lcell_comb       0.071    19.229   up
+nx60524z354                                 (net)                *     0.000                   1
+ix60524z53176/cin                           cycloneii_lcell_comb                19.229   up
+ix60524z53176/cout                          cycloneii_lcell_comb       0.071    19.300   up
+nx60524z351                                 (net)                *     0.000                   1
+ix60524z53174/cin                           cycloneii_lcell_comb                19.300   up
+ix60524z53174/cout                          cycloneii_lcell_comb       0.071    19.371   up
+nx60524z348                                 (net)                *     0.000                   1
+ix60524z53172/cin                           cycloneii_lcell_comb                19.371   up
+ix60524z53172/cout                          cycloneii_lcell_comb       0.071    19.442   up
+nx60524z345                                 (net)                *     0.000                   1
+ix60524z53170/cin                           cycloneii_lcell_comb                19.442   up
+ix60524z53170/cout                          cycloneii_lcell_comb       0.071    19.513   up
+nx60524z342                                 (net)                *     0.000                   1
+ix60524z53168/cin                           cycloneii_lcell_comb                19.513   up
+ix60524z53168/cout                          cycloneii_lcell_comb       0.071    19.584   up
+nx60524z339                                 (net)                *     0.000                   1
+ix60524z53165/cin                           cycloneii_lcell_comb                19.584   up
+ix60524z53165/cout                          cycloneii_lcell_comb       0.071    19.655   up
+nx60524z335                                 (net)                *     0.000                   1
+ix60524z53164/cin                           cycloneii_lcell_comb                19.655   up
+ix60524z53164/combout                       cycloneii_lcell_comb       0.000    19.655   up
+nx60524z334                                 (net)                *     0.410                   8
+ix60524z53167/datab                         cycloneii_lcell_comb                20.065   up
+ix60524z53167/combout                       cycloneii_lcell_comb       0.420    20.485   up
+nx60524z338                                 (net)                *     0.630                  19
+ix60524z53291/datad                         cycloneii_lcell_comb                21.115   up
+ix60524z53291/combout                       cycloneii_lcell_comb       0.150    21.265   up
+nx60524z505                                 (net)                *     0.290                   2
+ix60524z53290/datab                         cycloneii_lcell_comb                21.555   up
+ix60524z53290/cout                          cycloneii_lcell_comb       0.393    21.948   up
+nx60524z504                                 (net)                *     0.000                   1
+ix60524z53288/cin                           cycloneii_lcell_comb                21.948   up
+ix60524z53288/cout                          cycloneii_lcell_comb       0.071    22.019   up
+nx60524z501                                 (net)                *     0.000                   1
+ix60524z53286/cin                           cycloneii_lcell_comb                22.019   up
+ix60524z53286/cout                          cycloneii_lcell_comb       0.071    22.090   up
+nx60524z498                                 (net)                *     0.000                   1
+ix60524z53284/cin                           cycloneii_lcell_comb                22.090   up
+ix60524z53284/cout                          cycloneii_lcell_comb       0.071    22.161   up
+nx60524z495                                 (net)                *     0.000                   1
+ix60524z53282/cin                           cycloneii_lcell_comb                22.161   up
+ix60524z53282/cout                          cycloneii_lcell_comb       0.071    22.232   up
+nx60524z492                                 (net)                *     0.000                   1
+ix60524z53278/cin                           cycloneii_lcell_comb                22.232   up
+ix60524z53278/cout                          cycloneii_lcell_comb       0.071    22.303   up
+nx60524z487                                 (net)                *     0.000                   1
+ix60524z53276/cin                           cycloneii_lcell_comb                22.303   up
+ix60524z53276/cout                          cycloneii_lcell_comb       0.071    22.374   up
+nx60524z484                                 (net)                *     0.000                   1
+ix60524z53272/cin                           cycloneii_lcell_comb                22.374   up
+ix60524z53272/cout                          cycloneii_lcell_comb       0.071    22.445   up
+nx60524z479                                 (net)                *     0.000                   1
+ix60524z53268/cin                           cycloneii_lcell_comb                22.445   up
+ix60524z53268/cout                          cycloneii_lcell_comb       0.071    22.516   up
+nx60524z474                                 (net)                *     0.000                   1
+ix60524z53264/cin                           cycloneii_lcell_comb                22.516   up
+ix60524z53264/cout                          cycloneii_lcell_comb       0.071    22.587   up
+nx60524z469                                 (net)                *     0.000                   1
+ix60524z53260/cin                           cycloneii_lcell_comb                22.587   up
+ix60524z53260/cout                          cycloneii_lcell_comb       0.071    22.658   up
+nx60524z464                                 (net)                *     0.000                   1
+ix60524z53256/cin                           cycloneii_lcell_comb                22.658   up
+ix60524z53256/cout                          cycloneii_lcell_comb       0.071    22.729   up
+nx60524z459                                 (net)                *     0.000                   1
+ix60524z53252/cin                           cycloneii_lcell_comb                22.729   up
+ix60524z53252/cout                          cycloneii_lcell_comb       0.071    22.800   up
+nx60524z454                                 (net)                *     0.000                   1
+ix60524z53248/cin                           cycloneii_lcell_comb                22.800   up
+ix60524z53248/cout                          cycloneii_lcell_comb       0.071    22.871   up
+nx60524z449                                 (net)                *     0.000                   1
+ix60524z53244/cin                           cycloneii_lcell_comb                22.871   up
+ix60524z53244/cout                          cycloneii_lcell_comb       0.071    22.942   up
+nx60524z444                                 (net)                *     0.000                   1
+ix60524z53240/cin                           cycloneii_lcell_comb                22.942   up
+ix60524z53240/cout                          cycloneii_lcell_comb       0.071    23.013   up
+nx60524z439                                 (net)                *     0.000                   1
+ix60524z53236/cin                           cycloneii_lcell_comb                23.013   up
+ix60524z53236/cout                          cycloneii_lcell_comb       0.071    23.084   up
+nx60524z434                                 (net)                *     0.000                   1
+ix60524z53232/cin                           cycloneii_lcell_comb                23.084   up
+ix60524z53232/cout                          cycloneii_lcell_comb       0.071    23.155   up
+nx60524z429                                 (net)                *     0.000                   1
+ix60524z53228/cin                           cycloneii_lcell_comb                23.155   up
+ix60524z53228/cout                          cycloneii_lcell_comb       0.071    23.226   up
+nx60524z424                                 (net)                *     0.000                   1
+ix60524z53224/cin                           cycloneii_lcell_comb                23.226   up
+ix60524z53224/cout                          cycloneii_lcell_comb       0.071    23.297   up
+nx60524z419                                 (net)                *     0.000                   1
+ix60524z53220/cin                           cycloneii_lcell_comb                23.297   up
+ix60524z53220/cout                          cycloneii_lcell_comb       0.071    23.368   up
+nx60524z414                                 (net)                *     0.000                   1
+ix60524z53215/cin                           cycloneii_lcell_comb                23.368   up
+ix60524z53215/cout                          cycloneii_lcell_comb       0.071    23.439   up
+nx60524z408                                 (net)                *     0.000                   1
+ix60524z53214/cin                           cycloneii_lcell_comb                23.439   up
+ix60524z53214/combout                       cycloneii_lcell_comb       0.000    23.439   up
+nx60524z407                                 (net)                *     0.650                  24
+ix60524z53219/datab                         cycloneii_lcell_comb                24.089   up
+ix60524z53219/combout                       cycloneii_lcell_comb       0.420    24.509   up
+nx60524z413                                 (net)                *     0.570                  16
+ix60524z53341/datad                         cycloneii_lcell_comb                25.079   up
+ix60524z53341/combout                       cycloneii_lcell_comb       0.150    25.229   up
+nx60524z578                                 (net)                *     0.290                   2
+ix60524z53340/datab                         cycloneii_lcell_comb                25.519   up
+ix60524z53340/cout                          cycloneii_lcell_comb       0.393    25.912   up
+nx60524z577                                 (net)                *     0.000                   1
+ix60524z53338/cin                           cycloneii_lcell_comb                25.912   up
+ix60524z53338/cout                          cycloneii_lcell_comb       0.071    25.983   up
+nx60524z574                                 (net)                *     0.000                   1
+ix60524z53336/cin                           cycloneii_lcell_comb                25.983   up
+ix60524z53336/cout                          cycloneii_lcell_comb       0.071    26.054   up
+nx60524z571                                 (net)                *     0.000                   1
+ix60524z53334/cin                           cycloneii_lcell_comb                26.054   up
+ix60524z53334/cout                          cycloneii_lcell_comb       0.071    26.125   up
+nx60524z568                                 (net)                *     0.000                   1
+ix60524z53332/cin                           cycloneii_lcell_comb                26.125   up
+ix60524z53332/cout                          cycloneii_lcell_comb       0.071    26.196   up
+nx60524z565                                 (net)                *     0.000                   1
+ix60524z53330/cin                           cycloneii_lcell_comb                26.196   up
+ix60524z53330/cout                          cycloneii_lcell_comb       0.071    26.267   up
+nx60524z562                                 (net)                *     0.000                   1
+ix60524z53328/cin                           cycloneii_lcell_comb                26.267   up
+ix60524z53328/cout                          cycloneii_lcell_comb       0.071    26.338   up
+nx60524z559                                 (net)                *     0.000                   1
+ix60524z53326/cin                           cycloneii_lcell_comb                26.338   up
+ix60524z53326/cout                          cycloneii_lcell_comb       0.071    26.409   up
+nx60524z556                                 (net)                *     0.000                   1
+ix60524z53324/cin                           cycloneii_lcell_comb                26.409   up
+ix60524z53324/cout                          cycloneii_lcell_comb       0.071    26.480   up
+nx60524z553                                 (net)                *     0.000                   1
+ix60524z53322/cin                           cycloneii_lcell_comb                26.480   up
+ix60524z53322/cout                          cycloneii_lcell_comb       0.071    26.551   up
+nx60524z550                                 (net)                *     0.000                   1
+ix60524z53320/cin                           cycloneii_lcell_comb                26.551   up
+ix60524z53320/cout                          cycloneii_lcell_comb       0.071    26.622   up
+nx60524z547                                 (net)                *     0.000                   1
+ix60524z53318/cin                           cycloneii_lcell_comb                26.622   up
+ix60524z53318/cout                          cycloneii_lcell_comb       0.071    26.693   up
+nx60524z544                                 (net)                *     0.000                   1
+ix60524z53316/cin                           cycloneii_lcell_comb                26.693   up
+ix60524z53316/cout                          cycloneii_lcell_comb       0.071    26.764   up
+nx60524z541                                 (net)                *     0.000                   1
+ix60524z53314/cin                           cycloneii_lcell_comb                26.764   up
+ix60524z53314/cout                          cycloneii_lcell_comb       0.071    26.835   up
+nx60524z538                                 (net)                *     0.000                   1
+ix60524z53312/cin                           cycloneii_lcell_comb                26.835   up
+ix60524z53312/cout                          cycloneii_lcell_comb       0.071    26.906   up
+nx60524z535                                 (net)                *     0.000                   1
+ix60524z53310/cin                           cycloneii_lcell_comb                26.906   up
+ix60524z53310/cout                          cycloneii_lcell_comb       0.071    26.977   up
+nx60524z532                                 (net)                *     0.000                   1
+ix60524z53308/cin                           cycloneii_lcell_comb                26.977   up
+ix60524z53308/cout                          cycloneii_lcell_comb       0.071    27.048   up
+nx60524z529                                 (net)                *     0.000                   1
+ix60524z53306/cin                           cycloneii_lcell_comb                27.048   up
+ix60524z53306/cout                          cycloneii_lcell_comb       0.071    27.119   up
+nx60524z526                                 (net)                *     0.000                   1
+ix60524z53304/cin                           cycloneii_lcell_comb                27.119   up
+ix60524z53304/cout                          cycloneii_lcell_comb       0.071    27.190   up
+nx60524z523                                 (net)                *     0.000                   1
+ix60524z53302/cin                           cycloneii_lcell_comb                27.190   up
+ix60524z53302/cout                          cycloneii_lcell_comb       0.071    27.261   up
+nx60524z520                                 (net)                *     0.000                   1
+ix60524z53300/cin                           cycloneii_lcell_comb                27.261   up
+ix60524z53300/cout                          cycloneii_lcell_comb       0.071    27.332   up
+nx60524z517                                 (net)                *     0.000                   1
+ix60524z53297/cin                           cycloneii_lcell_comb                27.332   up
+ix60524z53297/cout                          cycloneii_lcell_comb       0.071    27.403   up
+nx60524z513                                 (net)                *     0.000                   1
+ix60524z53296/cin                           cycloneii_lcell_comb                27.403   up
+ix60524z53296/combout                       cycloneii_lcell_comb       0.000    27.403   up
+nx60524z512                                 (net)                *     0.650                  37
+ix60524z53299/datab                         cycloneii_lcell_comb                28.053   up
+ix60524z53299/combout                       cycloneii_lcell_comb       0.420    28.473   up
+nx60524z516                                 (net)                *     0.570                  16
+ix60524z53391/datad                         cycloneii_lcell_comb                29.043   up
+ix60524z53391/combout                       cycloneii_lcell_comb       0.150    29.193   up
+nx60524z651                                 (net)                *     0.290                   2
+ix60524z53390/datab                         cycloneii_lcell_comb                29.483   up
+ix60524z53390/cout                          cycloneii_lcell_comb       0.393    29.876   up
+nx60524z650                                 (net)                *     0.000                   1
+ix60524z53388/cin                           cycloneii_lcell_comb                29.876   up
+ix60524z53388/cout                          cycloneii_lcell_comb       0.071    29.947   up
+nx60524z647                                 (net)                *     0.000                   1
+ix60524z53386/cin                           cycloneii_lcell_comb                29.947   up
+ix60524z53386/cout                          cycloneii_lcell_comb       0.071    30.018   up
+nx60524z644                                 (net)                *     0.000                   1
+ix60524z53384/cin                           cycloneii_lcell_comb                30.018   up
+ix60524z53384/cout                          cycloneii_lcell_comb       0.071    30.089   up
+nx60524z641                                 (net)                *     0.000                   1
+ix60524z53382/cin                           cycloneii_lcell_comb                30.089   up
+ix60524z53382/cout                          cycloneii_lcell_comb       0.071    30.160   up
+nx60524z638                                 (net)                *     0.000                   1
+ix60524z53380/cin                           cycloneii_lcell_comb                30.160   up
+ix60524z53380/cout                          cycloneii_lcell_comb       0.071    30.231   up
+nx60524z635                                 (net)                *     0.000                   1
+ix60524z53378/cin                           cycloneii_lcell_comb                30.231   up
+ix60524z53378/cout                          cycloneii_lcell_comb       0.071    30.302   up
+nx60524z632                                 (net)                *     0.000                   1
+ix60524z53376/cin                           cycloneii_lcell_comb                30.302   up
+ix60524z53376/cout                          cycloneii_lcell_comb       0.071    30.373   up
+nx60524z629                                 (net)                *     0.000                   1
+ix60524z53374/cin                           cycloneii_lcell_comb                30.373   up
+ix60524z53374/cout                          cycloneii_lcell_comb       0.071    30.444   up
+nx60524z626                                 (net)                *     0.000                   1
+ix60524z53372/cin                           cycloneii_lcell_comb                30.444   up
+ix60524z53372/cout                          cycloneii_lcell_comb       0.071    30.515   up
+nx60524z623                                 (net)                *     0.000                   1
+ix60524z53370/cin                           cycloneii_lcell_comb                30.515   up
+ix60524z53370/cout                          cycloneii_lcell_comb       0.071    30.586   up
+nx60524z620                                 (net)                *     0.000                   1
+ix60524z53368/cin                           cycloneii_lcell_comb                30.586   up
+ix60524z53368/cout                          cycloneii_lcell_comb       0.071    30.657   up
+nx60524z617                                 (net)                *     0.000                   1
+ix60524z53366/cin                           cycloneii_lcell_comb                30.657   up
+ix60524z53366/cout                          cycloneii_lcell_comb       0.071    30.728   up
+nx60524z614                                 (net)                *     0.000                   1
+ix60524z53364/cin                           cycloneii_lcell_comb                30.728   up
+ix60524z53364/cout                          cycloneii_lcell_comb       0.071    30.799   up
+nx60524z611                                 (net)                *     0.000                   1
+ix60524z53362/cin                           cycloneii_lcell_comb                30.799   up
+ix60524z53362/cout                          cycloneii_lcell_comb       0.071    30.870   up
+nx60524z608                                 (net)                *     0.000                   1
+ix60524z53360/cin                           cycloneii_lcell_comb                30.870   up
+ix60524z53360/cout                          cycloneii_lcell_comb       0.071    30.941   up
+nx60524z605                                 (net)                *     0.000                   1
+ix60524z53358/cin                           cycloneii_lcell_comb                30.941   up
+ix60524z53358/cout                          cycloneii_lcell_comb       0.071    31.012   up
+nx60524z602                                 (net)                *     0.000                   1
+ix60524z53356/cin                           cycloneii_lcell_comb                31.012   up
+ix60524z53356/cout                          cycloneii_lcell_comb       0.071    31.083   up
+nx60524z599                                 (net)                *     0.000                   1
+ix60524z53354/cin                           cycloneii_lcell_comb                31.083   up
+ix60524z53354/cout                          cycloneii_lcell_comb       0.071    31.154   up
+nx60524z596                                 (net)                *     0.000                   1
+ix60524z53352/cin                           cycloneii_lcell_comb                31.154   up
+ix60524z53352/cout                          cycloneii_lcell_comb       0.071    31.225   up
+nx60524z593                                 (net)                *     0.000                   1
+ix60524z53350/cin                           cycloneii_lcell_comb                31.225   up
+ix60524z53350/cout                          cycloneii_lcell_comb       0.071    31.296   up
+nx60524z590                                 (net)                *     0.000                   1
+ix60524z53347/cin                           cycloneii_lcell_comb                31.296   up
+ix60524z53347/cout                          cycloneii_lcell_comb       0.071    31.367   up
+nx60524z586                                 (net)                *     0.000                   1
+ix60524z53346/cin                           cycloneii_lcell_comb                31.367   up
+ix60524z53346/combout                       cycloneii_lcell_comb       0.000    31.367   up
+nx60524z585                                 (net)                *     0.470                  11
+ix60524z53349/datab                         cycloneii_lcell_comb                31.837   up
+ix60524z53349/combout                       cycloneii_lcell_comb       0.420    32.257   up
+nx60524z589                                 (net)                *     0.570                  16
+ix60524z53467/datad                         cycloneii_lcell_comb                32.827   up
+ix60524z53467/combout                       cycloneii_lcell_comb       0.150    32.977   up
+nx60524z750                                 (net)                *     0.290                   2
+ix60524z53466/datab                         cycloneii_lcell_comb                33.267   up
+ix60524z53466/cout                          cycloneii_lcell_comb       0.393    33.660   up
+nx60524z749                                 (net)                *     0.000                   1
+ix60524z53464/cin                           cycloneii_lcell_comb                33.660   up
+ix60524z53464/cout                          cycloneii_lcell_comb       0.071    33.731   up
+nx60524z746                                 (net)                *     0.000                   1
+ix60524z53462/cin                           cycloneii_lcell_comb                33.731   up
+ix60524z53462/cout                          cycloneii_lcell_comb       0.071    33.802   up
+nx60524z743                                 (net)                *     0.000                   1
+ix60524z53460/cin                           cycloneii_lcell_comb                33.802   up
+ix60524z53460/cout                          cycloneii_lcell_comb       0.071    33.873   up
+nx60524z740                                 (net)                *     0.000                   1
+ix60524z53458/cin                           cycloneii_lcell_comb                33.873   up
+ix60524z53458/cout                          cycloneii_lcell_comb       0.071    33.944   up
+nx60524z737                                 (net)                *     0.000                   1
+ix60524z53456/cin                           cycloneii_lcell_comb                33.944   up
+ix60524z53456/cout                          cycloneii_lcell_comb       0.071    34.015   up
+nx60524z734                                 (net)                *     0.000                   1
+ix60524z53454/cin                           cycloneii_lcell_comb                34.015   up
+ix60524z53454/cout                          cycloneii_lcell_comb       0.071    34.086   up
+nx60524z731                                 (net)                *     0.000                   1
+ix60524z53452/cin                           cycloneii_lcell_comb                34.086   up
+ix60524z53452/cout                          cycloneii_lcell_comb       0.071    34.157   up
+nx60524z728                                 (net)                *     0.000                   1
+ix60524z53448/cin                           cycloneii_lcell_comb                34.157   up
+ix60524z53448/cout                          cycloneii_lcell_comb       0.071    34.228   up
+nx60524z723                                 (net)                *     0.000                   1
+ix60524z53446/cin                           cycloneii_lcell_comb                34.228   up
+ix60524z53446/cout                          cycloneii_lcell_comb       0.071    34.299   up
+nx60524z720                                 (net)                *     0.000                   1
+ix60524z53442/cin                           cycloneii_lcell_comb                34.299   up
+ix60524z53442/cout                          cycloneii_lcell_comb       0.071    34.370   up
+nx60524z715                                 (net)                *     0.000                   1
+ix60524z53438/cin                           cycloneii_lcell_comb                34.370   up
+ix60524z53438/cout                          cycloneii_lcell_comb       0.071    34.441   up
+nx60524z710                                 (net)                *     0.000                   1
+ix60524z53434/cin                           cycloneii_lcell_comb                34.441   up
+ix60524z53434/cout                          cycloneii_lcell_comb       0.071    34.512   up
+nx60524z705                                 (net)                *     0.000                   1
+ix60524z53430/cin                           cycloneii_lcell_comb                34.512   up
+ix60524z53430/cout                          cycloneii_lcell_comb       0.071    34.583   up
+nx60524z700                                 (net)                *     0.000                   1
+ix60524z53426/cin                           cycloneii_lcell_comb                34.583   up
+ix60524z53426/cout                          cycloneii_lcell_comb       0.071    34.654   up
+nx60524z695                                 (net)                *     0.000                   1
+ix60524z53422/cin                           cycloneii_lcell_comb                34.654   up
+ix60524z53422/cout                          cycloneii_lcell_comb       0.071    34.725   up
+nx60524z690                                 (net)                *     0.000                   1
+ix60524z53418/cin                           cycloneii_lcell_comb                34.725   up
+ix60524z53418/cout                          cycloneii_lcell_comb       0.071    34.796   up
+nx60524z685                                 (net)                *     0.000                   1
+ix60524z53414/cin                           cycloneii_lcell_comb                34.796   up
+ix60524z53414/cout                          cycloneii_lcell_comb       0.071    34.867   up
+nx60524z680                                 (net)                *     0.000                   1
+ix60524z53410/cin                           cycloneii_lcell_comb                34.867   up
+ix60524z53410/cout                          cycloneii_lcell_comb       0.071    34.938   up
+nx60524z675                                 (net)                *     0.000                   1
+ix60524z53406/cin                           cycloneii_lcell_comb                34.938   up
+ix60524z53406/cout                          cycloneii_lcell_comb       0.071    35.009   up
+nx60524z670                                 (net)                *     0.000                   1
+ix60524z53402/cin                           cycloneii_lcell_comb                35.009   up
+ix60524z53402/cout                          cycloneii_lcell_comb       0.071    35.080   up
+nx60524z665                                 (net)                *     0.000                   1
+ix60524z53397/cin                           cycloneii_lcell_comb                35.080   up
+ix60524z53397/cout                          cycloneii_lcell_comb       0.071    35.151   up
+nx60524z659                                 (net)                *     0.000                   1
+ix60524z53396/cin                           cycloneii_lcell_comb                35.151   up
+ix60524z53396/combout                       cycloneii_lcell_comb       0.000    35.151   up
+nx60524z658                                 (net)                *     0.650                  24
+ix60524z53401/datab                         cycloneii_lcell_comb                35.801   up
+ix60524z53401/combout                       cycloneii_lcell_comb       0.420    36.221   up
+nx60524z664                                 (net)                *     0.510                  13
+ix60524z53517/datad                         cycloneii_lcell_comb                36.731   up
+ix60524z53517/combout                       cycloneii_lcell_comb       0.150    36.881   up
+nx60524z823                                 (net)                *     0.290                   2
+ix60524z53516/datab                         cycloneii_lcell_comb                37.171   up
+ix60524z53516/cout                          cycloneii_lcell_comb       0.393    37.564   up
+nx60524z822                                 (net)                *     0.000                   1
+ix60524z53514/cin                           cycloneii_lcell_comb                37.564   up
+ix60524z53514/cout                          cycloneii_lcell_comb       0.071    37.635   up
+nx60524z819                                 (net)                *     0.000                   1
+ix60524z53512/cin                           cycloneii_lcell_comb                37.635   up
+ix60524z53512/cout                          cycloneii_lcell_comb       0.071    37.706   up
+nx60524z816                                 (net)                *     0.000                   1
+ix60524z53510/cin                           cycloneii_lcell_comb                37.706   up
+ix60524z53510/cout                          cycloneii_lcell_comb       0.071    37.777   up
+nx60524z813                                 (net)                *     0.000                   1
+ix60524z53508/cin                           cycloneii_lcell_comb                37.777   up
+ix60524z53508/cout                          cycloneii_lcell_comb       0.071    37.848   up
+nx60524z810                                 (net)                *     0.000                   1
+ix60524z53506/cin                           cycloneii_lcell_comb                37.848   up
+ix60524z53506/cout                          cycloneii_lcell_comb       0.071    37.919   up
+nx60524z807                                 (net)                *     0.000                   1
+ix60524z53504/cin                           cycloneii_lcell_comb                37.919   up
+ix60524z53504/cout                          cycloneii_lcell_comb       0.071    37.990   up
+nx60524z804                                 (net)                *     0.000                   1
+ix60524z53502/cin                           cycloneii_lcell_comb                37.990   up
+ix60524z53502/cout                          cycloneii_lcell_comb       0.071    38.061   up
+nx60524z801                                 (net)                *     0.000                   1
+ix60524z53500/cin                           cycloneii_lcell_comb                38.061   up
+ix60524z53500/cout                          cycloneii_lcell_comb       0.071    38.132   up
+nx60524z798                                 (net)                *     0.000                   1
+ix60524z53498/cin                           cycloneii_lcell_comb                38.132   up
+ix60524z53498/cout                          cycloneii_lcell_comb       0.071    38.203   up
+nx60524z795                                 (net)                *     0.000                   1
+ix60524z53496/cin                           cycloneii_lcell_comb                38.203   up
+ix60524z53496/cout                          cycloneii_lcell_comb       0.071    38.274   up
+nx60524z792                                 (net)                *     0.000                   1
+ix60524z53494/cin                           cycloneii_lcell_comb                38.274   up
+ix60524z53494/cout                          cycloneii_lcell_comb       0.071    38.345   up
+nx60524z789                                 (net)                *     0.000                   1
+ix60524z53492/cin                           cycloneii_lcell_comb                38.345   up
+ix60524z53492/cout                          cycloneii_lcell_comb       0.071    38.416   up
+nx60524z786                                 (net)                *     0.000                   1
+ix60524z53490/cin                           cycloneii_lcell_comb                38.416   up
+ix60524z53490/cout                          cycloneii_lcell_comb       0.071    38.487   up
+nx60524z783                                 (net)                *     0.000                   1
+ix60524z53488/cin                           cycloneii_lcell_comb                38.487   up
+ix60524z53488/cout                          cycloneii_lcell_comb       0.071    38.558   up
+nx60524z780                                 (net)                *     0.000                   1
+ix60524z53486/cin                           cycloneii_lcell_comb                38.558   up
+ix60524z53486/cout                          cycloneii_lcell_comb       0.071    38.629   up
+nx60524z777                                 (net)                *     0.000                   1
+ix60524z53484/cin                           cycloneii_lcell_comb                38.629   up
+ix60524z53484/cout                          cycloneii_lcell_comb       0.071    38.700   up
+nx60524z774                                 (net)                *     0.000                   1
+ix60524z53482/cin                           cycloneii_lcell_comb                38.700   up
+ix60524z53482/cout                          cycloneii_lcell_comb       0.071    38.771   up
+nx60524z771                                 (net)                *     0.000                   1
+ix60524z53480/cin                           cycloneii_lcell_comb                38.771   up
+ix60524z53480/cout                          cycloneii_lcell_comb       0.071    38.842   up
+nx60524z768                                 (net)                *     0.000                   1
+ix60524z53478/cin                           cycloneii_lcell_comb                38.842   up
+ix60524z53478/cout                          cycloneii_lcell_comb       0.071    38.913   up
+nx60524z765                                 (net)                *     0.000                   1
+ix60524z53476/cin                           cycloneii_lcell_comb                38.913   up
+ix60524z53476/cout                          cycloneii_lcell_comb       0.071    38.984   up
+nx60524z762                                 (net)                *     0.000                   1
+ix60524z53473/cin                           cycloneii_lcell_comb                38.984   up
+ix60524z53473/cout                          cycloneii_lcell_comb       0.071    39.055   up
+nx60524z758                                 (net)                *     0.000                   1
+ix60524z53472/cin                           cycloneii_lcell_comb                39.055   up
+ix60524z53472/combout                       cycloneii_lcell_comb       0.000    39.055   up
+nx60524z757                                 (net)                *     0.650                  34
+ix60524z53475/datab                         cycloneii_lcell_comb                39.705   up
+ix60524z53475/combout                       cycloneii_lcell_comb       0.420    40.125   up
+nx60524z761                                 (net)                *     0.510                  13
+ix60524z53567/datad                         cycloneii_lcell_comb                40.635   up
+ix60524z53567/combout                       cycloneii_lcell_comb       0.150    40.785   up
+nx60524z896                                 (net)                *     0.290                   2
+ix60524z53566/datab                         cycloneii_lcell_comb                41.075   up
+ix60524z53566/cout                          cycloneii_lcell_comb       0.393    41.468   up
+nx60524z895                                 (net)                *     0.000                   1
+ix60524z53564/cin                           cycloneii_lcell_comb                41.468   up
+ix60524z53564/cout                          cycloneii_lcell_comb       0.071    41.539   up
+nx60524z892                                 (net)                *     0.000                   1
+ix60524z53562/cin                           cycloneii_lcell_comb                41.539   up
+ix60524z53562/cout                          cycloneii_lcell_comb       0.071    41.610   up
+nx60524z889                                 (net)                *     0.000                   1
+ix60524z53560/cin                           cycloneii_lcell_comb                41.610   up
+ix60524z53560/cout                          cycloneii_lcell_comb       0.071    41.681   up
+nx60524z886                                 (net)                *     0.000                   1
+ix60524z53558/cin                           cycloneii_lcell_comb                41.681   up
+ix60524z53558/cout                          cycloneii_lcell_comb       0.071    41.752   up
+nx60524z883                                 (net)                *     0.000                   1
+ix60524z53556/cin                           cycloneii_lcell_comb                41.752   up
+ix60524z53556/cout                          cycloneii_lcell_comb       0.071    41.823   up
+nx60524z880                                 (net)                *     0.000                   1
+ix60524z53554/cin                           cycloneii_lcell_comb                41.823   up
+ix60524z53554/cout                          cycloneii_lcell_comb       0.071    41.894   up
+nx60524z877                                 (net)                *     0.000                   1
+ix60524z53552/cin                           cycloneii_lcell_comb                41.894   up
+ix60524z53552/cout                          cycloneii_lcell_comb       0.071    41.965   up
+nx60524z874                                 (net)                *     0.000                   1
+ix60524z53550/cin                           cycloneii_lcell_comb                41.965   up
+ix60524z53550/cout                          cycloneii_lcell_comb       0.071    42.036   up
+nx60524z871                                 (net)                *     0.000                   1
+ix60524z53548/cin                           cycloneii_lcell_comb                42.036   up
+ix60524z53548/cout                          cycloneii_lcell_comb       0.071    42.107   up
+nx60524z868                                 (net)                *     0.000                   1
+ix60524z53546/cin                           cycloneii_lcell_comb                42.107   up
+ix60524z53546/cout                          cycloneii_lcell_comb       0.071    42.178   up
+nx60524z865                                 (net)                *     0.000                   1
+ix60524z53544/cin                           cycloneii_lcell_comb                42.178   up
+ix60524z53544/cout                          cycloneii_lcell_comb       0.071    42.249   up
+nx60524z862                                 (net)                *     0.000                   1
+ix60524z53542/cin                           cycloneii_lcell_comb                42.249   up
+ix60524z53542/cout                          cycloneii_lcell_comb       0.071    42.320   up
+nx60524z859                                 (net)                *     0.000                   1
+ix60524z53540/cin                           cycloneii_lcell_comb                42.320   up
+ix60524z53540/cout                          cycloneii_lcell_comb       0.071    42.391   up
+nx60524z856                                 (net)                *     0.000                   1
+ix60524z53538/cin                           cycloneii_lcell_comb                42.391   up
+ix60524z53538/cout                          cycloneii_lcell_comb       0.071    42.462   up
+nx60524z853                                 (net)                *     0.000                   1
+ix60524z53536/cin                           cycloneii_lcell_comb                42.462   up
+ix60524z53536/cout                          cycloneii_lcell_comb       0.071    42.533   up
+nx60524z850                                 (net)                *     0.000                   1
+ix60524z53534/cin                           cycloneii_lcell_comb                42.533   up
+ix60524z53534/cout                          cycloneii_lcell_comb       0.071    42.604   up
+nx60524z847                                 (net)                *     0.000                   1
+ix60524z53532/cin                           cycloneii_lcell_comb                42.604   up
+ix60524z53532/cout                          cycloneii_lcell_comb       0.071    42.675   up
+nx60524z844                                 (net)                *     0.000                   1
+ix60524z53530/cin                           cycloneii_lcell_comb                42.675   up
+ix60524z53530/cout                          cycloneii_lcell_comb       0.071    42.746   up
+nx60524z841                                 (net)                *     0.000                   1
+ix60524z53528/cin                           cycloneii_lcell_comb                42.746   up
+ix60524z53528/cout                          cycloneii_lcell_comb       0.071    42.817   up
+nx60524z838                                 (net)                *     0.000                   1
+ix60524z53526/cin                           cycloneii_lcell_comb                42.817   up
+ix60524z53526/cout                          cycloneii_lcell_comb       0.071    42.888   up
+nx60524z835                                 (net)                *     0.000                   1
+ix60524z53523/cin                           cycloneii_lcell_comb                42.888   up
+ix60524z53523/cout                          cycloneii_lcell_comb       0.071    42.959   up
+nx60524z831                                 (net)                *     0.000                   1
+ix60524z53522/cin                           cycloneii_lcell_comb                42.959   up
+ix60524z53522/combout                       cycloneii_lcell_comb       0.000    42.959   up
+nx60524z830                                 (net)                *     0.530                  14
+ix60524z53525/datab                         cycloneii_lcell_comb                43.489   up
+ix60524z53525/combout                       cycloneii_lcell_comb       0.420    43.909   up
+nx60524z834                                 (net)                *     0.510                  13
+ix60524z53637/datad                         cycloneii_lcell_comb                44.419   up
+ix60524z53637/combout                       cycloneii_lcell_comb       0.150    44.569   up
+nx60524z989                                 (net)                *     0.290                   2
+ix60524z53636/datab                         cycloneii_lcell_comb                44.859   up
+ix60524z53636/cout                          cycloneii_lcell_comb       0.393    45.252   up
+nx60524z988                                 (net)                *     0.000                   1
+ix60524z53634/cin                           cycloneii_lcell_comb                45.252   up
+ix60524z53634/cout                          cycloneii_lcell_comb       0.071    45.323   up
+nx60524z985                                 (net)                *     0.000                   1
+ix60524z53632/cin                           cycloneii_lcell_comb                45.323   up
+ix60524z53632/cout                          cycloneii_lcell_comb       0.071    45.394   up
+nx60524z982                                 (net)                *     0.000                   1
+ix60524z53630/cin                           cycloneii_lcell_comb                45.394   up
+ix60524z53630/cout                          cycloneii_lcell_comb       0.071    45.465   up
+nx60524z979                                 (net)                *     0.000                   1
+ix60524z53628/cin                           cycloneii_lcell_comb                45.465   up
+ix60524z53628/cout                          cycloneii_lcell_comb       0.071    45.536   up
+nx60524z976                                 (net)                *     0.000                   1
+ix60524z53626/cin                           cycloneii_lcell_comb                45.536   up
+ix60524z53626/cout                          cycloneii_lcell_comb       0.071    45.607   up
+nx60524z973                                 (net)                *     0.000                   1
+ix60524z53624/cin                           cycloneii_lcell_comb                45.607   up
+ix60524z53624/cout                          cycloneii_lcell_comb       0.071    45.678   up
+nx60524z970                                 (net)                *     0.000                   1
+ix60524z53622/cin                           cycloneii_lcell_comb                45.678   up
+ix60524z53622/cout                          cycloneii_lcell_comb       0.071    45.749   up
+nx60524z967                                 (net)                *     0.000                   1
+ix60524z53620/cin                           cycloneii_lcell_comb                45.749   up
+ix60524z53620/cout                          cycloneii_lcell_comb       0.071    45.820   up
+nx60524z964                                 (net)                *     0.000                   1
+ix60524z53618/cin                           cycloneii_lcell_comb                45.820   up
+ix60524z53618/cout                          cycloneii_lcell_comb       0.071    45.891   up
+nx60524z961                                 (net)                *     0.000                   1
+ix60524z53616/cin                           cycloneii_lcell_comb                45.891   up
+ix60524z53616/cout                          cycloneii_lcell_comb       0.071    45.962   up
+nx60524z958                                 (net)                *     0.000                   1
+ix60524z53612/cin                           cycloneii_lcell_comb                45.962   up
+ix60524z53612/cout                          cycloneii_lcell_comb       0.071    46.033   up
+nx60524z953                                 (net)                *     0.000                   1
+ix60524z53610/cin                           cycloneii_lcell_comb                46.033   up
+ix60524z53610/cout                          cycloneii_lcell_comb       0.071    46.104   up
+nx60524z950                                 (net)                *     0.000                   1
+ix60524z53606/cin                           cycloneii_lcell_comb                46.104   up
+ix60524z53606/cout                          cycloneii_lcell_comb       0.071    46.175   up
+nx60524z945                                 (net)                *     0.000                   1
+ix60524z53602/cin                           cycloneii_lcell_comb                46.175   up
+ix60524z53602/cout                          cycloneii_lcell_comb       0.071    46.246   up
+nx60524z940                                 (net)                *     0.000                   1
+ix60524z53598/cin                           cycloneii_lcell_comb                46.246   up
+ix60524z53598/cout                          cycloneii_lcell_comb       0.071    46.317   up
+nx60524z935                                 (net)                *     0.000                   1
+ix60524z53594/cin                           cycloneii_lcell_comb                46.317   up
+ix60524z53594/cout                          cycloneii_lcell_comb       0.071    46.388   up
+nx60524z930                                 (net)                *     0.000                   1
+ix60524z53590/cin                           cycloneii_lcell_comb                46.388   up
+ix60524z53590/cout                          cycloneii_lcell_comb       0.071    46.459   up
+nx60524z925                                 (net)                *     0.000                   1
+ix60524z53586/cin                           cycloneii_lcell_comb                46.459   up
+ix60524z53586/cout                          cycloneii_lcell_comb       0.071    46.530   up
+nx60524z920                                 (net)                *     0.000                   1
+ix60524z53582/cin                           cycloneii_lcell_comb                46.530   up
+ix60524z53582/cout                          cycloneii_lcell_comb       0.071    46.601   up
+nx60524z915                                 (net)                *     0.000                   1
+ix60524z53578/cin                           cycloneii_lcell_comb                46.601   up
+ix60524z53578/cout                          cycloneii_lcell_comb       0.071    46.672   up
+nx60524z910                                 (net)                *     0.000                   1
+ix60524z53573/cin                           cycloneii_lcell_comb                46.672   up
+ix60524z53573/cout                          cycloneii_lcell_comb       0.071    46.743   up
+nx60524z904                                 (net)                *     0.000                   1
+ix60524z53572/cin                           cycloneii_lcell_comb                46.743   up
+ix60524z53572/combout                       cycloneii_lcell_comb       0.000    46.743   up
+nx60524z903                                 (net)                *     0.650                  24
+ix60524z53577/datab                         cycloneii_lcell_comb                47.393   up
+ix60524z53577/combout                       cycloneii_lcell_comb       0.420    47.813   up
+nx60524z909                                 (net)                *     0.450                  10
+ix60524z53687/datad                         cycloneii_lcell_comb                48.263   up
+ix60524z53687/combout                       cycloneii_lcell_comb       0.150    48.413   up
+nx60524z1062                                (net)                *     0.290                   2
+ix60524z53686/datab                         cycloneii_lcell_comb                48.703   up
+ix60524z53686/cout                          cycloneii_lcell_comb       0.393    49.096   up
+nx60524z1061                                (net)                *     0.000                   1
+ix60524z53684/cin                           cycloneii_lcell_comb                49.096   up
+ix60524z53684/cout                          cycloneii_lcell_comb       0.071    49.167   up
+nx60524z1058                                (net)                *     0.000                   1
+ix60524z53682/cin                           cycloneii_lcell_comb                49.167   up
+ix60524z53682/cout                          cycloneii_lcell_comb       0.071    49.238   up
+nx60524z1055                                (net)                *     0.000                   1
+ix60524z53680/cin                           cycloneii_lcell_comb                49.238   up
+ix60524z53680/cout                          cycloneii_lcell_comb       0.071    49.309   up
+nx60524z1052                                (net)                *     0.000                   1
+ix60524z53678/cin                           cycloneii_lcell_comb                49.309   up
+ix60524z53678/cout                          cycloneii_lcell_comb       0.071    49.380   up
+nx60524z1049                                (net)                *     0.000                   1
+ix60524z53676/cin                           cycloneii_lcell_comb                49.380   up
+ix60524z53676/cout                          cycloneii_lcell_comb       0.071    49.451   up
+nx60524z1046                                (net)                *     0.000                   1
+ix60524z53674/cin                           cycloneii_lcell_comb                49.451   up
+ix60524z53674/cout                          cycloneii_lcell_comb       0.071    49.522   up
+nx60524z1043                                (net)                *     0.000                   1
+ix60524z53672/cin                           cycloneii_lcell_comb                49.522   up
+ix60524z53672/cout                          cycloneii_lcell_comb       0.071    49.593   up
+nx60524z1040                                (net)                *     0.000                   1
+ix60524z53670/cin                           cycloneii_lcell_comb                49.593   up
+ix60524z53670/cout                          cycloneii_lcell_comb       0.071    49.664   up
+nx60524z1037                                (net)                *     0.000                   1
+ix60524z53668/cin                           cycloneii_lcell_comb                49.664   up
+ix60524z53668/cout                          cycloneii_lcell_comb       0.071    49.735   up
+nx60524z1034                                (net)                *     0.000                   1
+ix60524z53666/cin                           cycloneii_lcell_comb                49.735   up
+ix60524z53666/cout                          cycloneii_lcell_comb       0.071    49.806   up
+nx60524z1031                                (net)                *     0.000                   1
+ix60524z53664/cin                           cycloneii_lcell_comb                49.806   up
+ix60524z53664/cout                          cycloneii_lcell_comb       0.071    49.877   up
+nx60524z1028                                (net)                *     0.000                   1
+ix60524z53662/cin                           cycloneii_lcell_comb                49.877   up
+ix60524z53662/cout                          cycloneii_lcell_comb       0.071    49.948   up
+nx60524z1025                                (net)                *     0.000                   1
+ix60524z53660/cin                           cycloneii_lcell_comb                49.948   up
+ix60524z53660/cout                          cycloneii_lcell_comb       0.071    50.019   up
+nx60524z1022                                (net)                *     0.000                   1
+ix60524z53658/cin                           cycloneii_lcell_comb                50.019   up
+ix60524z53658/cout                          cycloneii_lcell_comb       0.071    50.090   up
+nx60524z1019                                (net)                *     0.000                   1
+ix60524z53656/cin                           cycloneii_lcell_comb                50.090   up
+ix60524z53656/cout                          cycloneii_lcell_comb       0.071    50.161   up
+nx60524z1016                                (net)                *     0.000                   1
+ix60524z53654/cin                           cycloneii_lcell_comb                50.161   up
+ix60524z53654/cout                          cycloneii_lcell_comb       0.071    50.232   up
+nx60524z1013                                (net)                *     0.000                   1
+ix60524z53652/cin                           cycloneii_lcell_comb                50.232   up
+ix60524z53652/cout                          cycloneii_lcell_comb       0.071    50.303   up
+nx60524z1010                                (net)                *     0.000                   1
+ix60524z53650/cin                           cycloneii_lcell_comb                50.303   up
+ix60524z53650/cout                          cycloneii_lcell_comb       0.071    50.374   up
+nx60524z1007                                (net)                *     0.000                   1
+ix60524z53648/cin                           cycloneii_lcell_comb                50.374   up
+ix60524z53648/cout                          cycloneii_lcell_comb       0.071    50.445   up
+nx60524z1004                                (net)                *     0.000                   1
+ix60524z53646/cin                           cycloneii_lcell_comb                50.445   up
+ix60524z53646/cout                          cycloneii_lcell_comb       0.071    50.516   up
+nx60524z1001                                (net)                *     0.000                   1
+ix60524z53643/cin                           cycloneii_lcell_comb                50.516   up
+ix60524z53643/cout                          cycloneii_lcell_comb       0.071    50.587   up
+nx60524z997                                 (net)                *     0.000                   1
+ix60524z53642/cin                           cycloneii_lcell_comb                50.587   up
+ix60524z53642/combout                       cycloneii_lcell_comb       0.000    50.587   up
+nx60524z996                                 (net)                *     0.650                  31
+ix60524z53645/datab                         cycloneii_lcell_comb                51.237   up
+ix60524z53645/combout                       cycloneii_lcell_comb       0.420    51.657   up
+nx60524z1000                                (net)                *     0.450                  10
+ix60524z53737/datad                         cycloneii_lcell_comb                52.107   up
+ix60524z53737/combout                       cycloneii_lcell_comb       0.150    52.257   up
+nx60524z1135                                (net)                *     0.290                   2
+ix60524z53736/datab                         cycloneii_lcell_comb                52.547   up
+ix60524z53736/cout                          cycloneii_lcell_comb       0.393    52.940   up
+nx60524z1134                                (net)                *     0.000                   1
+ix60524z53734/cin                           cycloneii_lcell_comb                52.940   up
+ix60524z53734/cout                          cycloneii_lcell_comb       0.071    53.011   up
+nx60524z1131                                (net)                *     0.000                   1
+ix60524z53732/cin                           cycloneii_lcell_comb                53.011   up
+ix60524z53732/cout                          cycloneii_lcell_comb       0.071    53.082   up
+nx60524z1128                                (net)                *     0.000                   1
+ix60524z53730/cin                           cycloneii_lcell_comb                53.082   up
+ix60524z53730/cout                          cycloneii_lcell_comb       0.071    53.153   up
+nx60524z1125                                (net)                *     0.000                   1
+ix60524z53728/cin                           cycloneii_lcell_comb                53.153   up
+ix60524z53728/cout                          cycloneii_lcell_comb       0.071    53.224   up
+nx60524z1122                                (net)                *     0.000                   1
+ix60524z53726/cin                           cycloneii_lcell_comb                53.224   up
+ix60524z53726/cout                          cycloneii_lcell_comb       0.071    53.295   up
+nx60524z1119                                (net)                *     0.000                   1
+ix60524z53724/cin                           cycloneii_lcell_comb                53.295   up
+ix60524z53724/cout                          cycloneii_lcell_comb       0.071    53.366   up
+nx60524z1116                                (net)                *     0.000                   1
+ix60524z53722/cin                           cycloneii_lcell_comb                53.366   up
+ix60524z53722/cout                          cycloneii_lcell_comb       0.071    53.437   up
+nx60524z1113                                (net)                *     0.000                   1
+ix60524z53720/cin                           cycloneii_lcell_comb                53.437   up
+ix60524z53720/cout                          cycloneii_lcell_comb       0.071    53.508   up
+nx60524z1110                                (net)                *     0.000                   1
+ix60524z53718/cin                           cycloneii_lcell_comb                53.508   up
+ix60524z53718/cout                          cycloneii_lcell_comb       0.071    53.579   up
+nx60524z1107                                (net)                *     0.000                   1
+ix60524z53716/cin                           cycloneii_lcell_comb                53.579   up
+ix60524z53716/cout                          cycloneii_lcell_comb       0.071    53.650   up
+nx60524z1104                                (net)                *     0.000                   1
+ix60524z53714/cin                           cycloneii_lcell_comb                53.650   up
+ix60524z53714/cout                          cycloneii_lcell_comb       0.071    53.721   up
+nx60524z1101                                (net)                *     0.000                   1
+ix60524z53712/cin                           cycloneii_lcell_comb                53.721   up
+ix60524z53712/cout                          cycloneii_lcell_comb       0.071    53.792   up
+nx60524z1098                                (net)                *     0.000                   1
+ix60524z53710/cin                           cycloneii_lcell_comb                53.792   up
+ix60524z53710/cout                          cycloneii_lcell_comb       0.071    53.863   up
+nx60524z1095                                (net)                *     0.000                   1
+ix60524z53708/cin                           cycloneii_lcell_comb                53.863   up
+ix60524z53708/cout                          cycloneii_lcell_comb       0.071    53.934   up
+nx60524z1092                                (net)                *     0.000                   1
+ix60524z53706/cin                           cycloneii_lcell_comb                53.934   up
+ix60524z53706/cout                          cycloneii_lcell_comb       0.071    54.005   up
+nx60524z1089                                (net)                *     0.000                   1
+ix60524z53704/cin                           cycloneii_lcell_comb                54.005   up
+ix60524z53704/cout                          cycloneii_lcell_comb       0.071    54.076   up
+nx60524z1086                                (net)                *     0.000                   1
+ix60524z53702/cin                           cycloneii_lcell_comb                54.076   up
+ix60524z53702/cout                          cycloneii_lcell_comb       0.071    54.147   up
+nx60524z1083                                (net)                *     0.000                   1
+ix60524z53700/cin                           cycloneii_lcell_comb                54.147   up
+ix60524z53700/cout                          cycloneii_lcell_comb       0.071    54.218   up
+nx60524z1080                                (net)                *     0.000                   1
+ix60524z53698/cin                           cycloneii_lcell_comb                54.218   up
+ix60524z53698/cout                          cycloneii_lcell_comb       0.071    54.289   up
+nx60524z1077                                (net)                *     0.000                   1
+ix60524z53696/cin                           cycloneii_lcell_comb                54.289   up
+ix60524z53696/cout                          cycloneii_lcell_comb       0.071    54.360   up
+nx60524z1074                                (net)                *     0.000                   1
+ix60524z53693/cin                           cycloneii_lcell_comb                54.360   up
+ix60524z53693/cout                          cycloneii_lcell_comb       0.071    54.431   up
+nx60524z1070                                (net)                *     0.000                   1
+ix60524z53692/cin                           cycloneii_lcell_comb                54.431   up
+ix60524z53692/combout                       cycloneii_lcell_comb       0.000    54.431   up
+nx60524z1069                                (net)                *     0.590                  17
+ix60524z53695/datab                         cycloneii_lcell_comb                55.021   up
+ix60524z53695/combout                       cycloneii_lcell_comb       0.420    55.441   up
+nx60524z1073                                (net)                *     0.450                  10
+ix60524z53801/datad                         cycloneii_lcell_comb                55.891   up
+ix60524z53801/combout                       cycloneii_lcell_comb       0.150    56.041   up
+nx60524z1222                                (net)                *     0.290                   2
+ix60524z53800/datab                         cycloneii_lcell_comb                56.331   up
+ix60524z53800/cout                          cycloneii_lcell_comb       0.393    56.724   up
+nx60524z1221                                (net)                *     0.000                   1
+ix60524z53798/cin                           cycloneii_lcell_comb                56.724   up
+ix60524z53798/cout                          cycloneii_lcell_comb       0.071    56.795   up
+nx60524z1218                                (net)                *     0.000                   1
+ix60524z53796/cin                           cycloneii_lcell_comb                56.795   up
+ix60524z53796/cout                          cycloneii_lcell_comb       0.071    56.866   up
+nx60524z1215                                (net)                *     0.000                   1
+ix60524z53794/cin                           cycloneii_lcell_comb                56.866   up
+ix60524z53794/cout                          cycloneii_lcell_comb       0.071    56.937   up
+nx60524z1212                                (net)                *     0.000                   1
+ix60524z53792/cin                           cycloneii_lcell_comb                56.937   up
+ix60524z53792/cout                          cycloneii_lcell_comb       0.071    57.008   up
+nx60524z1209                                (net)                *     0.000                   1
+ix60524z53790/cin                           cycloneii_lcell_comb                57.008   up
+ix60524z53790/cout                          cycloneii_lcell_comb       0.071    57.079   up
+nx60524z1206                                (net)                *     0.000                   1
+ix60524z53788/cin                           cycloneii_lcell_comb                57.079   up
+ix60524z53788/cout                          cycloneii_lcell_comb       0.071    57.150   up
+nx60524z1203                                (net)                *     0.000                   1
+ix60524z53786/cin                           cycloneii_lcell_comb                57.150   up
+ix60524z53786/cout                          cycloneii_lcell_comb       0.071    57.221   up
+nx60524z1200                                (net)                *     0.000                   1
+ix60524z53784/cin                           cycloneii_lcell_comb                57.221   up
+ix60524z53784/cout                          cycloneii_lcell_comb       0.071    57.292   up
+nx60524z1197                                (net)                *     0.000                   1
+ix60524z53782/cin                           cycloneii_lcell_comb                57.292   up
+ix60524z53782/cout                          cycloneii_lcell_comb       0.071    57.363   up
+nx60524z1194                                (net)                *     0.000                   1
+ix60524z53780/cin                           cycloneii_lcell_comb                57.363   up
+ix60524z53780/cout                          cycloneii_lcell_comb       0.071    57.434   up
+nx60524z1191                                (net)                *     0.000                   1
+ix60524z53778/cin                           cycloneii_lcell_comb                57.434   up
+ix60524z53778/cout                          cycloneii_lcell_comb       0.071    57.505   up
+nx60524z1188                                (net)                *     0.000                   1
+ix60524z53776/cin                           cycloneii_lcell_comb                57.505   up
+ix60524z53776/cout                          cycloneii_lcell_comb       0.071    57.576   up
+nx60524z1185                                (net)                *     0.000                   1
+ix60524z53774/cin                           cycloneii_lcell_comb                57.576   up
+ix60524z53774/cout                          cycloneii_lcell_comb       0.071    57.647   up
+nx60524z1182                                (net)                *     0.000                   1
+ix60524z53770/cin                           cycloneii_lcell_comb                57.647   up
+ix60524z53770/cout                          cycloneii_lcell_comb       0.071    57.718   up
+nx60524z1177                                (net)                *     0.000                   1
+ix60524z53768/cin                           cycloneii_lcell_comb                57.718   up
+ix60524z53768/cout                          cycloneii_lcell_comb       0.071    57.789   up
+nx60524z1174                                (net)                *     0.000                   1
+ix60524z53764/cin                           cycloneii_lcell_comb                57.789   up
+ix60524z53764/cout                          cycloneii_lcell_comb       0.071    57.860   up
+nx60524z1169                                (net)                *     0.000                   1
+ix60524z53760/cin                           cycloneii_lcell_comb                57.860   up
+ix60524z53760/cout                          cycloneii_lcell_comb       0.071    57.931   up
+nx60524z1164                                (net)                *     0.000                   1
+ix60524z53756/cin                           cycloneii_lcell_comb                57.931   up
+ix60524z53756/cout                          cycloneii_lcell_comb       0.071    58.002   up
+nx60524z1159                                (net)                *     0.000                   1
+ix60524z53752/cin                           cycloneii_lcell_comb                58.002   up
+ix60524z53752/cout                          cycloneii_lcell_comb       0.071    58.073   up
+nx60524z1154                                (net)                *     0.000                   1
+ix60524z53748/cin                           cycloneii_lcell_comb                58.073   up
+ix60524z53748/cout                          cycloneii_lcell_comb       0.071    58.144   up
+nx60524z1149                                (net)                *     0.000                   1
+ix60524z53743/cin                           cycloneii_lcell_comb                58.144   up
+ix60524z53743/cout                          cycloneii_lcell_comb       0.071    58.215   up
+nx60524z1143                                (net)                *     0.000                   1
+ix60524z53742/cin                           cycloneii_lcell_comb                58.215   up
+ix60524z53742/combout                       cycloneii_lcell_comb       0.000    58.215   up
+nx60524z1142                                (net)                *     0.650                  24
+ix60524z53747/datab                         cycloneii_lcell_comb                58.865   up
+ix60524z53747/combout                       cycloneii_lcell_comb       0.420    59.285   up
+nx60524z1148                                (net)                *     0.390                   7
+ix60524z53851/datad                         cycloneii_lcell_comb                59.675   up
+ix60524z53851/combout                       cycloneii_lcell_comb       0.150    59.825   up
+nx60524z1295                                (net)                *     0.290                   2
+ix60524z53850/datab                         cycloneii_lcell_comb                60.115   up
+ix60524z53850/cout                          cycloneii_lcell_comb       0.393    60.508   up
+nx60524z1294                                (net)                *     0.000                   1
+ix60524z53848/cin                           cycloneii_lcell_comb                60.508   up
+ix60524z53848/cout                          cycloneii_lcell_comb       0.071    60.579   up
+nx60524z1291                                (net)                *     0.000                   1
+ix60524z53846/cin                           cycloneii_lcell_comb                60.579   up
+ix60524z53846/cout                          cycloneii_lcell_comb       0.071    60.650   up
+nx60524z1288                                (net)                *     0.000                   1
+ix60524z53844/cin                           cycloneii_lcell_comb                60.650   up
+ix60524z53844/cout                          cycloneii_lcell_comb       0.071    60.721   up
+nx60524z1285                                (net)                *     0.000                   1
+ix60524z53842/cin                           cycloneii_lcell_comb                60.721   up
+ix60524z53842/cout                          cycloneii_lcell_comb       0.071    60.792   up
+nx60524z1282                                (net)                *     0.000                   1
+ix60524z53840/cin                           cycloneii_lcell_comb                60.792   up
+ix60524z53840/cout                          cycloneii_lcell_comb       0.071    60.863   up
+nx60524z1279                                (net)                *     0.000                   1
+ix60524z53838/cin                           cycloneii_lcell_comb                60.863   up
+ix60524z53838/cout                          cycloneii_lcell_comb       0.071    60.934   up
+nx60524z1276                                (net)                *     0.000                   1
+ix60524z53836/cin                           cycloneii_lcell_comb                60.934   up
+ix60524z53836/cout                          cycloneii_lcell_comb       0.071    61.005   up
+nx60524z1273                                (net)                *     0.000                   1
+ix60524z53834/cin                           cycloneii_lcell_comb                61.005   up
+ix60524z53834/cout                          cycloneii_lcell_comb       0.071    61.076   up
+nx60524z1270                                (net)                *     0.000                   1
+ix60524z53832/cin                           cycloneii_lcell_comb                61.076   up
+ix60524z53832/cout                          cycloneii_lcell_comb       0.071    61.147   up
+nx60524z1267                                (net)                *     0.000                   1
+ix60524z53830/cin                           cycloneii_lcell_comb                61.147   up
+ix60524z53830/cout                          cycloneii_lcell_comb       0.071    61.218   up
+nx60524z1264                                (net)                *     0.000                   1
+ix60524z53828/cin                           cycloneii_lcell_comb                61.218   up
+ix60524z53828/cout                          cycloneii_lcell_comb       0.071    61.289   up
+nx60524z1261                                (net)                *     0.000                   1
+ix60524z53826/cin                           cycloneii_lcell_comb                61.289   up
+ix60524z53826/cout                          cycloneii_lcell_comb       0.071    61.360   up
+nx60524z1258                                (net)                *     0.000                   1
+ix60524z53824/cin                           cycloneii_lcell_comb                61.360   up
+ix60524z53824/cout                          cycloneii_lcell_comb       0.071    61.431   up
+nx60524z1255                                (net)                *     0.000                   1
+ix60524z53822/cin                           cycloneii_lcell_comb                61.431   up
+ix60524z53822/cout                          cycloneii_lcell_comb       0.071    61.502   up
+nx60524z1252                                (net)                *     0.000                   1
+ix60524z53820/cin                           cycloneii_lcell_comb                61.502   up
+ix60524z53820/cout                          cycloneii_lcell_comb       0.071    61.573   up
+nx60524z1249                                (net)                *     0.000                   1
+ix60524z53818/cin                           cycloneii_lcell_comb                61.573   up
+ix60524z53818/cout                          cycloneii_lcell_comb       0.071    61.644   up
+nx60524z1246                                (net)                *     0.000                   1
+ix60524z53816/cin                           cycloneii_lcell_comb                61.644   up
+ix60524z53816/cout                          cycloneii_lcell_comb       0.071    61.715   up
+nx60524z1243                                (net)                *     0.000                   1
+ix60524z53814/cin                           cycloneii_lcell_comb                61.715   up
+ix60524z53814/cout                          cycloneii_lcell_comb       0.071    61.786   up
+nx60524z1240                                (net)                *     0.000                   1
+ix60524z53812/cin                           cycloneii_lcell_comb                61.786   up
+ix60524z53812/cout                          cycloneii_lcell_comb       0.071    61.857   up
+nx60524z1237                                (net)                *     0.000                   1
+ix60524z53810/cin                           cycloneii_lcell_comb                61.857   up
+ix60524z53810/cout                          cycloneii_lcell_comb       0.071    61.928   up
+nx60524z1234                                (net)                *     0.000                   1
+ix60524z53807/cin                           cycloneii_lcell_comb                61.928   up
+ix60524z53807/cout                          cycloneii_lcell_comb       0.071    61.999   up
+nx60524z1230                                (net)                *     0.000                   1
+ix60524z53806/cin                           cycloneii_lcell_comb                61.999   up
+ix60524z53806/combout                       cycloneii_lcell_comb       0.000    61.999   up
+nx60524z1229                                (net)                *     0.650                  28
+ix60524z53809/datab                         cycloneii_lcell_comb                62.649   up
+ix60524z53809/combout                       cycloneii_lcell_comb       0.420    63.069   up
+nx60524z1233                                (net)                *     0.390                   7
+ix60524z53901/datad                         cycloneii_lcell_comb                63.459   up
+ix60524z53901/combout                       cycloneii_lcell_comb       0.150    63.609   up
+nx60524z1368                                (net)                *     0.290                   2
+ix60524z53900/datab                         cycloneii_lcell_comb                63.899   up
+ix60524z53900/cout                          cycloneii_lcell_comb       0.393    64.292   up
+nx60524z1367                                (net)                *     0.000                   1
+ix60524z53898/cin                           cycloneii_lcell_comb                64.292   up
+ix60524z53898/cout                          cycloneii_lcell_comb       0.071    64.363   up
+nx60524z1364                                (net)                *     0.000                   1
+ix60524z53896/cin                           cycloneii_lcell_comb                64.363   up
+ix60524z53896/cout                          cycloneii_lcell_comb       0.071    64.434   up
+nx60524z1361                                (net)                *     0.000                   1
+ix60524z53894/cin                           cycloneii_lcell_comb                64.434   up
+ix60524z53894/cout                          cycloneii_lcell_comb       0.071    64.505   up
+nx60524z1358                                (net)                *     0.000                   1
+ix60524z53892/cin                           cycloneii_lcell_comb                64.505   up
+ix60524z53892/cout                          cycloneii_lcell_comb       0.071    64.576   up
+nx60524z1355                                (net)                *     0.000                   1
+ix60524z53890/cin                           cycloneii_lcell_comb                64.576   up
+ix60524z53890/cout                          cycloneii_lcell_comb       0.071    64.647   up
+nx60524z1352                                (net)                *     0.000                   1
+ix60524z53888/cin                           cycloneii_lcell_comb                64.647   up
+ix60524z53888/cout                          cycloneii_lcell_comb       0.071    64.718   up
+nx60524z1349                                (net)                *     0.000                   1
+ix60524z53886/cin                           cycloneii_lcell_comb                64.718   up
+ix60524z53886/cout                          cycloneii_lcell_comb       0.071    64.789   up
+nx60524z1346                                (net)                *     0.000                   1
+ix60524z53884/cin                           cycloneii_lcell_comb                64.789   up
+ix60524z53884/cout                          cycloneii_lcell_comb       0.071    64.860   up
+nx60524z1343                                (net)                *     0.000                   1
+ix60524z53882/cin                           cycloneii_lcell_comb                64.860   up
+ix60524z53882/cout                          cycloneii_lcell_comb       0.071    64.931   up
+nx60524z1340                                (net)                *     0.000                   1
+ix60524z53880/cin                           cycloneii_lcell_comb                64.931   up
+ix60524z53880/cout                          cycloneii_lcell_comb       0.071    65.002   up
+nx60524z1337                                (net)                *     0.000                   1
+ix60524z53878/cin                           cycloneii_lcell_comb                65.002   up
+ix60524z53878/cout                          cycloneii_lcell_comb       0.071    65.073   up
+nx60524z1334                                (net)                *     0.000                   1
+ix60524z53876/cin                           cycloneii_lcell_comb                65.073   up
+ix60524z53876/cout                          cycloneii_lcell_comb       0.071    65.144   up
+nx60524z1331                                (net)                *     0.000                   1
+ix60524z53874/cin                           cycloneii_lcell_comb                65.144   up
+ix60524z53874/cout                          cycloneii_lcell_comb       0.071    65.215   up
+nx60524z1328                                (net)                *     0.000                   1
+ix60524z53872/cin                           cycloneii_lcell_comb                65.215   up
+ix60524z53872/cout                          cycloneii_lcell_comb       0.071    65.286   up
+nx60524z1325                                (net)                *     0.000                   1
+ix60524z53870/cin                           cycloneii_lcell_comb                65.286   up
+ix60524z53870/cout                          cycloneii_lcell_comb       0.071    65.357   up
+nx60524z1322                                (net)                *     0.000                   1
+ix60524z53868/cin                           cycloneii_lcell_comb                65.357   up
+ix60524z53868/cout                          cycloneii_lcell_comb       0.071    65.428   up
+nx60524z1319                                (net)                *     0.000                   1
+ix60524z53866/cin                           cycloneii_lcell_comb                65.428   up
+ix60524z53866/cout                          cycloneii_lcell_comb       0.071    65.499   up
+nx60524z1316                                (net)                *     0.000                   1
+ix60524z53864/cin                           cycloneii_lcell_comb                65.499   up
+ix60524z53864/cout                          cycloneii_lcell_comb       0.071    65.570   up
+nx60524z1313                                (net)                *     0.000                   1
+ix60524z53862/cin                           cycloneii_lcell_comb                65.570   up
+ix60524z53862/cout                          cycloneii_lcell_comb       0.071    65.641   up
+nx60524z1310                                (net)                *     0.000                   1
+ix60524z53860/cin                           cycloneii_lcell_comb                65.641   up
+ix60524z53860/cout                          cycloneii_lcell_comb       0.071    65.712   up
+nx60524z1307                                (net)                *     0.000                   1
+ix60524z53857/cin                           cycloneii_lcell_comb                65.712   up
+ix60524z53857/cout                          cycloneii_lcell_comb       0.071    65.783   up
+nx60524z1303                                (net)                *     0.000                   1
+ix60524z53856/cin                           cycloneii_lcell_comb                65.783   up
+ix60524z53856/combout                       cycloneii_lcell_comb       0.000    65.783   up
+nx60524z1302                                (net)                *     0.650                  20
+ix60524z53859/datab                         cycloneii_lcell_comb                66.433   up
+ix60524z53859/combout                       cycloneii_lcell_comb       0.420    66.853   up
+nx60524z1306                                (net)                *     0.390                   7
+ix60524z53959/datad                         cycloneii_lcell_comb                67.243   up
+ix60524z53959/combout                       cycloneii_lcell_comb       0.150    67.393   up
+nx60524z1449                                (net)                *     0.290                   2
+ix60524z53958/datab                         cycloneii_lcell_comb                67.683   up
+ix60524z53958/cout                          cycloneii_lcell_comb       0.393    68.076   up
+nx60524z1448                                (net)                *     0.000                   1
+ix60524z53956/cin                           cycloneii_lcell_comb                68.076   up
+ix60524z53956/cout                          cycloneii_lcell_comb       0.071    68.147   up
+nx60524z1445                                (net)                *     0.000                   1
+ix60524z53954/cin                           cycloneii_lcell_comb                68.147   up
+ix60524z53954/cout                          cycloneii_lcell_comb       0.071    68.218   up
+nx60524z1442                                (net)                *     0.000                   1
+ix60524z53952/cin                           cycloneii_lcell_comb                68.218   up
+ix60524z53952/cout                          cycloneii_lcell_comb       0.071    68.289   up
+nx60524z1439                                (net)                *     0.000                   1
+ix60524z53950/cin                           cycloneii_lcell_comb                68.289   up
+ix60524z53950/cout                          cycloneii_lcell_comb       0.071    68.360   up
+nx60524z1436                                (net)                *     0.000                   1
+ix60524z53948/cin                           cycloneii_lcell_comb                68.360   up
+ix60524z53948/cout                          cycloneii_lcell_comb       0.071    68.431   up
+nx60524z1433                                (net)                *     0.000                   1
+ix60524z53946/cin                           cycloneii_lcell_comb                68.431   up
+ix60524z53946/cout                          cycloneii_lcell_comb       0.071    68.502   up
+nx60524z1430                                (net)                *     0.000                   1
+ix60524z53944/cin                           cycloneii_lcell_comb                68.502   up
+ix60524z53944/cout                          cycloneii_lcell_comb       0.071    68.573   up
+nx60524z1427                                (net)                *     0.000                   1
+ix60524z53942/cin                           cycloneii_lcell_comb                68.573   up
+ix60524z53942/cout                          cycloneii_lcell_comb       0.071    68.644   up
+nx60524z1424                                (net)                *     0.000                   1
+ix60524z53940/cin                           cycloneii_lcell_comb                68.644   up
+ix60524z53940/cout                          cycloneii_lcell_comb       0.071    68.715   up
+nx60524z1421                                (net)                *     0.000                   1
+ix60524z53938/cin                           cycloneii_lcell_comb                68.715   up
+ix60524z53938/cout                          cycloneii_lcell_comb       0.071    68.786   up
+nx60524z1418                                (net)                *     0.000                   1
+ix60524z53936/cin                           cycloneii_lcell_comb                68.786   up
+ix60524z53936/cout                          cycloneii_lcell_comb       0.071    68.857   up
+nx60524z1415                                (net)                *     0.000                   1
+ix60524z53934/cin                           cycloneii_lcell_comb                68.857   up
+ix60524z53934/cout                          cycloneii_lcell_comb       0.071    68.928   up
+nx60524z1412                                (net)                *     0.000                   1
+ix60524z53932/cin                           cycloneii_lcell_comb                68.928   up
+ix60524z53932/cout                          cycloneii_lcell_comb       0.071    68.999   up
+nx60524z1409                                (net)                *     0.000                   1
+ix60524z53930/cin                           cycloneii_lcell_comb                68.999   up
+ix60524z53930/cout                          cycloneii_lcell_comb       0.071    69.070   up
+nx60524z1406                                (net)                *     0.000                   1
+ix60524z53928/cin                           cycloneii_lcell_comb                69.070   up
+ix60524z53928/cout                          cycloneii_lcell_comb       0.071    69.141   up
+nx60524z1403                                (net)                *     0.000                   1
+ix60524z53926/cin                           cycloneii_lcell_comb                69.141   up
+ix60524z53926/cout                          cycloneii_lcell_comb       0.071    69.212   up
+nx60524z1400                                (net)                *     0.000                   1
+ix60524z53922/cin                           cycloneii_lcell_comb                69.212   up
+ix60524z53922/cout                          cycloneii_lcell_comb       0.071    69.283   up
+nx60524z1395                                (net)                *     0.000                   1
+ix60524z53920/cin                           cycloneii_lcell_comb                69.283   up
+ix60524z53920/cout                          cycloneii_lcell_comb       0.071    69.354   up
+nx60524z1392                                (net)                *     0.000                   1
+ix60524z53916/cin                           cycloneii_lcell_comb                69.354   up
+ix60524z53916/cout                          cycloneii_lcell_comb       0.071    69.425   up
+nx60524z1387                                (net)                *     0.000                   1
+ix60524z53912/cin                           cycloneii_lcell_comb                69.425   up
+ix60524z53912/cout                          cycloneii_lcell_comb       0.071    69.496   up
+nx60524z1382                                (net)                *     0.000                   1
+ix60524z53907/cin                           cycloneii_lcell_comb                69.496   up
+ix60524z53907/cout                          cycloneii_lcell_comb       0.071    69.567   up
+nx60524z1376                                (net)                *     0.000                   1
+ix60524z53906/cin                           cycloneii_lcell_comb                69.567   up
+ix60524z53906/combout                       cycloneii_lcell_comb       0.000    69.567   up
+nx60524z1375                                (net)                *     0.650                  24
+ix60524z53911/datab                         cycloneii_lcell_comb                70.217   up
+ix60524z53911/combout                       cycloneii_lcell_comb       0.420    70.637   up
+nx60524z1381                                (net)                *     0.370                   6
+ix60524z54009/datad                         cycloneii_lcell_comb                71.007   up
+ix60524z54009/combout                       cycloneii_lcell_comb       0.150    71.157   up
+nx60524z1522                                (net)                *     0.310                   3
+ix60524z54008/datab                         cycloneii_lcell_comb                71.467   up
+ix60524z54008/cout                          cycloneii_lcell_comb       0.393    71.860   up
+nx60524z1521                                (net)                *     0.000                   1
+ix60524z54006/cin                           cycloneii_lcell_comb                71.860   up
+ix60524z54006/cout                          cycloneii_lcell_comb       0.071    71.931   up
+nx60524z1518                                (net)                *     0.000                   1
+ix60524z54004/cin                           cycloneii_lcell_comb                71.931   up
+ix60524z54004/cout                          cycloneii_lcell_comb       0.071    72.002   up
+nx60524z1515                                (net)                *     0.000                   1
+ix60524z54002/cin                           cycloneii_lcell_comb                72.002   up
+ix60524z54002/cout                          cycloneii_lcell_comb       0.071    72.073   up
+nx60524z1512                                (net)                *     0.000                   1
+ix60524z54000/cin                           cycloneii_lcell_comb                72.073   up
+ix60524z54000/cout                          cycloneii_lcell_comb       0.071    72.144   up
+nx60524z1509                                (net)                *     0.000                   1
+ix60524z53998/cin                           cycloneii_lcell_comb                72.144   up
+ix60524z53998/cout                          cycloneii_lcell_comb       0.071    72.215   up
+nx60524z1506                                (net)                *     0.000                   1
+ix60524z53996/cin                           cycloneii_lcell_comb                72.215   up
+ix60524z53996/cout                          cycloneii_lcell_comb       0.071    72.286   up
+nx60524z1503                                (net)                *     0.000                   1
+ix60524z53994/cin                           cycloneii_lcell_comb                72.286   up
+ix60524z53994/cout                          cycloneii_lcell_comb       0.071    72.357   up
+nx60524z1500                                (net)                *     0.000                   1
+ix60524z53992/cin                           cycloneii_lcell_comb                72.357   up
+ix60524z53992/cout                          cycloneii_lcell_comb       0.071    72.428   up
+nx60524z1497                                (net)                *     0.000                   1
+ix60524z53990/cin                           cycloneii_lcell_comb                72.428   up
+ix60524z53990/cout                          cycloneii_lcell_comb       0.071    72.499   up
+nx60524z1494                                (net)                *     0.000                   1
+ix60524z53988/cin                           cycloneii_lcell_comb                72.499   up
+ix60524z53988/cout                          cycloneii_lcell_comb       0.071    72.570   up
+nx60524z1491                                (net)                *     0.000                   1
+ix60524z53986/cin                           cycloneii_lcell_comb                72.570   up
+ix60524z53986/cout                          cycloneii_lcell_comb       0.071    72.641   up
+nx60524z1488                                (net)                *     0.000                   1
+ix60524z53984/cin                           cycloneii_lcell_comb                72.641   up
+ix60524z53984/cout                          cycloneii_lcell_comb       0.071    72.712   up
+nx60524z1485                                (net)                *     0.000                   1
+ix60524z53982/cin                           cycloneii_lcell_comb                72.712   up
+ix60524z53982/cout                          cycloneii_lcell_comb       0.071    72.783   up
+nx60524z1482                                (net)                *     0.000                   1
+ix60524z53980/cin                           cycloneii_lcell_comb                72.783   up
+ix60524z53980/cout                          cycloneii_lcell_comb       0.071    72.854   up
+nx60524z1479                                (net)                *     0.000                   1
+ix60524z53978/cin                           cycloneii_lcell_comb                72.854   up
+ix60524z53978/cout                          cycloneii_lcell_comb       0.071    72.925   up
+nx60524z1476                                (net)                *     0.000                   1
+ix60524z53976/cin                           cycloneii_lcell_comb                72.925   up
+ix60524z53976/cout                          cycloneii_lcell_comb       0.071    72.996   up
+nx60524z1473                                (net)                *     0.000                   1
+ix60524z53974/cin                           cycloneii_lcell_comb                72.996   up
+ix60524z53974/cout                          cycloneii_lcell_comb       0.071    73.067   up
+nx60524z1470                                (net)                *     0.000                   1
+ix60524z53972/cin                           cycloneii_lcell_comb                73.067   up
+ix60524z53972/cout                          cycloneii_lcell_comb       0.071    73.138   up
+nx60524z1467                                (net)                *     0.000                   1
+ix60524z53970/cin                           cycloneii_lcell_comb                73.138   up
+ix60524z53970/cout                          cycloneii_lcell_comb       0.071    73.209   up
+nx60524z1464                                (net)                *     0.000                   1
+ix60524z53968/cin                           cycloneii_lcell_comb                73.209   up
+ix60524z53968/cout                          cycloneii_lcell_comb       0.071    73.280   up
+nx60524z1461                                (net)                *     0.000                   1
+ix60524z53965/cin                           cycloneii_lcell_comb                73.280   up
+ix60524z53965/cout                          cycloneii_lcell_comb       0.071    73.351   up
+nx60524z1457                                (net)                *     0.000                   1
+ix60524z53964/cin                           cycloneii_lcell_comb                73.351   up
+ix60524z53964/combout                       cycloneii_lcell_comb       0.000    73.351   up
+nx60524z1456                                (net)                *     0.650                  27
+ix60524z53967/datab                         cycloneii_lcell_comb                74.001   up
+ix60524z53967/combout                       cycloneii_lcell_comb       0.420    74.421   up
+nx60524z1460                                (net)                *     0.650                  24
+ix60524z54059/datad                         cycloneii_lcell_comb                75.071   up
+ix60524z54059/combout                       cycloneii_lcell_comb       0.150    75.221   up
+nx60524z1595                                (net)                *     0.290                   2
+ix60524z54058/datab                         cycloneii_lcell_comb                75.511   up
+ix60524z54058/cout                          cycloneii_lcell_comb       0.393    75.904   up
+nx60524z1594                                (net)                *     0.000                   1
+ix60524z54056/cin                           cycloneii_lcell_comb                75.904   up
+ix60524z54056/cout                          cycloneii_lcell_comb       0.071    75.975   up
+nx60524z1591                                (net)                *     0.000                   1
+ix60524z54054/cin                           cycloneii_lcell_comb                75.975   up
+ix60524z54054/cout                          cycloneii_lcell_comb       0.071    76.046   up
+nx60524z1588                                (net)                *     0.000                   1
+ix60524z54052/cin                           cycloneii_lcell_comb                76.046   up
+ix60524z54052/cout                          cycloneii_lcell_comb       0.071    76.117   up
+nx60524z1585                                (net)                *     0.000                   1
+ix60524z54050/cin                           cycloneii_lcell_comb                76.117   up
+ix60524z54050/cout                          cycloneii_lcell_comb       0.071    76.188   up
+nx60524z1582                                (net)                *     0.000                   1
+ix60524z54048/cin                           cycloneii_lcell_comb                76.188   up
+ix60524z54048/cout                          cycloneii_lcell_comb       0.071    76.259   up
+nx60524z1579                                (net)                *     0.000                   1
+ix60524z54046/cin                           cycloneii_lcell_comb                76.259   up
+ix60524z54046/cout                          cycloneii_lcell_comb       0.071    76.330   up
+nx60524z1576                                (net)                *     0.000                   1
+ix60524z54044/cin                           cycloneii_lcell_comb                76.330   up
+ix60524z54044/cout                          cycloneii_lcell_comb       0.071    76.401   up
+nx60524z1573                                (net)                *     0.000                   1
+ix60524z54042/cin                           cycloneii_lcell_comb                76.401   up
+ix60524z54042/cout                          cycloneii_lcell_comb       0.071    76.472   up
+nx60524z1570                                (net)                *     0.000                   1
+ix60524z54040/cin                           cycloneii_lcell_comb                76.472   up
+ix60524z54040/cout                          cycloneii_lcell_comb       0.071    76.543   up
+nx60524z1567                                (net)                *     0.000                   1
+ix60524z54038/cin                           cycloneii_lcell_comb                76.543   up
+ix60524z54038/cout                          cycloneii_lcell_comb       0.071    76.614   up
+nx60524z1564                                (net)                *     0.000                   1
+ix60524z54036/cin                           cycloneii_lcell_comb                76.614   up
+ix60524z54036/cout                          cycloneii_lcell_comb       0.071    76.685   up
+nx60524z1561                                (net)                *     0.000                   1
+ix60524z54034/cin                           cycloneii_lcell_comb                76.685   up
+ix60524z54034/cout                          cycloneii_lcell_comb       0.071    76.756   up
+nx60524z1558                                (net)                *     0.000                   1
+ix60524z54032/cin                           cycloneii_lcell_comb                76.756   up
+ix60524z54032/cout                          cycloneii_lcell_comb       0.071    76.827   up
+nx60524z1555                                (net)                *     0.000                   1
+ix60524z54030/cin                           cycloneii_lcell_comb                76.827   up
+ix60524z54030/cout                          cycloneii_lcell_comb       0.071    76.898   up
+nx60524z1552                                (net)                *     0.000                   1
+ix60524z54028/cin                           cycloneii_lcell_comb                76.898   up
+ix60524z54028/cout                          cycloneii_lcell_comb       0.071    76.969   up
+nx60524z1549                                (net)                *     0.000                   1
+ix60524z54026/cin                           cycloneii_lcell_comb                76.969   up
+ix60524z54026/cout                          cycloneii_lcell_comb       0.071    77.040   up
+nx60524z1546                                (net)                *     0.000                   1
+ix60524z54024/cin                           cycloneii_lcell_comb                77.040   up
+ix60524z54024/cout                          cycloneii_lcell_comb       0.071    77.111   up
+nx60524z1543                                (net)                *     0.000                   1
+ix60524z54022/cin                           cycloneii_lcell_comb                77.111   up
+ix60524z54022/cout                          cycloneii_lcell_comb       0.071    77.182   up
+nx60524z1540                                (net)                *     0.000                   1
+ix60524z54020/cin                           cycloneii_lcell_comb                77.182   up
+ix60524z54020/cout                          cycloneii_lcell_comb       0.071    77.253   up
+nx60524z1537                                (net)                *     0.000                   1
+ix60524z54018/cin                           cycloneii_lcell_comb                77.253   up
+ix60524z54018/cout                          cycloneii_lcell_comb       0.071    77.324   up
+nx60524z1534                                (net)                *     0.000                   1
+ix60524z54015/cin                           cycloneii_lcell_comb                77.324   up
+ix60524z54015/cout                          cycloneii_lcell_comb       0.071    77.395   up
+nx60524z1530                                (net)                *     0.000                   1
+ix60524z54014/cin                           cycloneii_lcell_comb                77.395   up
+ix60524z54014/combout                       cycloneii_lcell_comb       0.000    77.395   up
+nx60524z1529                                (net)                *     0.650                  39
+ix60524z54017/datab                         cycloneii_lcell_comb                78.045   up
+ix60524z54017/combout                       cycloneii_lcell_comb       0.420    78.465   up
+nx60524z1533                                (net)                *     0.650                  25
+ix60524z54115/datad                         cycloneii_lcell_comb                79.115   up
+ix60524z54115/combout                       cycloneii_lcell_comb       0.150    79.265   up
+nx60524z1674                                (net)                *     0.290                   2
+ix60524z54114/datab                         cycloneii_lcell_comb                79.555   up
+ix60524z54114/cout                          cycloneii_lcell_comb       0.393    79.948   up
+nx60524z1673                                (net)                *     0.000                   1
+ix60524z54112/cin                           cycloneii_lcell_comb                79.948   up
+ix60524z54112/cout                          cycloneii_lcell_comb       0.071    80.019   up
+nx60524z1670                                (net)                *     0.000                   1
+ix60524z54110/cin                           cycloneii_lcell_comb                80.019   up
+ix60524z54110/cout                          cycloneii_lcell_comb       0.071    80.090   up
+nx60524z1667                                (net)                *     0.000                   1
+ix60524z54108/cin                           cycloneii_lcell_comb                80.090   up
+ix60524z54108/cout                          cycloneii_lcell_comb       0.071    80.161   up
+nx60524z1664                                (net)                *     0.000                   1
+ix60524z54106/cin                           cycloneii_lcell_comb                80.161   up
+ix60524z54106/cout                          cycloneii_lcell_comb       0.071    80.232   up
+nx60524z1661                                (net)                *     0.000                   1
+ix60524z54104/cin                           cycloneii_lcell_comb                80.232   up
+ix60524z54104/cout                          cycloneii_lcell_comb       0.071    80.303   up
+nx60524z1658                                (net)                *     0.000                   1
+ix60524z54102/cin                           cycloneii_lcell_comb                80.303   up
+ix60524z54102/cout                          cycloneii_lcell_comb       0.071    80.374   up
+nx60524z1655                                (net)                *     0.000                   1
+ix60524z54100/cin                           cycloneii_lcell_comb                80.374   up
+ix60524z54100/cout                          cycloneii_lcell_comb       0.071    80.445   up
+nx60524z1652                                (net)                *     0.000                   1
+ix60524z54098/cin                           cycloneii_lcell_comb                80.445   up
+ix60524z54098/cout                          cycloneii_lcell_comb       0.071    80.516   up
+nx60524z1649                                (net)                *     0.000                   1
+ix60524z54096/cin                           cycloneii_lcell_comb                80.516   up
+ix60524z54096/cout                          cycloneii_lcell_comb       0.071    80.587   up
+nx60524z1646                                (net)                *     0.000                   1
+ix60524z54094/cin                           cycloneii_lcell_comb                80.587   up
+ix60524z54094/cout                          cycloneii_lcell_comb       0.071    80.658   up
+nx60524z1643                                (net)                *     0.000                   1
+ix60524z54092/cin                           cycloneii_lcell_comb                80.658   up
+ix60524z54092/cout                          cycloneii_lcell_comb       0.071    80.729   up
+nx60524z1640                                (net)                *     0.000                   1
+ix60524z54090/cin                           cycloneii_lcell_comb                80.729   up
+ix60524z54090/cout                          cycloneii_lcell_comb       0.071    80.800   up
+nx60524z1637                                (net)                *     0.000                   1
+ix60524z54088/cin                           cycloneii_lcell_comb                80.800   up
+ix60524z54088/cout                          cycloneii_lcell_comb       0.071    80.871   up
+nx60524z1634                                (net)                *     0.000                   1
+ix60524z54086/cin                           cycloneii_lcell_comb                80.871   up
+ix60524z54086/cout                          cycloneii_lcell_comb       0.071    80.942   up
+nx60524z1631                                (net)                *     0.000                   1
+ix60524z54084/cin                           cycloneii_lcell_comb                80.942   up
+ix60524z54084/cout                          cycloneii_lcell_comb       0.071    81.013   up
+nx60524z1628                                (net)                *     0.000                   1
+ix60524z54082/cin                           cycloneii_lcell_comb                81.013   up
+ix60524z54082/cout                          cycloneii_lcell_comb       0.071    81.084   up
+nx60524z1625                                (net)                *     0.000                   1
+ix60524z54080/cin                           cycloneii_lcell_comb                81.084   up
+ix60524z54080/cout                          cycloneii_lcell_comb       0.071    81.155   up
+nx60524z1622                                (net)                *     0.000                   1
+ix60524z54078/cin                           cycloneii_lcell_comb                81.155   up
+ix60524z54078/cout                          cycloneii_lcell_comb       0.071    81.226   up
+nx60524z1619                                (net)                *     0.000                   1
+ix60524z54074/cin                           cycloneii_lcell_comb                81.226   up
+ix60524z54074/cout                          cycloneii_lcell_comb       0.071    81.297   up
+nx60524z1614                                (net)                *     0.000                   1
+ix60524z54070/cin                           cycloneii_lcell_comb                81.297   up
+ix60524z54070/cout                          cycloneii_lcell_comb       0.071    81.368   up
+nx60524z1609                                (net)                *     0.000                   1
+ix60524z54065/cin                           cycloneii_lcell_comb                81.368   up
+ix60524z54065/cout                          cycloneii_lcell_comb       0.071    81.439   up
+nx60524z1603                                (net)                *     0.000                   1
+ix60524z54064/cin                           cycloneii_lcell_comb                81.439   up
+ix60524z54064/combout                       cycloneii_lcell_comb       0.000    81.439   up
+nx60524z1602                                (net)                *     0.390                   7
+ix60524z54069/datab                         cycloneii_lcell_comb                81.829   up
+ix60524z54069/combout                       cycloneii_lcell_comb       0.420    82.249   up
+nx60524z1608                                (net)                *     0.650                  22
+ix60524z54195/datab                         cycloneii_lcell_comb                82.899   up
+ix60524z54195/combout                       cycloneii_lcell_comb       0.420    83.319   up
+nx60524z1775                                (net)                *     0.290                   2
+ix60524z54194/datab                         cycloneii_lcell_comb                83.609   up
+ix60524z54194/cout                          cycloneii_lcell_comb       0.393    84.002   up
+nx60524z1774                                (net)                *     0.000                   1
+ix60524z54190/cin                           cycloneii_lcell_comb                84.002   up
+ix60524z54190/cout                          cycloneii_lcell_comb       0.071    84.073   up
+nx60524z1769                                (net)                *     0.000                   1
+ix60524z54186/cin                           cycloneii_lcell_comb                84.073   up
+ix60524z54186/cout                          cycloneii_lcell_comb       0.071    84.144   up
+nx60524z1764                                (net)                *     0.000                   1
+ix60524z54182/cin                           cycloneii_lcell_comb                84.144   up
+ix60524z54182/cout                          cycloneii_lcell_comb       0.071    84.215   up
+nx60524z1759                                (net)                *     0.000                   1
+ix60524z54178/cin                           cycloneii_lcell_comb                84.215   up
+ix60524z54178/cout                          cycloneii_lcell_comb       0.071    84.286   up
+nx60524z1754                                (net)                *     0.000                   1
+ix60524z54174/cin                           cycloneii_lcell_comb                84.286   up
+ix60524z54174/cout                          cycloneii_lcell_comb       0.071    84.357   up
+nx60524z1749                                (net)                *     0.000                   1
+ix60524z54170/cin                           cycloneii_lcell_comb                84.357   up
+ix60524z54170/cout                          cycloneii_lcell_comb       0.071    84.428   up
+nx60524z1744                                (net)                *     0.000                   1
+ix60524z54166/cin                           cycloneii_lcell_comb                84.428   up
+ix60524z54166/cout                          cycloneii_lcell_comb       0.071    84.499   up
+nx60524z1739                                (net)                *     0.000                   1
+ix60524z54162/cin                           cycloneii_lcell_comb                84.499   up
+ix60524z54162/cout                          cycloneii_lcell_comb       0.071    84.570   up
+nx60524z1734                                (net)                *     0.000                   1
+ix60524z54158/cin                           cycloneii_lcell_comb                84.570   up
+ix60524z54158/cout                          cycloneii_lcell_comb       0.071    84.641   up
+nx60524z1729                                (net)                *     0.000                   1
+ix60524z54154/cin                           cycloneii_lcell_comb                84.641   up
+ix60524z54154/cout                          cycloneii_lcell_comb       0.071    84.712   up
+nx60524z1724                                (net)                *     0.000                   1
+ix60524z54150/cin                           cycloneii_lcell_comb                84.712   up
+ix60524z54150/cout                          cycloneii_lcell_comb       0.071    84.783   up
+nx60524z1719                                (net)                *     0.000                   1
+ix60524z54146/cin                           cycloneii_lcell_comb                84.783   up
+ix60524z54146/cout                          cycloneii_lcell_comb       0.071    84.854   up
+nx60524z1714                                (net)                *     0.000                   1
+ix60524z54142/cin                           cycloneii_lcell_comb                84.854   up
+ix60524z54142/cout                          cycloneii_lcell_comb       0.071    84.925   up
+nx60524z1709                                (net)                *     0.000                   1
+ix60524z54138/cin                           cycloneii_lcell_comb                84.925   up
+ix60524z54138/cout                          cycloneii_lcell_comb       0.071    84.996   up
+nx60524z1704                                (net)                *     0.000                   1
+ix60524z54134/cin                           cycloneii_lcell_comb                84.996   up
+ix60524z54134/cout                          cycloneii_lcell_comb       0.071    85.067   up
+nx60524z1699                                (net)                *     0.000                   1
+ix60524z54130/cin                           cycloneii_lcell_comb                85.067   up
+ix60524z54130/cout                          cycloneii_lcell_comb       0.071    85.138   up
+nx60524z1694                                (net)                *     0.000                   1
+ix60524z54126/cin                           cycloneii_lcell_comb                85.138   up
+ix60524z54126/cout                          cycloneii_lcell_comb       0.071    85.209   up
+nx60524z1689                                (net)                *     0.000                   1
+ix60524z54124/cin                           cycloneii_lcell_comb                85.209   up
+ix60524z54124/cout                          cycloneii_lcell_comb       0.071    85.280   up
+nx60524z1686                                (net)                *     0.000                   1
+ix60524z54121/cin                           cycloneii_lcell_comb                85.280   up
+ix60524z54121/cout                          cycloneii_lcell_comb       0.071    85.351   up
+nx60524z1682                                (net)                *     0.000                   1
+ix60524z54120/cin                           cycloneii_lcell_comb                85.351   up
+ix60524z54120/combout                       cycloneii_lcell_comb       0.000    85.351   up
+nx60524z1681                                (net)                *     0.650                  23
+ix60524z54253/datac                         cycloneii_lcell_comb                86.001   up
+ix60524z54253/combout                       cycloneii_lcell_comb       0.275    86.276   up
+nx60524z1859                                (net)                *     0.270                   1
+ix60524z54252/datab                         cycloneii_lcell_comb                86.546   up
+ix60524z54252/cout                          cycloneii_lcell_comb       0.393    86.939   up
+nx60524z1858                                (net)                *     0.000                   1
+ix60524z54250/cin                           cycloneii_lcell_comb                86.939   up
+ix60524z54250/cout                          cycloneii_lcell_comb       0.071    87.010   up
+nx60524z1855                                (net)                *     0.000                   1
+ix60524z54248/cin                           cycloneii_lcell_comb                87.010   up
+ix60524z54248/cout                          cycloneii_lcell_comb       0.071    87.081   up
+nx60524z1852                                (net)                *     0.000                   1
+ix60524z54244/cin                           cycloneii_lcell_comb                87.081   up
+ix60524z54244/cout                          cycloneii_lcell_comb       0.071    87.152   up
+nx60524z1847                                (net)                *     0.000                   1
+ix60524z54242/cin                           cycloneii_lcell_comb                87.152   up
+ix60524z54242/cout                          cycloneii_lcell_comb       0.071    87.223   up
+nx60524z1844                                (net)                *     0.000                   1
+ix60524z54240/cin                           cycloneii_lcell_comb                87.223   up
+ix60524z54240/cout                          cycloneii_lcell_comb       0.071    87.294   up
+nx60524z1841                                (net)                *     0.000                   1
+ix60524z54238/cin                           cycloneii_lcell_comb                87.294   up
+ix60524z54238/cout                          cycloneii_lcell_comb       0.071    87.365   up
+nx60524z1838                                (net)                *     0.000                   1
+ix60524z54236/cin                           cycloneii_lcell_comb                87.365   up
+ix60524z54236/cout                          cycloneii_lcell_comb       0.071    87.436   up
+nx60524z1835                                (net)                *     0.000                   1
+ix60524z54234/cin                           cycloneii_lcell_comb                87.436   up
+ix60524z54234/cout                          cycloneii_lcell_comb       0.071    87.507   up
+nx60524z1832                                (net)                *     0.000                   1
+ix60524z54232/cin                           cycloneii_lcell_comb                87.507   up
+ix60524z54232/cout                          cycloneii_lcell_comb       0.071    87.578   up
+nx60524z1829                                (net)                *     0.000                   1
+ix60524z54230/cin                           cycloneii_lcell_comb                87.578   up
+ix60524z54230/cout                          cycloneii_lcell_comb       0.071    87.649   up
+nx60524z1826                                (net)                *     0.000                   1
+ix60524z54228/cin                           cycloneii_lcell_comb                87.649   up
+ix60524z54228/cout                          cycloneii_lcell_comb       0.071    87.720   up
+nx60524z1823                                (net)                *     0.000                   1
+ix60524z54226/cin                           cycloneii_lcell_comb                87.720   up
+ix60524z54226/cout                          cycloneii_lcell_comb       0.071    87.791   up
+nx60524z1820                                (net)                *     0.000                   1
+ix60524z54224/cin                           cycloneii_lcell_comb                87.791   up
+ix60524z54224/cout                          cycloneii_lcell_comb       0.071    87.862   up
+nx60524z1817                                (net)                *     0.000                   1
+ix60524z54222/cin                           cycloneii_lcell_comb                87.862   up
+ix60524z54222/cout                          cycloneii_lcell_comb       0.071    87.933   up
+nx60524z1814                                (net)                *     0.000                   1
+ix60524z54220/cin                           cycloneii_lcell_comb                87.933   up
+ix60524z54220/cout                          cycloneii_lcell_comb       0.071    88.004   up
+nx60524z1811                                (net)                *     0.000                   1
+ix60524z54218/cin                           cycloneii_lcell_comb                88.004   up
+ix60524z54218/cout                          cycloneii_lcell_comb       0.071    88.075   up
+nx60524z1808                                (net)                *     0.000                   1
+ix60524z54216/cin                           cycloneii_lcell_comb                88.075   up
+ix60524z54216/cout                          cycloneii_lcell_comb       0.071    88.146   up
+nx60524z1805                                (net)                *     0.000                   1
+ix60524z54214/cin                           cycloneii_lcell_comb                88.146   up
+ix60524z54214/cout                          cycloneii_lcell_comb       0.071    88.217   up
+nx60524z1802                                (net)                *     0.000                   1
+ix60524z54212/cin                           cycloneii_lcell_comb                88.217   up
+ix60524z54212/cout                          cycloneii_lcell_comb       0.071    88.288   up
+nx60524z1799                                (net)                *     0.000                   1
+ix60524z54210/cin                           cycloneii_lcell_comb                88.288   up
+ix60524z54210/cout                          cycloneii_lcell_comb       0.071    88.359   up
+nx60524z1796                                (net)                *     0.000                   1
+ix60524z54208/cin                           cycloneii_lcell_comb                88.359   up
+ix60524z54208/cout                          cycloneii_lcell_comb       0.071    88.430   up
+nx60524z1793                                (net)                *     0.000                   1
+ix60524z54206/cin                           cycloneii_lcell_comb                88.430   up
+ix60524z54206/combout                       cycloneii_lcell_comb       0.000    88.430   up
+nx60524z1790                                (net)                *     0.270                   1
+ix60524z54205/datab                         cycloneii_lcell_comb                88.700   up
+ix60524z54205/combout                       cycloneii_lcell_comb       0.420    89.120   up
+nx60524z1788                                (net)                *     0.310                   3
+cycloneii_mac_mult_0/datab(0)               cycloneii_mac_mult                  89.430   up
+cycloneii_mac_mult_0/dataout(0)             cycloneii_mac_mult         2.679    92.109   up
+nx26826z36                                  (net)                *     0.000                   1
+cycloneii_mac_out_1/dataa(0)                cycloneii_mac_out                   92.109   up
+cycloneii_mac_out_1/dataout(18)             cycloneii_mac_out          0.224    92.333   up
+nx60524z1976                                (net)                *     0.000                   1
+ix60524z54299/dataa                         cycloneii_lcell_comb                92.333   up
+ix60524z54299/combout                       cycloneii_lcell_comb       0.438    92.771   up
+nx60524z2045                                (net)                *     0.270                   1
+ix60524z54322/dataa                         cycloneii_lcell_comb                93.041   up
+ix60524z54322/cout                          cycloneii_lcell_comb       0.414    93.455   up
+nx60524z2044                                (net)                *     0.000                   1
+ix60524z54321/cin                           cycloneii_lcell_comb                93.455   up
+ix60524z54321/cout                          cycloneii_lcell_comb       0.071    93.526   up
+nx60524z2041                                (net)                *     0.000                   1
+ix60524z54320/cin                           cycloneii_lcell_comb                93.526   up
+ix60524z54320/cout                          cycloneii_lcell_comb       0.071    93.597   up
+nx60524z2038                                (net)                *     0.000                   1
+ix60524z54319/cin                           cycloneii_lcell_comb                93.597   up
+ix60524z54319/cout                          cycloneii_lcell_comb       0.071    93.668   up
+nx60524z2035                                (net)                *     0.000                   1
+ix60524z54318/cin                           cycloneii_lcell_comb                93.668   up
+ix60524z54318/cout                          cycloneii_lcell_comb       0.071    93.739   up
+nx60524z2032                                (net)                *     0.000                   1
+ix60524z54317/cin                           cycloneii_lcell_comb                93.739   up
+ix60524z54317/cout                          cycloneii_lcell_comb       0.071    93.810   up
+nx60524z2029                                (net)                *     0.000                   1
+ix60524z54316/cin                           cycloneii_lcell_comb                93.810   up
+ix60524z54316/cout                          cycloneii_lcell_comb       0.071    93.881   up
+nx60524z2026                                (net)                *     0.000                   1
+ix60524z54315/cin                           cycloneii_lcell_comb                93.881   up
+ix60524z54315/cout                          cycloneii_lcell_comb       0.071    93.952   up
+nx60524z2023                                (net)                *     0.000                   1
+ix60524z54314/cin                           cycloneii_lcell_comb                93.952   up
+ix60524z54314/cout                          cycloneii_lcell_comb       0.071    94.023   up
+nx60524z2020                                (net)                *     0.000                   1
+ix60524z54313/cin                           cycloneii_lcell_comb                94.023   up
+ix60524z54313/cout                          cycloneii_lcell_comb       0.071    94.094   up
+nx60524z2017                                (net)                *     0.000                   1
+ix60524z54312/cin                           cycloneii_lcell_comb                94.094   up
+ix60524z54312/cout                          cycloneii_lcell_comb       0.071    94.165   up
+nx60524z2014                                (net)                *     0.000                   1
+ix60524z54311/cin                           cycloneii_lcell_comb                94.165   up
+ix60524z54311/cout                          cycloneii_lcell_comb       0.071    94.236   up
+nx60524z2011                                (net)                *     0.000                   1
+ix60524z54310/cin                           cycloneii_lcell_comb                94.236   up
+ix60524z54310/cout                          cycloneii_lcell_comb       0.071    94.307   up
+nx60524z2008                                (net)                *     0.000                   1
+ix60524z54309/cin                           cycloneii_lcell_comb                94.307   up
+ix60524z54309/cout                          cycloneii_lcell_comb       0.071    94.378   up
+nx60524z2005                                (net)                *     0.000                   1
+ix60524z54308/cin                           cycloneii_lcell_comb                94.378   up
+ix60524z54308/cout                          cycloneii_lcell_comb       0.071    94.449   up
+nx60524z2002                                (net)                *     0.000                   1
+ix60524z54307/cin                           cycloneii_lcell_comb                94.449   up
+ix60524z54307/cout                          cycloneii_lcell_comb       0.071    94.520   up
+nx60524z1999                                (net)                *     0.000                   1
+ix60524z54306/cin                           cycloneii_lcell_comb                94.520   up
+ix60524z54306/cout                          cycloneii_lcell_comb       0.071    94.591   up
+nx60524z1996                                (net)                *     0.000                   1
+ix60524z54305/cin                           cycloneii_lcell_comb                94.591   up
+ix60524z54305/cout                          cycloneii_lcell_comb       0.071    94.662   up
+nx60524z1993                                (net)                *     0.000                   1
+ix60524z54304/cin                           cycloneii_lcell_comb                94.662   up
+ix60524z54304/cout                          cycloneii_lcell_comb       0.071    94.733   up
+nx60524z1990                                (net)                *     0.000                   1
+ix60524z54303/cin                           cycloneii_lcell_comb                94.733   up
+ix60524z54303/cout                          cycloneii_lcell_comb       0.071    94.804   up
+nx60524z1987                                (net)                *     0.000                   1
+ix60524z54302/cin                           cycloneii_lcell_comb                94.804   up
+ix60524z54302/cout                          cycloneii_lcell_comb       0.071    94.875   up
+nx60524z1984                                (net)                *     0.000                   1
+ix60524z54301/cin                           cycloneii_lcell_comb                94.875   up
+ix60524z54301/cout                          cycloneii_lcell_comb       0.071    94.946   up
+nx60524z1981                                (net)                *     0.000                   1
+ix60524z54300/cin                           cycloneii_lcell_comb                94.946   up
+ix60524z54300/cout                          cycloneii_lcell_comb       0.071    95.017   up
+nx60524z1978                                (net)                *     0.000                   1
+ix60524z54275/cin                           cycloneii_lcell_comb                95.017   up
+ix60524z54275/cout                          cycloneii_lcell_comb       0.071    95.088   up
+nx60524z1910                                (net)                *     0.000                   1
+ix60524z54274/cin                           cycloneii_lcell_comb                95.088   up
+ix60524z54274/cout                          cycloneii_lcell_comb       0.071    95.159   up
+nx60524z1908                                (net)                *     0.000                   1
+ix60524z54273/cin                           cycloneii_lcell_comb                95.159   up
+ix60524z54273/cout                          cycloneii_lcell_comb       0.071    95.230   up
+nx60524z1906                                (net)                *     0.000                   1
+ix60524z54272/cin                           cycloneii_lcell_comb                95.230   up
+ix60524z54272/cout                          cycloneii_lcell_comb       0.071    95.301   up
+nx60524z1904                                (net)                *     0.000                   1
+ix60524z54271/cin                           cycloneii_lcell_comb                95.301   up
+ix60524z54271/cout                          cycloneii_lcell_comb       0.071    95.372   up
+nx60524z1902                                (net)                *     0.000                   1
+ix60524z54270/cin                           cycloneii_lcell_comb                95.372   up
+ix60524z54270/cout                          cycloneii_lcell_comb       0.071    95.443   up
+nx60524z1900                                (net)                *     0.000                   1
+ix60524z54257/cin                           cycloneii_lcell_comb                95.443   up
+ix60524z54257/combout                       cycloneii_lcell_comb       0.000    95.443   up
+nx60524z1863                                (net)                *     0.270                   1
+ix60524z40805/ix12219z52923/dataa           cycloneii_lcell_comb                95.713   up
+ix60524z40805/ix12219z52923/combout         cycloneii_lcell_comb       0.438    96.151   up
+ix60524z40805/nx12219z1                     (net)                *     0.270                   1
+ix60524z57180/ix100z52949/dataa             cycloneii_lcell_comb                96.421   up
+ix60524z57180/ix100z52949/combout           cycloneii_lcell_comb       0.438    96.859   up
+ix60524z57180/nx100z24                      (net)                *     0.270                   1
+ix60524z57180/ix100z52948/dataa             cycloneii_lcell_comb                97.129   up
+ix60524z57180/ix100z52948/combout           cycloneii_lcell_comb       0.438    97.567   up
+ix60524z57180/nx100z23                      (net)                *     0.270                   1
+ix60524z57180/ix100z52923/datac             cycloneii_lcell_comb                97.837   up
+ix60524z57180/ix100z52923/combout           cycloneii_lcell_comb       0.275    98.112   up
+ix60524z57180/d                             (net)                *     0.270                   1
+man_tmp_inc24_F1i2/ix11222z52947/dataa      cycloneii_lcell_comb                98.382   up
+man_tmp_inc24_F1i2/ix11222z52947/cout       cycloneii_lcell_comb       0.414    98.796   up
+man_tmp_inc24_F1i2/nx11222z47               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52946/cin        cycloneii_lcell_comb                98.796   up
+man_tmp_inc24_F1i2/ix11222z52946/cout       cycloneii_lcell_comb       0.071    98.867   up
+man_tmp_inc24_F1i2/nx11222z45               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52945/cin        cycloneii_lcell_comb                98.867   up
+man_tmp_inc24_F1i2/ix11222z52945/cout       cycloneii_lcell_comb       0.071    98.938   up
+man_tmp_inc24_F1i2/nx11222z43               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52944/cin        cycloneii_lcell_comb                98.938   up
+man_tmp_inc24_F1i2/ix11222z52944/cout       cycloneii_lcell_comb       0.071    99.009   up
+man_tmp_inc24_F1i2/nx11222z41               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52943/cin        cycloneii_lcell_comb                99.009   up
+man_tmp_inc24_F1i2/ix11222z52943/cout       cycloneii_lcell_comb       0.071    99.080   up
+man_tmp_inc24_F1i2/nx11222z39               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52942/cin        cycloneii_lcell_comb                99.080   up
+man_tmp_inc24_F1i2/ix11222z52942/cout       cycloneii_lcell_comb       0.071    99.151   up
+man_tmp_inc24_F1i2/nx11222z37               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52941/cin        cycloneii_lcell_comb                99.151   up
+man_tmp_inc24_F1i2/ix11222z52941/cout       cycloneii_lcell_comb       0.071    99.222   up
+man_tmp_inc24_F1i2/nx11222z35               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52940/cin        cycloneii_lcell_comb                99.222   up
+man_tmp_inc24_F1i2/ix11222z52940/cout       cycloneii_lcell_comb       0.071    99.293   up
+man_tmp_inc24_F1i2/nx11222z33               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52939/cin        cycloneii_lcell_comb                99.293   up
+man_tmp_inc24_F1i2/ix11222z52939/cout       cycloneii_lcell_comb       0.071    99.364   up
+man_tmp_inc24_F1i2/nx11222z31               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52938/cin        cycloneii_lcell_comb                99.364   up
+man_tmp_inc24_F1i2/ix11222z52938/cout       cycloneii_lcell_comb       0.071    99.435   up
+man_tmp_inc24_F1i2/nx11222z29               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52937/cin        cycloneii_lcell_comb                99.435   up
+man_tmp_inc24_F1i2/ix11222z52937/cout       cycloneii_lcell_comb       0.071    99.506   up
+man_tmp_inc24_F1i2/nx11222z27               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52936/cin        cycloneii_lcell_comb                99.506   up
+man_tmp_inc24_F1i2/ix11222z52936/cout       cycloneii_lcell_comb       0.071    99.577   up
+man_tmp_inc24_F1i2/nx11222z25               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52935/cin        cycloneii_lcell_comb                99.577   up
+man_tmp_inc24_F1i2/ix11222z52935/cout       cycloneii_lcell_comb       0.071    99.648   up
+man_tmp_inc24_F1i2/nx11222z23               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52934/cin        cycloneii_lcell_comb                99.648   up
+man_tmp_inc24_F1i2/ix11222z52934/cout       cycloneii_lcell_comb       0.071    99.719   up
+man_tmp_inc24_F1i2/nx11222z21               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52933/cin        cycloneii_lcell_comb                99.719   up
+man_tmp_inc24_F1i2/ix11222z52933/cout       cycloneii_lcell_comb       0.071    99.790   up
+man_tmp_inc24_F1i2/nx11222z19               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52932/cin        cycloneii_lcell_comb                99.790   up
+man_tmp_inc24_F1i2/ix11222z52932/cout       cycloneii_lcell_comb       0.071    99.861   up
+man_tmp_inc24_F1i2/nx11222z17               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52931/cin        cycloneii_lcell_comb                99.861   up
+man_tmp_inc24_F1i2/ix11222z52931/cout       cycloneii_lcell_comb       0.071    99.932   up
+man_tmp_inc24_F1i2/nx11222z15               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52930/cin        cycloneii_lcell_comb                99.932   up
+man_tmp_inc24_F1i2/ix11222z52930/cout       cycloneii_lcell_comb       0.071   100.003   up
+man_tmp_inc24_F1i2/nx11222z13               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52929/cin        cycloneii_lcell_comb               100.003   up
+man_tmp_inc24_F1i2/ix11222z52929/cout       cycloneii_lcell_comb       0.071   100.074   up
+man_tmp_inc24_F1i2/nx11222z11               (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52928/cin        cycloneii_lcell_comb               100.074   up
+man_tmp_inc24_F1i2/ix11222z52928/cout       cycloneii_lcell_comb       0.071   100.145   up
+man_tmp_inc24_F1i2/nx11222z9                (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52927/cin        cycloneii_lcell_comb               100.145   up
+man_tmp_inc24_F1i2/ix11222z52927/cout       cycloneii_lcell_comb       0.071   100.216   up
+man_tmp_inc24_F1i2/nx11222z7                (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52926/cin        cycloneii_lcell_comb               100.216   up
+man_tmp_inc24_F1i2/ix11222z52926/cout       cycloneii_lcell_comb       0.071   100.287   up
+man_tmp_inc24_F1i2/nx11222z5                (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52925/cin        cycloneii_lcell_comb               100.287   up
+man_tmp_inc24_F1i2/ix11222z52925/cout       cycloneii_lcell_comb       0.071   100.358   up
+man_tmp_inc24_F1i2/nx11222z3                (net)                *     0.000                   1
+man_tmp_inc24_F1i2/ix11222z52923/cin        cycloneii_lcell_comb               100.358   up
+man_tmp_inc24_F1i2/ix11222z52923/combout    cycloneii_lcell_comb       0.000   100.358   up
+man_tmp_inc24_F1i2/nx11222z1                (net)                *     0.270                   1
+ix63749z52924/dataa                         cycloneii_lcell_comb               100.628   up
+ix63749z52924/combout                       cycloneii_lcell_comb       0.438   101.066   up
+nx63749z1                                   (net)                *     0.650                  34
+ix63749z52975/dataa                         cycloneii_lcell_comb               101.716   up
+ix63749z52975/combout                       cycloneii_lcell_comb       0.438   102.154   up
+nx63749z64                                  (net)                *     0.270                   1
+exp_tmp_addsub10_F1i1_ix63749z52974/dataa   cycloneii_lcell_comb               102.424   up
+exp_tmp_addsub10_F1i1_ix63749z52974/cout    cycloneii_lcell_comb       0.414   102.838   up
+nx63749z63                                  (net)                *     0.000                   1
+exp_tmp_addsub10_F1i1_ix63749z52973/cin     cycloneii_lcell_comb               102.838   up
+exp_tmp_addsub10_F1i1_ix63749z52973/cout    cycloneii_lcell_comb       0.071   102.909   up
+nx63749z61                                  (net)                *     0.000                   1
+exp_tmp_addsub10_F1i1_ix63749z52972/cin     cycloneii_lcell_comb               102.909   up
+exp_tmp_addsub10_F1i1_ix63749z52972/cout    cycloneii_lcell_comb       0.071   102.980   up
+nx63749z59                                  (net)                *     0.000                   1
+exp_tmp_addsub10_F1i1_ix63749z52971/cin     cycloneii_lcell_comb               102.980   up
+exp_tmp_addsub10_F1i1_ix63749z52971/cout    cycloneii_lcell_comb       0.071   103.051   up
+nx63749z57                                  (net)                *     0.000                   1
+exp_tmp_addsub10_F1i1_ix63749z52970/cin     cycloneii_lcell_comb               103.051   up
+exp_tmp_addsub10_F1i1_ix63749z52970/cout    cycloneii_lcell_comb       0.071   103.122   up
+nx63749z55                                  (net)                *     0.000                   1
+exp_tmp_addsub10_F1i1_ix63749z52969/cin     cycloneii_lcell_comb               103.122   up
+exp_tmp_addsub10_F1i1_ix63749z52969/cout    cycloneii_lcell_comb       0.071   103.193   up
+nx63749z53                                  (net)                *     0.000                   1
+exp_tmp_addsub10_F1i1_ix63749z52968/cin     cycloneii_lcell_comb               103.193   up
+exp_tmp_addsub10_F1i1_ix63749z52968/combout cycloneii_lcell_comb       0.000   103.193   up
+exp_tmp_F1n2ss1(7)                          (net)                *     0.310                   3
+ix63749z52977/dataa                         cycloneii_lcell_comb               103.503   up
+ix63749z52977/combout                       cycloneii_lcell_comb       0.438   103.941   up
+nx63749z67                                  (net)                *     0.270                   1
+ix63749z52965/datab                         cycloneii_lcell_comb               104.211   up
+ix63749z52965/combout                       cycloneii_lcell_comb       0.420   104.631   up
+nx63749z49                                  (net)                *     0.430                   9
+ix63749z52963/datab                         cycloneii_lcell_comb               105.061   up
+ix63749z52963/combout                       cycloneii_lcell_comb       0.420   105.481   up
+nx63749z48                                  (net)                *     0.650                  23
+ix58729z52923/datac                         cycloneii_lcell_comb               106.131   up
+ix58729z52923/combout                       cycloneii_lcell_comb       0.275   106.406   up
+result_mantisse(0)                          (net)                *     0.000                   0
+result_mantisse(0)                          (port)                             106.406   up
+
+		Initial edge separation:     10.000
+		Source clock delay:      -    0.000
+		Dest clock delay:        +    0.000
+		                        -----------
+		Edge separation:             10.000
+		Setup constraint:        -    0.000
+		                        -----------
+		Data required time:          10.000
+		Data arrival time:       -  106.406   ( 65.73% cell delay, 34.27% net delay )
+		                        -----------
+		Slack (VIOLATED):           -96.406
+
+
+
+================================================================================================
+                   Input Delay Report
+
+	Input                  Clock Name                            Slack (ns)
+	-----                  ----------                            ----------
+	op1_mantisse(0)        Design_Clock                          -96.406
+	op2_mantisse(0)        Design_Clock                          -96.385
+	op2_mantisse(1)        Design_Clock                          -96.335
+	op1_mantisse(1)        Design_Clock                          -96.314
+	op2_mantisse(2)        Design_Clock                          -96.264
+	op1_mantisse(2)        Design_Clock                          -96.243
+	op2_mantisse(3)        Design_Clock                          -96.193
+	op1_mantisse(3)        Design_Clock                          -96.172
+	op2_mantisse(4)        Design_Clock                          -96.122
+	op1_mantisse(4)        Design_Clock                          -96.101
+	op2_mantisse(5)        Design_Clock                          -96.051
+	op1_mantisse(5)        Design_Clock                          -96.030
+	op2_mantisse(6)        Design_Clock                          -95.980
+	op1_mantisse(6)        Design_Clock                          -95.959
+	op2_mantisse(7)        Design_Clock                          -95.909
+	op1_mantisse(7)        Design_Clock                          -95.888
+	op2_mantisse(8)        Design_Clock                          -95.838
+	op1_mantisse(8)        Design_Clock                          -95.817
+	op2_mantisse(9)        Design_Clock                          -95.767
+	op1_mantisse(9)        Design_Clock                          -95.746
+	op2_mantisse(10)       Design_Clock                          -95.696
+	op1_mantisse(10)       Design_Clock                          -95.675
+	op2_mantisse(11)       Design_Clock                          -95.625
+	op1_mantisse(11)       Design_Clock                          -95.604
+	op2_mantisse(12)       Design_Clock                          -95.554
+	op1_mantisse(12)       Design_Clock                          -95.533
+	op2_mantisse(13)       Design_Clock                          -95.483
+	op1_mantisse(13)       Design_Clock                          -95.462
+	op2_mantisse(14)       Design_Clock                          -95.412
+	op1_mantisse(14)       Design_Clock                          -95.391
+	op2_mantisse(15)       Design_Clock                          -95.341
+	op1_mantisse(15)       Design_Clock                          -95.320
+	op2_mantisse(16)       Design_Clock                          -95.270
+	op1_mantisse(16)       Design_Clock                          -95.249
+	op2_mantisse(17)       Design_Clock                          -95.199
+	op1_mantisse(17)       Design_Clock                          -95.178
+	op2_mantisse(18)       Design_Clock                          -95.128
+	op1_mantisse(18)       Design_Clock                          -95.107
+	op2_mantisse(19)       Design_Clock                          -95.057
+	op1_mantisse(19)       Design_Clock                          -95.036
+	op2_mantisse(20)       Design_Clock                          -94.986
+	op1_mantisse(20)       Design_Clock                          -94.965
+	op2_mantisse(21)       Design_Clock                          -94.915
+	op1_mantisse(21)       Design_Clock                          -94.894
+	op2_mantisse(22)       Design_Clock                          -94.844
+	op1_mantisse(22)       Design_Clock                          -94.823
+	op1_exposant(0)        Design_Clock                          1.658 
+	op2_exposant(0)        Design_Clock                          1.676 
+	op2_exposant(1)        Design_Clock                          1.677 
+	op1_exposant(1)        Design_Clock                          1.695 
+	op2_exposant(2)        Design_Clock                          1.748 
+	op1_exposant(2)        Design_Clock                          1.766 
+	op2_exposant(3)        Design_Clock                          1.819 
+	op1_exposant(3)        Design_Clock                          1.837 
+	op2_exposant(4)        Design_Clock                          1.890 
+	op1_exposant(4)        Design_Clock                          1.908 
+	op2_exposant(5)        Design_Clock                          1.961 
+	op1_exposant(5)        Design_Clock                          1.979 
+	op2_exposant(6)        Design_Clock                          2.032 
+	op1_exposant(6)        Design_Clock                          2.050 
+	op2_exposant(7)        Design_Clock                          2.103 
+	op1_exposant(7)        Design_Clock                          2.121 
+	op1_s                  Design_Clock                          9.562 
+	op2_s                  Design_Clock                          9.580 
+
+
+================================================================================================
+                   Output Delay Report
+
+	Output                 Clock Name                            Slack (ns)
+	------                 ----------                            ----------
+	result_mantisse(0)     Design_Clock                          -96.406
+	result_mantisse(22)    Design_Clock                          -96.281
+	result_mantisse(21)    Design_Clock                          -96.281
+	result_mantisse(20)    Design_Clock                          -96.281
+	result_mantisse(19)    Design_Clock                          -96.281
+	result_mantisse(18)    Design_Clock                          -96.281
+	result_mantisse(17)    Design_Clock                          -96.281
+	result_mantisse(16)    Design_Clock                          -96.281
+	result_mantisse(15)    Design_Clock                          -96.281
+	result_mantisse(14)    Design_Clock                          -96.281
+	result_mantisse(13)    Design_Clock                          -96.281
+	result_mantisse(12)    Design_Clock                          -96.281
+	result_mantisse(11)    Design_Clock                          -96.281
+	result_mantisse(10)    Design_Clock                          -96.281
+	result_mantisse(9)     Design_Clock                          -96.281
+	result_mantisse(8)     Design_Clock                          -96.281
+	result_mantisse(7)     Design_Clock                          -96.281
+	result_mantisse(6)     Design_Clock                          -96.281
+	result_mantisse(5)     Design_Clock                          -96.281
+	result_mantisse(4)     Design_Clock                          -96.281
+	result_mantisse(3)     Design_Clock                          -96.281
+	result_mantisse(2)     Design_Clock                          -96.281
+	result_mantisse(1)     Design_Clock                          -96.281
+	result_exposant(7)     Design_Clock                          -95.336
+	result_exposant(6)     Design_Clock                          -95.336
+	result_exposant(5)     Design_Clock                          -95.336
+	result_exposant(4)     Design_Clock                          -95.336
+	result_exposant(3)     Design_Clock                          -95.336
+	result_exposant(2)     Design_Clock                          -95.336
+	result_exposant(1)     Design_Clock                          -95.336
+	result_exposant(0)     Design_Clock                          -95.336
+	result_s               Design_Clock                          9.562 
