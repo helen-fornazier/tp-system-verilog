@@ -31,6 +31,12 @@ function float float_mul(float op1, float op2);
         automatic float result = 0;
         automatic logic [2*Nm+1:0]man_tmp = 0; /*2*Nm+2 bits*/
         automatic logic signed [Ne+1:0] exp_tmp = 0; /*Ne+2 bits, One is for the signal and the other for the overflow*/
+        automatic logic [Nm:0] op1_tmp;
+        automatic logic [Nm:0] op2_tmp;
+
+        /*op concatenation*/
+        op1_tmp[Nm:0] = {1'b1,op1.mantisse[Nm-1:0]};
+        op2_tmp[Nm:0] = {1'b1,op2.mantisse[Nm-1:0]};
 
         /*Signal*/
         result.s = op1.s ^ op2.s;
@@ -43,7 +49,7 @@ function float float_mul(float op1, float op2);
         end
         else begin
                 /*Mantisse*/
-                man_tmp = {1,op1.mantisse}*{1,op2.mantisse};
+                man_tmp = op1_tmp*op2_tmp;
                 if (man_tmp[2*Nm+1]) begin
                         result.mantisse[Nm-1:0] = man_tmp[2*Nm:Nm+1];
                         exp_tmp++;
@@ -129,12 +135,12 @@ function float float_div(float op1, float op2);
         automatic logic [Nm:0]man_tmp = 0; /*Nm+1 bits*/
         automatic logic signed [Ne+1:0] exp_tmp = 0; /*Ne+2 bits, One is for the signal and the other for the overflow*/
         automatic logic [2*Nm+1:0] op1_tmp = 0;
-        automatic logic [Nm:0] op2_tmp = {1,op2.mantisse};
+        automatic logic [Nm:0] op2_tmp = {1'b1,op2.mantisse[Nm-1:0]};
         result = '0;
 
         /*op1 shift*/
-        op1_tmp[2*Nm+1:Nm] = {1,op1.mantisse[Nm-1:0]};
-        op2_tmp[Nm:0] = {1,op2.mantisse};
+        op1_tmp[2*Nm+1:Nm] = {1'b1,op1.mantisse[Nm-1:0]};
+        op2_tmp[Nm:0] = {1'b1,op2.mantisse[Nm-1:0]};
 
         /*Signal*/
         result.s = op1.s ^ op2.s;
@@ -155,7 +161,7 @@ function float float_div(float op1, float op2);
                 /*Integer Division*/
                 man_tmp = op1_tmp/op2_tmp;
                 /*Rounding*/
-                //if(op2_tmp*man_tmp-op1_tmp >= op2_tmp/2 + op2_tmp/4 + op2_tmp+8) man_tmp++;
+                if(op2_tmp*man_tmp-op1_tmp >= op2_tmp/2) man_tmp++;
 
                 if (man_tmp[Nm]==0 && man_tmp[Nm-1]) begin
                         result.mantisse[Nm-1:1] = man_tmp[Nm-2:0];
@@ -190,7 +196,7 @@ function float float_sub(float op1, float op2);
 endfunction // float_sub
 
 /*---------- Convertion ----------*/
-
+   // synthesis translate_off
    function float_ieee real2float_ieee(shortreal number);
       return $shortrealtobits(number);
    endfunction // real2float_ieee
@@ -220,5 +226,5 @@ endfunction // float_sub
       number = float_ieee2real(nieee); 
       return number;    
    endfunction // float2real
-
+   // synthesis translate_on
 endpackage : float_pack
