@@ -1,0 +1,538 @@
+# Info: [9566]: Logging project transcript to file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/precision.log
+# Info: [9566]: Logging suppressed messages transcript to file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/precision.log.suppressed
+# Info: [9550]: Activated implementation mult_test_impl_1 in project /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test.psp.
+new_project -name mult_test -folder /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test -createimpl_name mult_test_impl_1
+# COMMAND: add_input_file {mult_ieee.sv}
+add_input_file {mult_ieee.sv}
+# COMMAND: add_input_file {../LM32_SYNTH_COPRO/copro_src/float_pack.sv}
+add_input_file {../LM32_SYNTH_COPRO/copro_src/float_pack.sv}
+# COMMAND: setup_design -manufacturer Altera -family "Cyclone II" -part EP2C35F672C -speed 6
+# Info: [15296]: Setting up the design to use synthesis library "cycloneii.syn"
+# Info: [572]: The global max fanout is currently set to 1000 for Altera - Cyclone II.
+# Info: [15320]: Setting Part to: "EP2C35F672C".
+# Info: [15321]: Setting Process to: "6".
+setup_design -manufacturer Altera -family "Cyclone II" -part EP2C35F672C -speed 6
+# COMMAND: setup_design -frequency 100 -input_delay 0 -output_delay 0 -max_fanout=1000
+# Info: [572]: The global max fanout is currently set to 1000 for Altera - Cyclone II.
+setup_design -frequency 100 -input_delay 0 -output_delay 0 -max_fanout=1000
+# COMMAND: setup_design -addio=false
+setup_design -addio=false
+# COMMAND: compile
+# Info: [3022]: Reading file: /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/techlibs/cycloneii.syn.
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Error: [42567]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 1: The package identifier ( float_pack ) not found.
+# Error: [41482]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 1: Syntax error near ( float_pack ).
+# Info: [40000]: import float_pack <-
+# Error: [41482]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 1: Syntax error near ( ::* ).
+# Info: [40000]: import float_pack::* <-
+# Error: [41482]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 3: Syntax error near ( op1 ).
+# Info: [40000]: module mult_ieee(input float op1 <-  [ Expected Token(s): `')'' or `','' ]
+# Error: [41574]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 4: semicolon missing.
+# Error: [41482]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 4: Syntax error near ( op2 ).
+# Info: [40000]: input float op2 <-
+# Error: [41676]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 5: Direction already specified for the object ( float ).
+# Error: [41482]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 5: Syntax error near ( result ).
+# Info: [40000]: output float result <-
+# Error: [41607]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Identifier ( result ) not declared in current scope.
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( op1 ) not defined.
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( op2 ) not defined.
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 46: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 46: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 132: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 136: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 137: Concatenations may not have un-lengthed numbers.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 194: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 198: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 202: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 213: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 215: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [40008]: HDL analysis failed.
+compile
+# COMMAND: add_input_file {../LM32_SYNTH_COPRO/copro_src/float_pack.sv}
+# Warning: [15238]: Input file /stud/users/promo13/koikefor/elec222/tp-system-verilog/LM32_SYNTH_COPRO/copro_src/float_pack.sv already exists in the list. Command options ignored.
+add_input_file {../LM32_SYNTH_COPRO/copro_src/float_pack.sv}
+# COMMAND: add_input_file {mult_ieee.sv}
+# Warning: [15238]: Input file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv already exists in the list. Command options ignored.
+add_input_file {mult_ieee.sv}
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Error: [42567]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 1: The package identifier ( float_pack ) not found.
+# Error: [41482]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 1: Syntax error near ( float_pack ).
+# Info: [40000]: import float_pack <-
+# Error: [41482]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 1: Syntax error near ( ::* ).
+# Info: [40000]: import float_pack::* <-
+# Error: [41482]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 3: Syntax error near ( op1 ).
+# Info: [40000]: module mult_ieee(input float op1 <-  [ Expected Token(s): `')'' or `','' ]
+# Error: [41574]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 4: semicolon missing.
+# Error: [41482]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 4: Syntax error near ( op2 ).
+# Info: [40000]: input float op2 <-
+# Error: [41676]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 5: Direction already specified for the object ( float ).
+# Error: [41482]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 5: Syntax error near ( result ).
+# Info: [40000]: output float result <-
+# Error: [41607]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Identifier ( result ) not declared in current scope.
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( op1 ) not defined.
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( op2 ) not defined.
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 46: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 46: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 132: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 136: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 137: Concatenations may not have un-lengthed numbers.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 194: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 198: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 202: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 213: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 215: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [40008]: HDL analysis failed.
+compile
+# COMMAND: save_project
+# Info: [9562]: Saved implementation mult_test_impl_1 in project /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test.psp.
+save_project
+# COMMAND: close_project -discard
+# Info: [9565]: Appending project transcript to file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/precision.log
+# Info: [9565]: Appending suppressed messages transcript to file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/precision.log.suppressed
+# Info: [15296]: Setting up the design to use synthesis library "cycloneii.syn"
+# Info: [572]: The global max fanout is currently set to 1000 for Altera - Cyclone II.
+# Info: [15320]: Setting Part to: "EP2C35F672C".
+# Info: [15321]: Setting Process to: "6".
+# Warning: [567]: Setting 'optimize_power_effort' is not allowed in RTL product mode. Ignoring.
+# Info: [3022]: Reading file: /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/techlibs/cycloneii.syn.
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [9550]: Activated implementation mult_test_impl_1 in project /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test.psp.
+open_project /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test.psp
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Error: [42567]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 1: The package identifier ( float_pack ) not found.
+# Error: [41482]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 1: Syntax error near ( float_pack ).
+# Info: [40000]: import float_pack <-
+# Error: [41482]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 1: Syntax error near ( ::* ).
+# Info: [40000]: import float_pack::* <-
+# Error: [41482]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 3: Syntax error near ( op1 ).
+# Info: [40000]: module mult_ieee(input float op1 <-  [ Expected Token(s): `')'' or `','' ]
+# Error: [41574]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 4: semicolon missing.
+# Error: [41482]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 4: Syntax error near ( op2 ).
+# Info: [40000]: input float op2 <-
+# Error: [41676]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 5: Direction already specified for the object ( float ).
+# Error: [41482]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 5: Syntax error near ( result ).
+# Info: [40000]: output float result <-
+# Error: [41607]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Identifier ( result ) not declared in current scope.
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( op1 ) not defined.
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( op2 ) not defined.
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 46: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 46: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 132: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 136: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 137: Concatenations may not have un-lengthed numbers.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 194: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 198: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 202: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 213: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 215: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [40008]: HDL analysis failed.
+compile
+# COMMAND: remove_input_file {/stud/users/promo13/koikefor/elec222/tp-system-verilog/LM32_SYNTH_COPRO/copro_src/float_pack.sv}
+remove_input_file {/stud/users/promo13/koikefor/elec222/tp-system-verilog/LM32_SYNTH_COPRO/copro_src/float_pack.sv}
+# COMMAND: remove_input_file {/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv}
+remove_input_file {/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv}
+# COMMAND: add_input_file {../LM32_SYNTH_COPRO/copro_src/float_pack.sv}
+add_input_file {../LM32_SYNTH_COPRO/copro_src/float_pack.sv}
+# COMMAND: add_input_file {mult_ieee.sv}
+add_input_file {mult_ieee.sv}
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 46: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 46: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 132: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 136: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 137: Concatenations may not have un-lengthed numbers.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 194: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 198: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 202: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 213: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 215: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( float_mult ) not defined.
+# Error: [40008]: HDL analysis failed.
+compile
+# COMMAND: save_project
+# Info: [9562]: Saved implementation mult_test_impl_1 in project /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test.psp.
+save_project
+# COMMAND: close_project -discard
+# Info: [9565]: Appending project transcript to file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/precision.log
+# Info: [9565]: Appending suppressed messages transcript to file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/precision.log.suppressed
+# Info: [15296]: Setting up the design to use synthesis library "cycloneii.syn"
+# Info: [572]: The global max fanout is currently set to 1000 for Altera - Cyclone II.
+# Info: [15320]: Setting Part to: "EP2C35F672C".
+# Info: [15321]: Setting Process to: "6".
+# Warning: [567]: Setting 'optimize_power_effort' is not allowed in RTL product mode. Ignoring.
+# Info: [3022]: Reading file: /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/techlibs/cycloneii.syn.
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [9550]: Activated implementation mult_test_impl_1 in project /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test.psp.
+open_project /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test.psp
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 34: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 35: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 38: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 39: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 138: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 142: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 143: Concatenations may not have un-lengthed numbers.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 200: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 204: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 208: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 219: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 221: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( float_mult ) not defined.
+# Error: [40008]: HDL analysis failed.
+compile
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 38: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 39: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 138: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 142: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 143: Concatenations may not have un-lengthed numbers.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 200: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 204: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 208: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 219: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 221: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( float_mult ) not defined.
+# Error: [40008]: HDL analysis failed.
+compile
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 38: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 39: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 138: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 142: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 143: Concatenations may not have un-lengthed numbers.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 200: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 204: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 208: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 219: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 221: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( float_mult ) not defined.
+# Error: [40008]: HDL analysis failed.
+compile
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 38: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 39: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 138: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 142: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 143: Concatenations may not have un-lengthed numbers.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 200: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 204: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 208: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 219: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Error: [41129]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 221: REAL declarations are not supported. Design Unit containing this construct will not be compiled.
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( float_mult ) not defined.
+# Error: [40008]: HDL analysis failed.
+compile
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 38: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 39: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 138: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 142: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 143: Concatenations may not have un-lengthed numbers.
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( float_mult ) not defined.
+# Error: [40008]: HDL analysis failed.
+compile
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 38: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 39: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 138: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 142: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 143: Concatenations may not have un-lengthed numbers.
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( float_mult ) not defined.
+# Error: [40008]: HDL analysis failed.
+compile
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 38: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 39: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 138: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 142: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 143: Concatenations may not have un-lengthed numbers.
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( float_mult ) not defined.
+# Error: [40008]: HDL analysis failed.
+compile
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 138: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 142: Concatenations may not have un-lengthed numbers.
+# Error: [41386]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 143: Concatenations may not have un-lengthed numbers.
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( float_mult ) not defined.
+# Error: [40008]: HDL analysis failed.
+compile
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 10: Task or function name ( float_mult ) not defined.
+# Error: [40008]: HDL analysis failed.
+compile
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Info: [654]: Top module of the design is set to: mult_ieee.
+# Info: [652]: Current working directory: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1.
+# Info: [40000]: RTLC-Driver, Release RTLC-Precision 2011a.9
+# Info: [40000]: Last compiled on May 11 2011 17:07:25
+# Info: [44512]: Initializing...
+# Info: [44504]: Partitioning design ....
+# Info: [40000]: RTLCompiler, Release RTLC-Precision 2011a.9
+# Info: [40000]: Last compiled on May 11 2011 17:37:33
+# Info: [44512]: Initializing...
+# Info: [44522]: Root Module mult_ieee: Pre-processing...
+# Info: [44523]: Root Module mult_ieee: Compiling...
+# Info: [44846]: Rebalanced Expression Tree...
+# Info: [44842]: Compilation successfully completed.
+# Info: [44841]: Counter Inferencing === Detected : 1, Inferred (Modgen/Selcounter/AddSub) : 0 (0 / 0 / 0), AcrossDH (Merged/Not-Merged) : (0 / 0), Not-Inferred (Acrossdh/Attempted) : (0 / 1), Local Vars : 0 ===
+# Info: [44856]: Total lines of RTL compiled: 10.
+# Info: [44835]: Total CPU time for compilation: 0.0 secs.
+# Info: [44513]: Overall running time for compilation: 3.0 secs.
+# Info: [652]: Current working directory: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1.
+# Info: [15326]: Doing rtl optimizations.
+# Info: [655]: Finished compiling design.
+compile
+# COMMAND: save_project
+# Info: [9562]: Saved implementation mult_test_impl_1 in project /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test.psp.
+save_project
+# COMMAND: close_project -discard
+# Info: [9565]: Appending project transcript to file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/precision.log
+# Info: [9565]: Appending suppressed messages transcript to file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/precision.log.suppressed
+# Info: [15296]: Setting up the design to use synthesis library "cycloneii.syn"
+# Info: [572]: The global max fanout is currently set to 1000 for Altera - Cyclone II.
+# Info: [15320]: Setting Part to: "EP2C35F672C".
+# Info: [15321]: Setting Process to: "6".
+# Warning: [567]: Setting 'optimize_power_effort' is not allowed in RTL product mode. Ignoring.
+# Info: [3022]: Reading file: /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/techlibs/cycloneii.syn.
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [9550]: Activated implementation mult_test_impl_1 in project /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test.psp.
+open_project /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test.psp
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Info: [654]: Top module of the design is set to: mult_ieee.
+# Info: [652]: Current working directory: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1.
+# Info: [40000]: RTLC-Driver, Release RTLC-Precision 2011a.9
+# Info: [40000]: Last compiled on May 11 2011 17:07:25
+# Info: [44512]: Initializing...
+# Info: [44504]: Partitioning design ....
+# Info: [40000]: RTLCompiler, Release RTLC-Precision 2011a.9
+# Info: [40000]: Last compiled on May 11 2011 17:37:33
+# Info: [44512]: Initializing...
+# Info: [44522]: Root Module mult_ieee: Pre-processing...
+# Info: [44523]: Root Module mult_ieee: Compiling...
+# Info: [44846]: Rebalanced Expression Tree...
+# Info: [44842]: Compilation successfully completed.
+# Info: [44841]: Counter Inferencing === Detected : 1, Inferred (Modgen/Selcounter/AddSub) : 0 (0 / 0 / 0), AcrossDH (Merged/Not-Merged) : (0 / 0), Not-Inferred (Acrossdh/Attempted) : (0 / 1), Local Vars : 0 ===
+# Info: [44856]: Total lines of RTL compiled: 10.
+# Info: [44835]: Total CPU time for compilation: 0.0 secs.
+# Info: [44513]: Overall running time for compilation: 3.0 secs.
+# Info: [652]: Current working directory: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1.
+# Info: [15326]: Doing rtl optimizations.
+# Info: [655]: Finished compiling design.
+compile
+# COMMAND: synthesize
+# Info: [652]: Current working directory: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1.
+# Info: [11008]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 52: Using 3 levels of output pipelining instead of 0 may improve the performance of multiplier instance:rtlcF1_384_mult_0
+# Info: [15002]: Optimizing design view:.work.mult_ieee.INTERFACE
+# Info: [12045]: Starting timing reports generation...
+# Info: [12046]: Timing reports generation done.
+# Info: [12047]: POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+# Info: [3027]: Writing file: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee.vqm.
+# Info: Info, Writing xrf file '/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee.xrf'
+# Info: [3027]: Writing file: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee.xrf.
+# Info: -- Writing file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee.tcl
+# Info: exq_pr_compile_project gen_vcf mult_ieee 1
+# Info: [655]: Finished synthesizing design.
+# Info: [11019]: Total CPU time for synthesis: 2.9 s secs.
+# Info: [11020]: Overall running time for synthesis: 3.4 s secs.
+synthesize
+# COMMAND: report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -clock_frequency
+report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -clock_frequency
+# COMMAND: report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -summary -num_paths 10 -append
+report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -summary -num_paths 10 -append
+# COMMAND: report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -num_paths 1 -show_nets -append
+report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -num_paths 1 -show_nets -append
+# COMMAND: report_missing_constraints /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_missing_constraints.rep
+report_missing_constraints /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_missing_constraints.rep
+# COMMAND: report_area /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_area.rep -cell_usage
+report_area /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_area.rep -cell_usage
+# COMMAND: report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -clock_frequency
+report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -clock_frequency
+# COMMAND: report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -summary -num_paths 10 -append
+report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -summary -num_paths 10 -append
+# COMMAND: report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -num_paths 1 -show_nets -append
+report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -num_paths 1 -show_nets -append
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Error: [41350]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv", line 8: Task or function name ( float_mult ) not defined.
+# Error: [40008]: HDL analysis failed.
+compile
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Info: [654]: Top module of the design is set to: mult_ieee.
+# Info: [652]: Current working directory: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1.
+# Info: [40000]: RTLC-Driver, Release RTLC-Precision 2011a.9
+# Info: [40000]: Last compiled on May 11 2011 17:07:25
+# Info: [44512]: Initializing...
+# Info: [44504]: Partitioning design ....
+# Info: [40000]: RTLCompiler, Release RTLC-Precision 2011a.9
+# Info: [40000]: Last compiled on May 11 2011 17:37:33
+# Info: [44512]: Initializing...
+# Info: [44522]: Root Module mult_ieee: Pre-processing...
+# Info: [44523]: Root Module mult_ieee: Compiling...
+# Info: [44846]: Rebalanced Expression Tree...
+# Info: [44842]: Compilation successfully completed.
+# Info: [44841]: Counter Inferencing === Detected : 1, Inferred (Modgen/Selcounter/AddSub) : 0 (0 / 0 / 0), AcrossDH (Merged/Not-Merged) : (0 / 0), Not-Inferred (Acrossdh/Attempted) : (0 / 1), Local Vars : 0 ===
+# Info: [44856]: Total lines of RTL compiled: 7.
+# Info: [44835]: Total CPU time for compilation: 0.0 secs.
+# Info: [44513]: Overall running time for compilation: 1.0 secs.
+# Info: [652]: Current working directory: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1.
+# Info: [15326]: Doing rtl optimizations.
+# Info: [655]: Finished compiling design.
+compile
+# COMMAND: synthesize
+# Info: [652]: Current working directory: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1.
+# Info: [11008]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 52: Using 3 levels of output pipelining instead of 0 may improve the performance of multiplier instance:rtlcF1_384_mult_0
+# Info: [15002]: Optimizing design view:.work.mult_ieee.INTERFACE
+# Info: [12045]: Starting timing reports generation...
+# Info: [12046]: Timing reports generation done.
+# Info: [12047]: POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+# Info: [3027]: Writing file: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee.vqm.
+# Info: Warning, Moving /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee.xrf to /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mgc_old_mult_ieee.xrf as /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee.xrf exists
+# Info: [3027]: Writing file: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee.xrf.
+# Info: -- Writing file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee.tcl
+# Info: exq_pr_compile_project gen_vcf mult_ieee 1
+# Info: [655]: Finished synthesizing design.
+# Info: [11019]: Total CPU time for synthesis: 3.0 s secs.
+# Info: [11020]: Overall running time for synthesis: 3.2 s secs.
+synthesize
+# COMMAND: report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -clock_frequency
+report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -clock_frequency
+# COMMAND: report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -summary -num_paths 10 -append
+report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -summary -num_paths 10 -append
+# COMMAND: report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -num_paths 1 -show_nets -append
+report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -num_paths 1 -show_nets -append
+# COMMAND: compile
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_ieee.sv" ...
+# Info: [654]: Top module of the design is set to: mult_ieee.
+# Info: [652]: Current working directory: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1.
+# Info: [40000]: RTLC-Driver, Release RTLC-Precision 2011a.9
+# Info: [40000]: Last compiled on May 11 2011 17:07:25
+# Info: [44512]: Initializing...
+# Info: [44504]: Partitioning design ....
+# Info: [40000]: RTLCompiler, Release RTLC-Precision 2011a.9
+# Info: [40000]: Last compiled on May 11 2011 17:37:33
+# Info: [44512]: Initializing...
+# Info: [44522]: Root Module mult_ieee: Pre-processing...
+# Info: [44523]: Root Module mult_ieee: Compiling...
+# Info: [44846]: Rebalanced Expression Tree...
+# Info: [44842]: Compilation successfully completed.
+# Info: [44841]: Counter Inferencing === Detected : 1, Inferred (Modgen/Selcounter/AddSub) : 0 (0 / 0 / 0), AcrossDH (Merged/Not-Merged) : (0 / 0), Not-Inferred (Acrossdh/Attempted) : (0 / 1), Local Vars : 0 ===
+# Info: [44856]: Total lines of RTL compiled: 7.
+# Info: [44835]: Total CPU time for compilation: 0.0 secs.
+# Info: [44513]: Overall running time for compilation: 2.0 secs.
+# Info: [652]: Current working directory: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1.
+# Info: [15326]: Doing rtl optimizations.
+# Info: [655]: Finished compiling design.
+compile
+# COMMAND: synthesize
+# Info: [652]: Current working directory: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1.
+# Info: [11008]: "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv", line 52: Using 3 levels of output pipelining instead of 0 may improve the performance of multiplier instance:rtlcF1_384_mult_0
+# Info: [15002]: Optimizing design view:.work.mult_ieee.INTERFACE
+# Info: [12045]: Starting timing reports generation...
+# Info: [12046]: Timing reports generation done.
+# Info: [12047]: POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+# Info: [3027]: Writing file: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee.vqm.
+# Info: Warning, Moving /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee.xrf to /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mgc_old_mult_ieee.xrf as /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee.xrf exists
+# Info: [3027]: Writing file: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee.xrf.
+# Info: -- Writing file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee.tcl
+# Info: exq_pr_compile_project gen_vcf mult_ieee 1
+# Info: [655]: Finished synthesizing design.
+# Info: [11019]: Total CPU time for synthesis: 3.1 s secs.
+# Info: [11020]: Overall running time for synthesis: 3.3 s secs.
+synthesize
+# COMMAND: report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -clock_frequency
+report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -clock_frequency
+# COMMAND: report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -summary -num_paths 10 -append
+report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -summary -num_paths 10 -append
+# COMMAND: report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -num_paths 1 -show_nets -append
+report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -num_paths 1 -show_nets -append
+# COMMAND: report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -clock_frequency
+report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -clock_frequency
+# COMMAND: report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -summary -num_paths 10 -append
+report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -summary -num_paths 10 -append
+# COMMAND: report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -num_paths 1 -show_nets -append
+report_timing /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/mult_ieee_timing.rep -num_paths 1 -show_nets -append
+# COMMAND: save_project
+# Info: [9562]: Saved implementation mult_test_impl_1 in project /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test.psp.
+save_project
+# COMMAND: close_project -discard
+# Info: [9565]: Appending project transcript to file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/precision.log
+# Info: [9565]: Appending suppressed messages transcript to file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test_impl_1/precision.log.suppressed
+# Info: [15296]: Setting up the design to use synthesis library "cycloneii.syn"
+# Info: [572]: The global max fanout is currently set to 1000 for Altera - Cyclone II.
+# Info: [15320]: Setting Part to: "EP2C35F672C".
+# Info: [15321]: Setting Process to: "6".
+# Warning: [567]: Setting 'optimize_power_effort' is not allowed in RTL product mode. Ignoring.
+# Info: [3022]: Reading file: /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/techlibs/cycloneii.syn.
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [9550]: Activated implementation mult_test_impl_1 in project /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test.psp.
+open_project /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/mult_test.psp
+# COMMAND: exit -force
