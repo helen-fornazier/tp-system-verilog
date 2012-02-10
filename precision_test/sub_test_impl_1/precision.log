@@ -1,0 +1,64 @@
+# Info: [9566]: Logging project transcript to file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/sub_test_impl_1/precision.log
+# Info: [9566]: Logging suppressed messages transcript to file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/sub_test_impl_1/precision.log.suppressed
+# Info: [9550]: Activated implementation sub_test_impl_1 in project /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/sub_test.psp.
+new_project -name sub_test -folder /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test -createimpl_name sub_test_impl_1
+# COMMAND: setup_design -manufacturer Altera -family "Cyclone II" -part EP2C35F672C -speed 6
+# Info: [15296]: Setting up the design to use synthesis library "cycloneii.syn"
+# Info: [572]: The global max fanout is currently set to 1000 for Altera - Cyclone II.
+# Info: [15320]: Setting Part to: "EP2C35F672C".
+# Info: [15321]: Setting Process to: "6".
+setup_design -manufacturer Altera -family "Cyclone II" -part EP2C35F672C -speed 6
+# COMMAND: setup_design -frequency 100 -input_delay 0 -output_delay 0 -max_fanout=1000
+# Info: [572]: The global max fanout is currently set to 1000 for Altera - Cyclone II.
+setup_design -frequency 100 -input_delay 0 -output_delay 0 -max_fanout=1000
+# COMMAND: setup_design -addio=false
+setup_design -addio=false
+# COMMAND: add_input_file {../LM32_SYNTH_COPRO/copro_src/float_pack.sv}
+add_input_file {../LM32_SYNTH_COPRO/copro_src/float_pack.sv}
+# COMMAND: add_input_file {sub_ieee.sv}
+add_input_file {sub_ieee.sv}
+# COMMAND: compile
+# Info: [3022]: Reading file: /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/techlibs/cycloneii.syn.
+# Info: [629]: Loading library initialization file /comelec/softs/opt/mentor/precision/current/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2011a.9
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/../LM32_SYNTH_COPRO/copro_src/float_pack.sv" ...
+# Info: [41002]: Analyzing input file "/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/sub_ieee.sv" ...
+# Info: [654]: Top module of the design is set to: sub_ieee.
+# Info: [652]: Current working directory: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/sub_test_impl_1.
+# Info: [40000]: RTLC-Driver, Release RTLC-Precision 2011a.9
+# Info: [40000]: Last compiled on May 11 2011 17:07:25
+# Info: [44512]: Initializing...
+# Info: [44504]: Partitioning design ....
+# Info: [40000]: RTLCompiler, Release RTLC-Precision 2011a.9
+# Info: [40000]: Last compiled on May 11 2011 17:37:33
+# Info: [44512]: Initializing...
+# Info: [44522]: Root Module sub_ieee: Pre-processing...
+# Info: [44523]: Root Module sub_ieee: Compiling...
+# Info: [44842]: Compilation successfully completed.
+# Info: [44841]: Counter Inferencing === Detected : 1, Inferred (Modgen/Selcounter/AddSub) : 0 (0 / 0 / 0), AcrossDH (Merged/Not-Merged) : (0 / 0), Not-Inferred (Acrossdh/Attempted) : (0 / 1), Local Vars : 0 ===
+# Info: [44856]: Total lines of RTL compiled: 7.
+# Info: [44835]: Total CPU time for compilation: 0.0 secs.
+# Info: [44513]: Overall running time for compilation: 1.0 secs.
+# Info: [652]: Current working directory: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/sub_test_impl_1.
+# Info: [15326]: Doing rtl optimizations.
+# Info: [655]: Finished compiling design.
+compile
+# COMMAND: synthesize
+# Info: [652]: Current working directory: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/sub_test_impl_1.
+# Info: [15002]: Optimizing design view:.work.sub_ieee.INTERFACE
+# Info: [12045]: Starting timing reports generation...
+# Info: [12046]: Timing reports generation done.
+# Info: [12047]: POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+# Info: [3027]: Writing file: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/sub_test_impl_1/sub_ieee.vqm.
+# Info: Info, Writing xrf file '/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/sub_test_impl_1/sub_ieee.xrf'
+# Info: [3027]: Writing file: /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/sub_test_impl_1/sub_ieee.xrf.
+# Info: -- Writing file /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/sub_test_impl_1/sub_ieee.tcl
+# Info: exq_pr_compile_project gen_vcf sub_ieee 1
+# Info: [655]: Finished synthesizing design.
+# Info: [11019]: Total CPU time for synthesis: 11.0 s secs.
+# Info: [11020]: Overall running time for synthesis: 11.5 s secs.
+synthesize
+# COMMAND: save_project
+# Info: [9562]: Saved implementation sub_test_impl_1 in project /stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/sub_test.psp.
+save_project
+# COMMAND: close_project -discard

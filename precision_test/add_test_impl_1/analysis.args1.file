@@ -1,0 +1,14 @@
+8:-out_dir
+95:/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/add_test_impl_1//rtlc.out
+10:-pipe_flow
+4:-svf
+112:/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/add_test_impl_1//hdlAnalyze_sysverilogfile
+2:-v
+61:/comelec/softs/opt/altera/current/quartus/eda/synthesis/lpm.v
+2:-v
+67:/comelec/softs/opt/altera/current/quartus/eda/synthesis/altera_mf.v
+25:-comment_transoff_regions
+13:-lib_map_file
+95:/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test/add_test_impl_1//.jaguarc
+159:+incdir+/stud/users/promo13/koikefor/elec222/tp-system-verilog/LM32_SYNTH_COPRO/copro_src+/stud/users/promo13/koikefor/elec222/tp-system-verilog/precision_test
+17:+define+synthesis
