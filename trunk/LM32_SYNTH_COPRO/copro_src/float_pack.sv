@@ -63,17 +63,17 @@ function float float_mul(float op1, float op2);
                 end
                 else if (exp_tmp == 0) result.mantisse = '0;
                 else result.exposant[Ne-1:0] = exp_tmp[Ne-1:0];
-        end
+        end // else: !if((exp_tmp < 0) || (!op1.exposant && !op1.mantisse)||(!op2.exposant && !op2.mantisse))
         /*Answer*/
         return result;
 endfunction // float_mul
 
 /*Somme f=1, Sub f=0*/
 function float float_add_sub(logic f, float op1, float op2);   
-   logic [4:0] 	   shift_size;
+   logic [4:0]   shift_size;
    logic [Nm+1:0] big_m,small_m;
-   logic 	big_s,small_s;
-   logic [Ne-1:0] big_e;
+   logic 	  big_s,small_s;
+   logic signed [Ne+1:0] big_e;/*Ne+2 bits, One is for the signal and the other for the overflow*/
    
    
    //sub, change signal of the second op
@@ -83,51 +83,71 @@ function float float_add_sub(logic f, float op1, float op2);
    if(op1.mantisse==0 && op1.exposant==0) return op2;
    else if (op2.mantisse==0 && op2.exposant==0)return op1;
    //proceed operation
-   else begin   
+   else begin
+      //prepare operands to calculus   
       if (op1.exposant >= op2.exposant) begin
-	 shift_size = op1.exposant-op2.exposant;
-	 big_e=op1.exposant;
-	 big_m[Nm+1:0] = {'1b0,'1b1,op1.mantisse};
-	 big_s = op1.s;      
-	 small_m[Nm+1:0] = {'1b0,'1b1,op2.mantisse} >> shift_size;
-	 small_s = op1.s;    
+	 shift_size = op1.exposant-op2.exposant;	  
+	 small_m[Nm+1:0] = {1'b0,1'b1,op2.mantisse} >> shift_size;
+	 small_s = op1.s;
+	 big_e={1'b0,1'b0,op1.exposant};
+	 big_m[Nm+1:0] = {1'b0,1'b1,op1.mantisse};
+	 big_s = op1.s;         
       end
       else begin
-	 shift_size = op2.exposant-op1.exposant;
-	 big_e=op2.exposant;
-	 big_m[Nm+1:0] = {'1b0,'1b1,op2.mantisse};
-	 big_s = op2.s;  
-	 small_m[Nm+1:0] = {'1b0,'1b1,op1.mantisse} >> shift_size;
-	 small_s = op1.s;      
+	 shift_size = op2.exposant-op1.exposant;	
+	 small_m[Nm+1:0] = {1'b0,1'b1,op1.mantisse} >> shift_size;
+	 small_s = op1.s;
+	 big_e={1'b0,1'b0,op2.exposant};
+	 big_m[Nm+1:0] = {1'b0,1'b1,op2.mantisse};
+	 big_s = op2.s;        
       end // else: !if(op1.exposant >= op2.exposant)
       
+      //generate final result
+      
+      //first generate signal
       op1.s = big_s;
       
+      //then generate mantisse and exponent
       if (big_s==small_s) begin
+	 //same signal, perform addition
 	 big_m = big_m + small_m;
+	 //normalize mantisse and adjust exponent
 	 if (big_m[Nm+1])begin
-	    op1.exposant = big_e+1;
-	    op1.mantisse = big_m[Nm:1];
+	    big_m = big_m>>1;	    
+	    big_e = big_e+1;	    
+	    //verify overflow in exp
+	    if (big_e[Ne] || big_e[Ne-1:0] == '1) begin
+	       big_e = '1;	       
+	       big_e = big_e-1;
+	       big_m = '1;
+	    end
 	 end
-	 else begin
-	    op1.exposant = big_e;
-	    op1.mantisse = big_m[Nm-1:0];
-	 end	 
+      end // if (big_s==small_s)
       else begin
+	 //different signals, perform subtracttion
 	 big_m = big_m - small_m;
-	 for (shift_size=0;shift_size<Nm;shifit_size++)
-	   if (big_m[Nm])
-	 
-      end
+	 //normalize results
+	 for (shift_size=0; shift_size<Nm && (big_m[Nm]==0); shift_size++)
+	   big_m = big_m << 1;
+	 //adjust exponent
+	 big_e = big_e - shift_size;
+	 //check underflow in exp
+	 if(big_e <= 0) begin
+	    big_e = '0;
+	    big_m = '0;	    
+	 end
+	 op1.mantisse = big_m[Nm-1:0];
+	 op1.exposant = big_e[Ne-1:0];   
+         
+      end // else: !if(big_s==small_s)
+
+      return op1;     
+	
+   end // else: !if(op2.mantisse==0 && op2.exposant==0)
 
       
-      
-      
-   end // else: !if(op2.mantisse==0 && op2.exposant==0)
-      
-   
         
-endfunction // float_add_sub
+   endfunction // float_add_sub
 
 
 function float float_div(float op1, float op2);
@@ -182,7 +202,7 @@ function float float_div(float op1, float op2);
                 end
                 else if (exp_tmp == 0) result.mantisse = '0;
                 else result.exposant[Ne-1:0] = exp_tmp[Ne-1:0];
-        end
+        end // else: !if(!op2.exposant && !op2.mantisse)
         /*Answer*/
         return result;
 endfunction // float_div
