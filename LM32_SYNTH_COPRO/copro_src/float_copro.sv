@@ -24,66 +24,54 @@ module float_copro #(
 
    //le datapath
    float_copro_dp datapath(opcode,op0,op1,resultat);
+// synthesis translate_off
+   shortreal fop0;
+   shortreal fop1;
+   shortreal fresultat;
+
+   always @( * )
+   begin
+        fop0     = $bitstoshortreal( op0 );
+        fop1     = $bitstoshortreal( op1 );
+        fresultat= $bitstoshortreal( resultat );
+   end
+// synthesis translate_on
    
    //////////////////////////////////////////////////
    // Compléter en rajoutant registres et contrôle //
    //////////////////////////////////////////////////
 
    int COUNT;
-
-   initial
-   begin
-      COUNT = 0;
-      copro_complete = 0;
-   end
+   logic inactiv;
 
    always_ff @ (posedge clk)
    begin
       if (copro_accept) begin
-         copro_complete = 0;
+         copro_complete <= 0;
+         inactiv = 0;
+         COUNT = 0;
       end
-      else if (!copro_complete) begin
-              if (COUNT == 0 && copro_valid) begin
-                 op0 = copro_op0;
-                 op1 = copro_op1;
-                 opcode = copro_opcode;
-                 COUNT = COUNT + 1;
-              end
-              else if (COUNT) case (opcode)
-                //somme
-                 11'd0:
-                    if (COUNT >= t_add) begin
-                       copro_complete = 1;
-                       copro_result = resultat;
-                       COUNT = 0;
-                    end  
-                    else COUNT = COUNT + 1;
-                //soustraction
-                 11'd1:
-                    if (COUNT >= t_sub) begin
-                       copro_complete = 1;
-                       copro_result = resultat;
-                       COUNT = 0;
-                    end  
-                    else COUNT = COUNT + 1;
-                //multiplication
-                 11'd2:
-                    if (COUNT >= t_mult) begin
-                       copro_complete = 1;
-                       copro_result = resultat;
-                       COUNT = 0;
-                    end  
-                    else COUNT = COUNT + 1;
-		//division
-                 11'd3:
-                    if (COUNT >= t_div) begin
-                       copro_complete = 1;
-                       copro_result = resultat;
-                       COUNT = 0;
-                    end  
-                    else COUNT = COUNT + 1;		
-              endcase
+      else if (!inactiv) begin
+         if (COUNT == 0 && copro_valid) begin
+            op0 <= copro_op0;
+            op1 <= copro_op1;
+            opcode <= copro_opcode;
+           case (copro_opcode)
+             11'd0: COUNT = t_add;
+             11'd1: COUNT = t_sub;
+             11'd2: COUNT = t_mult;
+             11'd3: COUNT = t_div;
+           endcase
+         end
+         else if (COUNT) begin
+             COUNT = COUNT - 1;
+             if (COUNT == 0) begin
+                 copro_complete <= 1;
+                 inactiv = 1;
+                 copro_result <= resultat;
+                 COUNT = 0;
+             end
+         end
       end
    end
 endmodule
-
