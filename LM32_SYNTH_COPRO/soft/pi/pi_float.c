@@ -25,40 +25,52 @@ static inline unsigned int get_cc(void)
 // CODE A MODIFIER
 static inline float fmult(float x, float y)
 {
-  float resultat;
+  float result;
   asm volatile("user %[dest],%[src1],%[src2],0x02"
-                 :[dest] "=r" (resultat)
-                 :[src1] "r" (x),
-                 [src2] "r" (y)
-                 ) ;
-  return resultat;
-//   return x*y ;
+	       :[dest] "=r" (result)
+	       :[src1] "r" (x),
+		[src2] "r" (y)
+	       ) ;
+  return result;
+  //return x*y ;
 }
 
 static inline float fadd(float x, float y)
 {
-  float resultat;
+  float result;
   asm volatile("user %[dest],%[src1],%[src2],0x00"
-                 :[dest] "=r" (resultat)
-                 :[src1] "r" (x),
-                 [src2] "r" (y)
-                 ) ;
-  return resultat;
-//    return  x + y ;
+	       :[dest] "=r" (result)
+	       :[src1] "r" (x),
+		[src2] "r" (y)
+	       ) ;
+  return result;
+  //return  x + y ;
 }
 
+static inline float fsub(float x, float y)
+{
+  float result;
+  asm volatile("user %[dest],%[src1],%[src2],0x01"
+	       :[dest] "=r" (result)
+	       :[src1] "r" (x),
+		[src2] "r" (y)
+	       ) ;
+  return result;
+  //return x-y;
+}
 static inline float fdiv(float x, float y)
 {
   float resultat;
   asm volatile("user %[dest],%[src1],%[src2],0x03"
-                 :[dest] "=r" (resultat)
-                 :[src1] "r" (x),
-                 [src2] "r" (y)
-                 ) ;
-  return resultat;
+	       :[dest] "=r" (resultat)
+	       :[src1] "r" (x),
+		[src2] "r" (y)
+	       ) ;
+  //return resultat;
 
-//    return x/y;
+  return x/y;
 }
+
 // FIN DU CODE A MODIFIER
 
 // fonction calculant pi en utilisant le copro
@@ -73,7 +85,7 @@ float dev_lim_atn_copro ( float x , int n ) {
     x2 = fmult(x,x)  ;
     for ( i =1; i <= n ; i +=2) {
         memsuri = fdiv(fmult(signe , mem_puiss),(float) i);
-        res = fadd(res,memsuri)  ;
+	 res = fadd(res,memsuri)  ;
         signe = fmult(-1.0,signe) ;
         mem_puiss = fmult(mem_puiss , x2) ;
     }
@@ -120,15 +132,20 @@ int main()
     printf("\nCalcul en utilisant le coprocesseur\n");
     // utilisant le copro
     for (i=1;i<100000;i*=10) {
-        printf("\nInicio\n") ;
         t0 = get_cc();
-        //printf("\nPassou cc\n") ;
-        //pi = fmult(4.0,dev_lim_atn_copro(1.0,i)) ;
-        pi = float_mult(4.0, 1.0);
+        pi = fmult(4.0,dev_lim_atn_copro(1.0,i)) ;
         t1 = get_cc();
         printf("Iterations :%10d Pi : %10.9f\n",i,pi) ;
         printf("Duration 1    %f ms\n\r", (t1-t0)/1000./FREQ);
     }
+    pi = fmult(4.0, 1.0);
+    printf("\r\nmult Pi : %10.9f\n\r",pi) ;
+    pi = fadd(4.0, 1.0);
+    printf("add Pi : %10.9f\n\r",pi) ;
+    pi = fsub(4.0, 1.0);
+    printf("sub Pi : %10.9f\n\r",pi) ;
+    pi = fdiv(4.0, 2.0);
+    printf("div Pi : %10.9f\n\r",pi) ;
     return 0;
 }
 
