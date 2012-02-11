@@ -45,33 +45,33 @@ module float_copro #(
    logic inactiv;
 
    always_ff @ (posedge clk)
-   begin
-      if (copro_accept) begin
-         copro_complete <= 0;
-         inactiv = 0;
-         COUNT = 0;
-      end
-      else if (!inactiv) begin
-         if (COUNT == 0 && copro_valid) begin
-            op0 <= copro_op0;
-            op1 <= copro_op1;
-            opcode <= copro_opcode;
-           case (copro_opcode)
-             11'd0: COUNT = t_add;
-             11'd1: COUNT = t_sub;
-             11'd2: COUNT = t_mult;
-             11'd3: COUNT = t_div;
-           endcase
-         end
-         else if (COUNT) begin
-             COUNT = COUNT - 1;
-             if (COUNT == 0) begin
+     begin
+	if (copro_accept) begin
+           copro_complete <= 0;
+           inactiv = 0;
+           COUNT = 0;
+	end
+	else if (!inactiv) begin
+           if (COUNT == 0 && copro_valid) begin
+              op0 <= copro_op0;
+              op1 <= copro_op1;
+              opcode <= copro_opcode;
+              case (copro_opcode)
+		11'd0: COUNT = t_add;
+		11'd1: COUNT = t_sub;
+		11'd2: COUNT = t_mult;
+		11'd3: COUNT = t_div;
+              endcase // case (copro_opcode)
+           end // if (COUNT == 0 && copro_valid)
+           else if (COUNT) begin
+              COUNT = COUNT - 1;
+              if (COUNT == 0) begin
                  copro_complete <= 1;
                  inactiv = 1;
                  copro_result <= resultat;
                  COUNT = 0;
-             end
-         end
-      end
-   end
-endmodule
+              end
+           end
+	end // if (!inactiv)
+     end // always_ff @
+endmodule // float_copro
