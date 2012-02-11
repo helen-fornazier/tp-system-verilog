@@ -1,8 +1,8 @@
 // Squelette du coprocesseur flottant
 module float_copro #(
 	       parameter t_mult = 2, /*Tmin 10.450 (95.694 MHz)*/
-               parameter t_add = 2, /*Tmin 16.864 (59.298 MHz)*/
-               parameter t_sub = 2, /*Tmin 16.864 (59.298 MHz)*/
+               parameter t_add = 3, /*Tmin 20.712 (48.281 MHz)*/
+               parameter t_sub = 3, /*Tmin 20.712 (48.281 MHz)*/
 	       parameter t_div = 12) /*Tmin 106.406 (9.398 MHz)*/
                (input logic clk,
                input logic copro_valid,
