@@ -61,6 +61,7 @@ module float_copro #(
 		11'd1: COUNT = t_sub;
 		11'd2: COUNT = t_mult;
 		11'd3: COUNT = t_div;
+		default: COUNT = t_div;		
               endcase // case (copro_opcode)
            end // if (COUNT == 0 && copro_valid)
            else if (COUNT) begin
